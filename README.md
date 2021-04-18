@@ -9,3 +9,5 @@
 ## Related Documents:
 * [SDS - Software Design Specification](https://github.com/tal-levi93/Bosser-project/wiki/SDS)
 * [Risks Management](https://github.com/tal-levi93/Bosser-project/wiki/Risks-Management#risks)
+* [Inception Planning](https://github.com/tal-levi93/Bosser-project/wiki/Inception-Planning)
+
