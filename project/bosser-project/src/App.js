@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import {auth} from "./Firebase/firebase";
+
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://twitch.tv/"
           target="_blank"
           rel="noopener noreferrer"
         >
