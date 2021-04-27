@@ -15,9 +15,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <Login/>
+
         <Router>
           <Switch>
+            <Route exact path="/" component={Login} />
             <Route exact path="/artists" component={Artists}/>
             <Route exact path="/blog" component={Blog}/>
             <Route exact path="/gallery" component={Gallery}/>
