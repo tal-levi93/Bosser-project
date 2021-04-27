@@ -8,23 +8,14 @@ import Courses from "./Pages/courses";
 import Events from "./Pages/events";
 import Newsletter from "./Pages/newsletter";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import Login from   "./Login";
+export default App;
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://twitch.tv/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <Login/>
         <Router>
           <Switch>
             <Route exact path="/artists" component={Artists}/>
@@ -40,5 +31,7 @@ function App() {
     </div>
   );
 }
-
-export default App;
+function signing() {
+  auth.createUserWithEmailAndPassword("first@gmail.com", "123456").then(result =>
+      console.log(result));
+}
