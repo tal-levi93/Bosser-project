@@ -10,12 +10,13 @@ import Events from "./Pages/events";
 import Newsletter from "./Pages/newsletter";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Login from   "./Login";
-import Navbar from "./components/Header";
+import Navbar from "./components/Header/NavbarElements";
 
-import React from "react";
+
+import React ,{useState} from "react";
+import Sidebar from "./components/Header/Sidebar";
+import Index from "./Pages";
 export default App;
-
-
 
 function App() {
   return (
@@ -24,9 +25,9 @@ function App() {
       <header className="App-header">
 
         <Router>
-          <Navbar/>
+          <Index/>
+
             <Switch>
-              <Route path='/' exact component={Home} />
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/artists" component={Artists}/>
@@ -38,6 +39,7 @@ function App() {
 
           </Switch>
         </Router>
+
 
 
 

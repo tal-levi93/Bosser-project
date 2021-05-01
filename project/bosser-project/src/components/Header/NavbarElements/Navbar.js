@@ -1,28 +1,50 @@
 import styled from 'styled-components';
 import { NavLink as Link} from "react-router-dom";
-import {FaBars} from 'react-icons/fa';
+import {Link as LinkR} from 'react-router-dom'
 
 
 export const Nav = styled.nav`
   background: black;
   height: 80px;
+  /*margin-top: -80px;*/
   display: flex;
-  justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1000px) / 2);
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  position: sticky;
+  top:0;
   z-index: 10;
+  
+  @media screen and (max-width: 960px){
+    transition: 0.8s all ease;
+  }
 `;
 
-export const NavLink = styled(Link)`
+export const NavContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  padding: 0 24px;
+  max-width: 1100px;
+`;
+export const NavItem = styled.li`
+  height: 80px;
+`;
+
+export const NavLink = styled(LinkR)`
+  color: #fff;
+  display: flex;
   float: right;
-  color: white;
-  display: block;
-  text-align:center;
-  text-decoration: none;
-  padding: 20px 35px;
+  align-items: center;
+  text-decoration:none;
+  padding: 0 1rem;
+  height: 100%;
   cursor: pointer;
-  font-size: 22px;
+  
   &.active {
-    background-color: #dddddd;
+    border-bottom: 3px solid #dddddd;
     color: white;
   }
 
@@ -33,26 +55,29 @@ export const NavLink = styled(Link)`
   }
 `;
 
-export const Bars = styled(FaBars)`
+export const Bars = styled.div`
   display: none;
-  color: #fff;
-  @media screen and (max-width: 768px) {
-    display: block;
+  
+  @media screen and (max-width: 840px) {
+    display: grid;
+    color: #ffff;
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-100%, 75%);
+    transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
   }
 `;
 
-export const NavMenu = styled.div`
+export const NavMenu = styled.ul`
   display: flex;
   align-items: center;
-  margin-right: 0;
+  list-style: none;
+  margin-right: -22px;
+  text-align: center;
  
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 840px) {
     display: none;
   }
 `;
@@ -61,39 +86,37 @@ export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
   float: right;
-  margin-right: 0;
-
-  @media screen and (max-width: 768px) {
+  padding: 0 1rem;
+  
+  @media screen and (max-width: 840px) {
     display: none;
   }
   
 `;
 
-
-
 export const NavBtnLink = styled(Link)`
-  border-radius: 200px;
-  padding: 17px 17px;
+  padding: 20px 20px;
   color: #fff;
   outline: none;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
+  margin: 10px;
   
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #fff;
+    background: #ddd;
     color: #010606;
   }
  
   
 `;
 
-export const FNavBtnLink = styled(Link)`
+export const FNavBtnLink = styled.a`
   border-radius: 200px;
   background: #3B5998;
-  padding: 17px 17px;
+  padding: 20px 20px;
   color: #fff;
   outline: none;
   border: none;
@@ -104,7 +127,7 @@ export const FNavBtnLink = styled(Link)`
   &:hover {
     transition: all 0.2s ease-in-out;
     background: #fff;
-    color: #010606;
+    color: #3B5998;
   }
   
 `;
