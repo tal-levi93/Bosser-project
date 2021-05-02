@@ -5,7 +5,7 @@ import Home from "./Pages/Home";
 import Artists from "./Pages/artists";
 import Blog from "./Pages/blog";
 import Gallery from "./Pages/gallery";
-import Courses from "./Pages/courses";
+import Courses from "./Pages/Courses/courses";
 import Events from "./Pages/events";
 import Newsletter from "./Pages/newsletter";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
@@ -34,8 +34,10 @@ function App() {
               <Route exact path="/blog" component={Blog}/>
               <Route exact path="/gallery" component={Gallery}/>
               <Route exact path="/courses" component={Courses}/>
+              {/*<Route exact path="/courses/:id" component={Courses}/>*/}
               <Route exact path="/events" component={Events}/>
               <Route exact path="/newsletter" component={Newsletter}/>
+              {/*<Route exact path="/newsletter/:id" component={Newsletter}/>*/}
 
           </Switch>
         </Router>

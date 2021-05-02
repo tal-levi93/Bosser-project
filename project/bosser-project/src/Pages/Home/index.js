@@ -1,5 +1,6 @@
 import logo from './logo.png'
 import React from 'react';
+import Courses from '../Courses/courses';
 
 const Home = () => {
     return (
@@ -14,9 +15,8 @@ const Home = () => {
         >
 
             <Logo/>
-            <Content/>
-            </div>
 
+            </div>
     );
 };
 
@@ -35,6 +35,7 @@ function Logo (){
         >
 
             <img src={logo} />
+
         </div>
 
     );
