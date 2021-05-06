@@ -32,13 +32,13 @@ class Courses extends Component {
             <div>
                 <div>
                     <h1>Courses</h1>
-                    <h2>info course</h2>
+                    <h2>courses info</h2>
                     <button onClick={()=>{
                     this.test("name1","lastname2")
                     }}>Back</button>
                 </div>
 
-                <div className="background">
+                <div className="background" style={ {display: 'flex', flexDirection: "row", flexWrap: "wrap"} }>
                     {this.state.courses.map((course, index)=>(
                         this.card(course, index)
                     ))}
@@ -49,13 +49,13 @@ class Courses extends Component {
 
     card(course_id, index) {
         return (<div key={index}>
-            <div style={ {border: '3px solid black', padding: '20px', margin: '10px', textAlign:'center', width: '18rem'} }>
+            <div style={ {border: '3px solid black', padding: '10px', margin: '10px', textAlign:'center', width: '18rem'} }>
                 <div>
-                    <img src={courseLogo} width="230" height="100"/>
+                    <img src={courseLogo} width="250" height="100"/>
                     <h1>{course_id.name}</h1>
-                    <h2>{course_id.description}</h2>
+                    <h3>{course_id.description}</h3>
                     <br/>
-                    <Button id={'enterCourseButton'}>Enter</Button>
+                    <Button id={'enterCourseButton'}>רישום לקורס</Button>
                 </div>
             </div>
         </div>)
