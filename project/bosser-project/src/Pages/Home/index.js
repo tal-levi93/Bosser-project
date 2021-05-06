@@ -42,17 +42,8 @@ function Logo (){
 };
 
 function Content (){
-    return (
-        <div
-            style={{
-
-
-
-            }}
-        >
-
-             
-        </div>
+    return (<>
+        </>
 
     );
 };

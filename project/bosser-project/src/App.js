@@ -20,8 +20,8 @@ export default App;
 
 function App() {
   return (
-      <html dir="rtl">
-    <div className="App">
+      <>
+    <div className="App" dir="rtl">
       <header className="App-header">
 
         <Router>
@@ -44,11 +44,9 @@ function App() {
 
 
 
-
-
       </header>
     </div>
-      </html>
+      </>
   );
 }
 function signing() {

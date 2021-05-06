@@ -11,7 +11,6 @@ import {
 import {useState} from 'react'
 import {SidebarContainer} from "../Header/Sidebar/SidebarElements";
 
-
 const Footer = () => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => {
