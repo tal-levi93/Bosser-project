@@ -6,7 +6,7 @@ import Artists from "./Pages/artists";
 import Blog from "./Pages/blog";
 import Gallery from "./Pages/gallery";
 import Courses from "./Pages/Courses/courses";
-import Events from "./Pages/events";
+import Events from "./Pages/Events/events";
 import Newsletter from "./Pages/newsletter";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Login from   "./Login";

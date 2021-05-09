@@ -1,5 +1,5 @@
 import {Component} from "react";
-import {db} from "../Firebase/firebase";
+import {db} from "../../Firebase/firebase";
 import eventLogo from "./eventLogo.jpg";
 import {Button} from "@material-ui/core";
 class Events extends Component{
