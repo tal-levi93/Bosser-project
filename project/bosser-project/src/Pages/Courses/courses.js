@@ -1,8 +1,8 @@
-import {Component} from "react";
-import {db} from "../../Firebase/firebase";
-import "./courses.css";
+import {Component} from 'react';
+import {db} from '../../Firebase/firebase';
+import './courses.css';
 import courseLogo from './courseLogo.jpg';
-import {Button, Card} from "@material-ui/core";
+import {Button, Card} from '@material-ui/core';
 
 class Courses extends Component {
 
@@ -15,7 +15,7 @@ class Courses extends Component {
 
     componentDidMount() {
         let courses = [];
-        db.collection("courses").get().then((result)=>{
+        db.collection('courses').get().then((result)=>{
             result.docs.forEach(doc=>{
                 courses.push(doc.data());
             });
@@ -23,25 +23,20 @@ class Courses extends Component {
         });
     }
 
-    test(f_name,l_name) {
-        this.setState({first_name:f_name,last_name:l_name})
-    }
-
     render() {
         return(
             <div>
-                <div>
-                    <h1>Courses</h1>
-                    <h2>courses info</h2>
-                    <button onClick={()=>{
-                    this.test("name1","lastname2")
-                    }}>Back</button>
-                </div>
+                <h1>רשימת קורסים:</h1>
 
-                <div className="background" style={ {display: 'flex', flexDirection: "row", flexWrap: "wrap"} }>
-                    {this.state.courses.map((course, index)=>(
-                        this.card(course, index)
-                    ))}
+                <button onClick={()=>{
+
+                }}>Back</button>
+
+                <div className='background' style={ {display: 'flex', flexDirection: 'row', flexWrap: 'wrap'} }>
+                    {this.state.courses.map(
+                        (course, index)=>(
+                            this.card(course, index)
+                        ))}
                 </div>
             </div>
         )
@@ -51,11 +46,13 @@ class Courses extends Component {
         return (<div key={index}>
             <div style={ {border: '3px solid black', padding: '10px', margin: '10px', textAlign:'center', width: '18rem'} }>
                 <div>
-                    <img src={courseLogo} width="250" height="100"/>
-                    <h1>{course_id.name}</h1>
-                    <h3>{course_id.description}</h3>
-                    <br/>
-                    <Button id={'enterCourseButton'}>רישום לקורס</Button>
+                    <img src={courseLogo} width='250' height='100'/>
+                    <h2>{course_id.name}</h2>
+                    <h2>{course_id.description}</h2>
+                    <h2> משך זמן: {course_id.duration}</h2>
+                    <h2> מספר נרשמים: {course_id.currentParticipants} מתוך {course_id.participants}</h2>
+                    <h2>{course_id.date.toDate().toString()}</h2>
+                    <Button id={course_id}>רישום לקורס</Button>
                 </div>
             </div>
         </div>)
