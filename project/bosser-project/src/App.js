@@ -16,6 +16,7 @@ import Navbar from "./components/Header/NavbarElements";
 import React ,{useState} from "react";
 import Sidebar from "./components/Header/Sidebar";
 import Index from "./Pages";
+import sign_up from "./Pages/Sign_up/sign_up";
 export default App;
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
               <Route exact path="/blog" component={Blog}/>
               <Route exact path="/gallery" component={Gallery}/>
               <Route exact path="/courses" component={Courses}/>
+              <Route exact path="/signup" component={sign_up}/>
+
               {/*<Route exact path="/courses/:id" component={Courses}/>*/}
               <Route exact path="/events" component={Events}/>
               <Route exact path="/newsletter" component={Newsletter}/>
