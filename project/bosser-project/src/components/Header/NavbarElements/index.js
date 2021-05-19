@@ -39,7 +39,7 @@ const Navbar = ( {toggle}) => {
                 </NavItem>
             </NavMenu>
             <NavBtn>
-                <NavBtnLink to="">התחברות</NavBtnLink>
+                <NavBtnLink to="login">התחברות</NavBtnLink>
                 <FNavBtnLink href='https://www.facebook.com/bosserco/' ><FaFacebookF /> </FNavBtnLink>
             </NavBtn>
                 </NavContainer>
