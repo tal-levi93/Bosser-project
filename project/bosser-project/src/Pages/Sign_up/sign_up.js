@@ -4,7 +4,7 @@ import {auth} from "../../Firebase/firebase";
 import {Route, Switch} from "react-router-dom";
 import Home from "../Home";
 import "./sign_up.css"
-import  { Redirect } from 'react-router-dom'
+
 
 
 
