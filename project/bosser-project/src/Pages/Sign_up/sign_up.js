@@ -4,6 +4,7 @@ import {auth} from "../../Firebase/firebase";
 import {Route, Switch} from "react-router-dom";
 import Home from "../Home";
 import "./sign_up.css"
+import  { Redirect } from 'react-router-dom'
 
 
 
@@ -36,6 +37,7 @@ class sign_up extends Component{
                 email: this.state.email,
                 age:this.state.age
             });
+            this.props.history.push('/')
         }).catch(err=>{
             alert(err)
         })
