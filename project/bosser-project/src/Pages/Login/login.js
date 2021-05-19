@@ -3,9 +3,7 @@ import firebase from "firebase";
 import {auth} from "../../Firebase/firebase";
 import {Route, Switch} from "react-router-dom";
 import Home from "../Home";
-import "./login.css"
-
-
+//import "./login.css"
 
 
 class login extends Component{
@@ -23,40 +21,33 @@ class login extends Component{
         })
     }
     handleSubmit = async (e) => {
+        console.log()
 
+    }
 
+    forgot_password(){
+        console.log("imhere")
     }
 
     render() {
         return(
             <div class="container">
                 <form onSubmit={this.handleSubmit} className="white">
-                    <h5 class="headline">הרשמה</h5>
+                    <h5 class="headline">התחברות</h5>
                     <div class = "input-field">
                         <label class = "line" htmlFor="username" >שם משתמש </label><br></br>
                         <input class = "box" type="text"  id="username" required  onChange={this.handleChange}/>
                     </div>
                     <div class = "input-field">
                         <label class = "line" htmlFor="password">סיסמא </label><br></br>
-                        <input class = "box" type="password" id="password" pattern=".{6,}" title="סיסמא חייבת לכלול 6 אותיות או יותר" required onChange={this.handleChange}/>
+                        <input class = "box" type="password" id="password"  required onChange={this.handleChange}/>
                     </div>
 
-                    <div class = "input-field">
-                        <label class = "line" htmlFor="email">דואר אלקטרוני </label><br></br>
-                        <input class = "box" type="text" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="name@domain.com" onChange={this.handleChange}/>
-                    </div>
-                    <div class = "Full name: ">
-                        <label class = "line" htmlFor="name">שם מלא</label><br></br>
-                        <input class = "box" type="text" id="full_name" required onChange={this.handleChange}/>
-                    </div>
-                    <div className="input-field">
-                        <label className="line" htmlFor="age">גיל </label><br></br>
-                        <input className="box" type="number"  id="age" required onChange={this.handleChange}/>
-                    </div>
                     <div><br></br>
-                        <button class = "button"><span>הירשם </span></button>
+                        <button class = "button"><span>התחבר </span></button>
                     </div>
                 </form>
+                <button className="button" onClick={this.forgot_password}><span>שכחתי סיסמא </span></button>
             </div>
         )
     }
