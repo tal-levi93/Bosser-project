@@ -29,7 +29,6 @@ function App() {
 
         <Router>
           <Index/>
-
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
@@ -38,12 +37,10 @@ function App() {
               <Route exact path="/gallery" component={Gallery}/>
               <Route exact path="/courses" component={Courses}/>
               <Route exact path="/signup" component={sign_up}/>
-
               {/*<Route exact path="/courses/:id" component={Courses}/>*/}
               <Route exact path="/events" component={Events}/>
               <Route exact path="/newsletter" component={Newsletter}/>
               {/*<Route exact path="/newsletter/:id" component={Newsletter}/>*/}
-
           </Switch>
         </Router>
 

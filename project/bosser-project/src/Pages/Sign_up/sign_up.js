@@ -45,32 +45,32 @@ class sign_up extends Component{
 
     render() {
         return(
-            <div class="container">
+            <div className="container">
                 <form onSubmit={this.handleSubmit} className="white">
-                    <h5 class="headline">הרשמה</h5>
-                    <div class = "input-field">
-                        <label class = "line" htmlFor="username" >שם משתמש </label><br></br>
-                        <input class = "box" type="text"  id="username" required  onChange={this.handleChange}/>
+                    <h5 className="headline">הרשמה</h5>
+                    <div className = "input-field">
+                        <label className = "line" htmlFor="username" >שם משתמש </label><br></br>
+                        <input className = "box" type="text"  id="username" required  onChange={this.handleChange}/>
                     </div>
-                    <div class = "input-field">
-                        <label class = "line" htmlFor="password">סיסמא </label><br></br>
-                        <input class = "box" type="password" id="password" pattern=".{6,}" title="סיסמא חייבת לכלול 6 אותיות או יותר" required onChange={this.handleChange}/>
+                    <div className = "input-field">
+                        <label className = "line" htmlFor="password">סיסמא </label><br></br>
+                        <input className = "box" type="password" id="password" pattern=".{6,}" title="סיסמא חייבת לכלול 6 אותיות או יותר" required onChange={this.handleChange}/>
                     </div>
 
-                    <div class = "input-field">
-                        <label class = "line" htmlFor="email">דואר אלקטרוני </label><br></br>
-                        <input class = "box" type="text" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="name@domain.com" onChange={this.handleChange}/>
+                    <div className = "input-field">
+                        <label className = "line" htmlFor="email">דואר אלקטרוני </label><br></br>
+                        <input className = "box" type="text" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="name@domain.com" onChange={this.handleChange}/>
                     </div>
-                    <div class = "Full name: ">
-                        <label class = "line" htmlFor="name">שם מלא</label><br></br>
-                        <input class = "box" type="text" id="full_name" required onChange={this.handleChange}/>
+                    <div className = "Full name: ">
+                        <label className = "line" htmlFor="name">שם מלא</label><br></br>
+                        <input className = "box" type="text" id="full_name" required onChange={this.handleChange}/>
                     </div>
                     <div className="input-field">
                         <label className="line" htmlFor="age">גיל </label><br></br>
                         <input className="box" type="number"  id="age" required onChange={this.handleChange}/>
                     </div>
                     <div><br></br>
-                        <button class = "button"><span>הירשם </span></button>
+                        <button className = "button"><span>הירשם </span></button>
                     </div>
                 </form>
             </div>
