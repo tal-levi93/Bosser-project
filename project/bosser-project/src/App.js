@@ -2,7 +2,7 @@
 import './App.css';
 import {auth} from "./Firebase/firebase";
 import Home from "./Pages/Home";
-import Artists from "./Pages/Artists";
+import Artists from "./Pages/Artists/artists";
 import Blog from "./Pages/blog";
 import Gallery from "./Pages/gallery";
 import Courses from "./Pages/Courses/courses";

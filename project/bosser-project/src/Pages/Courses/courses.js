@@ -28,10 +28,6 @@ class Courses extends Component {
             <div>
                 <h1>רשימת קורסים:</h1>
 
-                <button onClick={()=>{
-
-                }}>חזרה</button>
-
                 <div className='background' style={ {display: 'flex', flexDirection: 'row', flexWrap: 'wrap'} }>
                     {this.state.courses.map(
                         (course, index)=>(

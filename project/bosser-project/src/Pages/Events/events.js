@@ -26,10 +26,6 @@ class Events extends Component{
             <div>
                 <h1>אירועים עתידיים:</h1>
 
-                <button onClick={()=>{
-
-                }}>חזרה</button>
-
                 <div className="tmp" style={ {display: 'flex', flexDirection: "row", flexWrap: "wrap"}}>
                     {this.state.events.map((event , idx)=>(
                         this.create_event(event,idx)
