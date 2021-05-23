@@ -1,4 +1,5 @@
 import React from 'react'
+import {db} from "../../Firebase/firebase";
 import { FaEnvelope } from "react-icons/fa";
 import {
     BTN,
@@ -25,7 +26,7 @@ const Footer = () => {
                 <Form>
 
                     <label htmlFor="email"></label>
-                    <In type="text" placeholder="הכנס דואר אלקטרוני" name="email " required></In>
+                    <In type="text" placeholder="הכנס דואר אלקטרוני" name="email "   ></In>
                     <Confirm >הרשמה</Confirm>
                         <Close onClick={toggle}>סגור</Close>
                 </Form>

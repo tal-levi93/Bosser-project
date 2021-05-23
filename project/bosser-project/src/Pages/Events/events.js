@@ -28,7 +28,7 @@ class Events extends Component{
 
                 <button onClick={()=>{
 
-                }}>Back</button>
+                }}>חזרה</button>
 
                 <div className="tmp" style={ {display: 'flex', flexDirection: "row", flexWrap: "wrap"}}>
                     {this.state.events.map((event , idx)=>(
@@ -41,13 +41,14 @@ class Events extends Component{
 
     create_event(event_id, idx) {
         return (<div key={idx}>
-            <div style={ {border: '3px solid black', padding: '10px', margin: '10px', textAlign:'center', width: '18rem'} }>
+            <div style={ {color: '#bab9b9' ,border: '3px solid #bab9b9', padding: '10px', margin: '10px', textAlign:'center', width: '18rem'} }>
                 <div>
                     <img src={eventLogo} width="250" height="100"/>
                     <h2>{event_id.name}</h2>
                     <h2>{event_id.description}</h2>
                     <h2>{event_id.date.toDate().toString()}</h2>
-                    <Button id={'enterCourseButton'}>רישום לאירוע</Button>
+                    <br/>
+                    <Button id={'enterCourseButton'} style={ { color:'black' , border: '3px solid white' , background:'#c3c3c3'} }>רישום לאירוע</Button>
                 </div>
             </div>
         </div>)

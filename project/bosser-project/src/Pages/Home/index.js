@@ -1,20 +1,28 @@
-import logo from './logo.png'
 import React from 'react';
-import Courses from '../Courses/courses';
+import {P,Title,Img} from "./home";
+import Logo from './logo.png';
+
 
 const Home = () => {
-    return (
-        <div
-            style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                width:'100%',
-                backgroundColor: 'black'
-            }}
-        >
 
-            <Logo/>
+    return (
+        <div>
+            <Img></Img>
+
+            <Title>מי היא בוסר?</Title>
+            <P>קהילה מקצועית לאומנים בתחילת דרכם המשלבת, קהילה ויצירת שינוי במרחב הציבורי.
+                <br/>
+                הפעילות של העמותה החלה בשנת 2017 במהלך תקופה זו התקיימו מגוון רחב של מפגשי אמנים, מפגשי אמן וקהילה, אמנות במרחב הציבורי, ציור ונגינה ברחוב, תערוכות קבוצתיות, פסטיבל אמנות אורבני, פרויקט אמנותי חברתי ועוד.
+                <br/>
+                העמותה שואפת לקדם, לעודד ולטפח אמנים ויוצרים ממגוון האומנויות בקידום קריירה מקצועית באמנות ושילוב עשייה חברתית וקהילה מקומית. (מוזיקה, אמנות פלסטית, שירה, תיאטרון, פרפורמנס, מחול, קולנוע ועוד).
+                <br/>
+                <b>קהילת אמנים היוצרת בתוך הקהילה ועם הקהילה.</b>
+
+
+            </P>
+
+
+
 
             </div>
     );
@@ -22,29 +30,5 @@ const Home = () => {
 
 export default Home;
 
-function Logo (){
-    return (
-        <div
-            style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                width:'100%',
-                backgroundColor: 'black'
-            }}
-        >
 
-            <img src={logo} />
-
-        </div>
-
-    );
-};
-
-function Content (){
-    return (<>
-        </>
-
-    );
-};
 

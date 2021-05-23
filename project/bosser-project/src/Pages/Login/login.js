@@ -3,7 +3,10 @@ import firebase from "firebase";
 import {auth} from "../../Firebase/firebase";
 import {Route, Switch} from "react-router-dom";
 import Home from "../Home";
-//import "./login.css"
+import "./login.css"
+import styled from "styled-components";
+import logo from "../Home/logo.png";
+import Header from "../../components/Header";
 
 
 class login extends Component{
@@ -13,6 +16,7 @@ class login extends Component{
             username:"",
             password:""
         }
+
     }
 
     handleChange = (e) =>{
@@ -31,8 +35,11 @@ class login extends Component{
 
     render() {
         return(
-            <div class="container">
-                <form onSubmit={this.handleSubmit} className="white">
+            <div className="container">
+            {/*<Header style={{display:'none'}}> <Header/>*/}
+
+                <form id='form' onSubmit={this.handleSubmit} className="white">
+                    <br/>
                     <h5 class="headline">התחברות</h5>
                     <div class = "input-field">
                         <label class = "line" htmlFor="username" >שם משתמש </label><br></br>
@@ -44,10 +51,10 @@ class login extends Component{
                     </div>
 
                     <div><br></br>
-                        <button class = "button"><span>התחבר </span></button>
+                        <button class = "login"><span>התחבר </span></button>
                     </div>
                 </form>
-                <button className="button" onClick={this.forgot_password}><span>שכחתי סיסמא </span></button>
+                <button class="forgot_pass"  onClick={this.forgot_password}><span>שכחתי סיסמא </span></button>
             </div>
         )
     }
@@ -55,6 +62,5 @@ class login extends Component{
 
 }
 
-
-
 export default login;
+

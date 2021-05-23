@@ -1,5 +1,6 @@
 import {Component} from "react";
-import {auth} from "../Firebase/firebase";
+import {auth} from "../../Firebase/firebase";
+import Search from '../../components/Search/index'
 
 class Artists extends Component{
 
@@ -10,11 +11,12 @@ class Artists extends Component{
     render() {
         return(
             <div>
-                <h1>Artists</h1>
+                {/*<h1>אמנים</h1>*/}
+                <Search></Search>
 
                 <button onClick={()=>{
 
-                }}>Back</button>
+                }}>חזרה</button>
 
             </div>
         )

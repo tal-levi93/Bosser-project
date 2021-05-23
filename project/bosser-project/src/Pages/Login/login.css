@@ -1,0 +1,41 @@
+.container{
+text-align: center;
+
+}
+
+.headline{
+
+}
+
+.login{
+    margin: 10px;
+    background: #87FC89;
+    padding: 15px 50px;
+    color: black;
+    border: none;
+    border-radius: 200px;
+    font-size:35px;
+}
+
+.login:hover{
+    background: #62C864;
+    font-size:45px;
+    cursor: pointer;
+}
+
+.forgot_pass{
+    margin: 10px;
+    background: #FC8787;
+    padding: 15px 40px;
+    color: black;
+    border: none;
+    border-radius: 200px;
+    font-size:35px;
+
+}
+
+.forgot_pass:hover{
+    background: #C86767;
+    font-size:45px;
+    cursor: pointer;
+}

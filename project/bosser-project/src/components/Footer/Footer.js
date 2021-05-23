@@ -3,30 +3,40 @@ import styled from 'styled-components';
 
 
 export const BTN = styled.button`
-  background-color: #555;
+  background-color: #CB0000;
   color: white;
   padding: 10px 10px;
-  border: none;
+  border-bottom-color: white;
   cursor: pointer;
   opacity: 0.8;
   position: fixed;
   bottom: 23px;
-  right: 28px;
+  left: 23px;
   border-radius: 200px;
-  padding: 20px;
-  font-size: 23px;
+  padding: 32px;
+  font-size: 30px;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #C34242;
+    opacity: 0.8;
+    font-size: 35px;
+    border-bottom-color: white;
+
+
+  }
 `;
 
 export const PopUp = styled.div`
   position: fixed;
   bottom: 0;
   display: ${({ipOpen}) => (ipOpen ? 'grid' : 'none') };
-  right: 15px;
+  left: 15px;
   border: 3px solid #f1f1f1;
   z-index: 9;
   
 `;
-export const Form = styled.form`
+export const Form = styled.div`
   max-width: 400px;
   padding: 10px;
   background-color: white;

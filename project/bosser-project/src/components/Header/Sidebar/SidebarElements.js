@@ -1,20 +1,22 @@
 import styled from 'styled-components';
 import {Link as LinkS} from 'react-scroll'
 import {Link as LinkR} from 'react-router-dom'
+import { Link as Link} from "react-router-dom";
 import {FaFacebook, FaTimes} from "react-icons/fa";
 
 export const SidebarContainer = styled.aside`
   display: none;
   
   
-  @media screen and (max-width:810px){
-    position: fixed;
+  @media screen and (max-width:1200px){
+    position: absolute;
     cursor: pointer;
     z-index: 999;
     width: 100%;
     height: 100%;
     background: #0d0d0d;
-    display: grid;
+    display:inline-block;
+    text-align: center;
     align-items: center;
     top: 0;
     left: 0 ;
@@ -33,8 +35,9 @@ export const Icon = styled.div`
   position: absolute;
   top:1.2rem;
   right: 1.5rem;
+
   background: transparent;
-  font-size: 2rem;
+  font-size: 2.1rem;
   cursor: pointer;
   outline: none;
 `;
@@ -67,12 +70,12 @@ export const SidebarLink = styled(LinkR) `
   list-style: none;
   transition: 0.2s ease-in-out;
   text-decoration: none;
-  
-  
+
+
   color: #fff;
-  
-  &:hover{
-    color: #536162;
+
+  &:hover {
+    color: #7A8B8D;
     transition: 0.2s ease-in-out;
   }
 `;
@@ -88,7 +91,7 @@ export const SideBtnWrap = styled.div`
   }
 `;
 
-export const SideBtn = styled(LinkS)`
+export const SideBtn = styled(Link)`
   border-radius: 90px;
   background: white;
   display: flex;
