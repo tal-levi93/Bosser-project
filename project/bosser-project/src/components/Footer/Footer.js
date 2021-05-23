@@ -13,14 +13,14 @@ export const BTN = styled.button`
   bottom: 23px;
   left: 23px;
   border-radius: 200px;
-  padding: 32px;
-  font-size: 30px;
+  padding: 30px;
+  font-size: 45px;
 
   &:hover {
     transition: all 0.2s ease-in-out;
     background: #C34242;
     opacity: 0.8;
-    font-size: 35px;
+    font-size: 55px;
     border-bottom-color: white;
 
 

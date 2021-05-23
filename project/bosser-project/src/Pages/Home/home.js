@@ -18,7 +18,7 @@ export const P = styled.p`
   padding-left: 30px;
   text-align: center;
   color: white;
-  font-size: 46px;
+  font-size: 56px;
   margin-bottom: 100px;
 
 `;
@@ -29,7 +29,7 @@ export const Title = styled.div`
   padding-left: 30px;
   text-align: center;
   color: white;
-  font-size: 65px;
+  font-size: 70px;
   text-decoration: underline;
   text-decoration-color: red;
 
