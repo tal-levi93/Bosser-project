@@ -1,10 +1,51 @@
-import React, {useState} from 'react'
+import React, {Component, useState} from 'react'
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Home from "./Home";
 
-const Index = () => {
+/*
+
+class Index extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isOpen:'false'
+        }
+    }
+    toggle = () => {
+        if(this.state.isOpen == true){
+            this.setState({
+                isOpen:'false'
+            })
+        }
+        else {
+            this.setState({
+                isOpen: 'true'
+            })
+        }
+        return this.state.isOpen
+    };
+
+    render() {
+
+
+        return (
+            <>
+                <Header isOpen={this.isOpen} toggle={this.toggle} isLoggedIn={this.props.isLoggedIn}/>
+                <Footer isOpen={this.isOpen} toggle={this.toggle}/>
+            </>
+        );
+    }
+}
+export default Index
+
+
+*/
+
+
+
+const Index = (props) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => {
@@ -14,10 +55,12 @@ const Index = () => {
 
     return (
         <>
-            <Header isOpen={isOpen} toggle={toggle}/>
+
+            <Header isOpen={isOpen} toggle={toggle} isLoggedIn={props.isLoggedIn}/>
             <Footer isOpen={isOpen} toggle={toggle}/>
 
         </>
     );
 };
+
 export default Index
