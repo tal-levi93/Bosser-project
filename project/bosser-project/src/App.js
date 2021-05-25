@@ -11,47 +11,145 @@ import Newsletter from "./Pages/newsletter";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Login from "./Pages/Login/login";
 
+
 import Navbar from "./components/Header/NavbarElements";
 
 
 
-import React ,{useState} from "react";
+import React, {Component, useState} from "react";
 import Sidebar from "./components/Header/Sidebar";
 import Index from "./Pages";
 import sign_up from "./Pages/Sign_up/sign_up";
+import firebase from "firebase";
+
+
+
+class App extends Component{
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      UserLog:false,
+      UserName:''
+    }
+  }
+
+
+
+
+
+  IsLoggedIn = async()=>{
+    try {
+      await new Promise((resolve, reject) =>
+          firebase.auth().onAuthStateChanged(
+              user => {
+                if (user) {
+                  this.setState({UserLog:true})
+                  resolve(user)
+                } else {
+                  this.setState({UserLog:false})
+                  reject('no user logged in')
+                }
+              },
+              // Prevent console error
+              error => reject(error)
+          )
+      )
+
+    } catch (error) {
+
+    }
+  }
+
+  componentDidMount() {
+    this.IsLoggedIn().then(r => {
+
+    });
+  }
+
+
+  render(){
+
+
+
+    return (
+        <>
+          <div className="App" dir="rtl">
+            <header className="App-header">
+              <Router>
+
+                <Index isLoggedIn = {this.state.UserLog}/>
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route exact path="/login" component={Login} />
+                  <Route exact path="/artists" component={Artists}/>
+                  <Route exact path="/blog" component={Blog}/>
+                  <Route exact path="/gallery" component={Gallery}/>
+                  <Route exact path="/courses" component={Courses}/>
+                  <Route exact path="/signup" component={sign_up}/>
+                  {<Route exact path="/courses/:id" component={Courses}/>}
+                  <Route exact path="/events" component={Events}/>
+                  <Route exact path="/newsletter" component={Newsletter}/>
+                  {/*<Route exact path="/newsletter/:id" component={Newsletter}/>*/}
+                </Switch>
+              </Router>
+
+
+
+            </header>
+          </div>
+        </>
+    );
+  }
+
+
+
+
+}
 export default App;
 
-function App() {
-  return (
-      <>
-    <div className="App" dir="rtl">
-      <header className="App-header">
-
-        <Router>
-          <Index/>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/artists" component={Artists}/>
-              <Route exact path="/blog" component={Blog}/>
-              <Route exact path="/gallery" component={Gallery}/>
-              <Route exact path="/courses" component={Courses}/>
-              <Route exact path="/signup" component={sign_up}/>
-              {/*<Route exact path="/courses/:id" component={Courses}/>*/}
-              <Route exact path="/events" component={Events}/>
-              <Route exact path="/newsletter" component={Newsletter}/>
-              {/*<Route exact path="/newsletter/:id" component={Newsletter}/>*/}
-          </Switch>
-        </Router>
 
 
 
-      </header>
-    </div>
-      </>
-  );
-}
-function signing() {
-  auth.createUserWithEmailAndPassword("first@gmail.com", "123456").then(result =>
-      console.log(result));
-}
+//
+// function App() {
+//
+//   firebase.auth().onAuthStateChanged(function (user) {
+//     if (user) {
+//       console.log("imhere")
+//     } else {
+//       console.log("3213")
+//     }
+//   });
+//
+//   return (
+//       <>
+//     <div className="App" dir="rtl">
+//       <header className="App-header">
+//
+//         <Router>
+//           <Index/>
+//             <Switch>
+//               <Route exact path="/" component={Home} />
+//               <Route exact path="/login" component={Login} />
+//               <Route exact path="/artists" component={Artists}/>
+//               <Route exact path="/blog" component={Blog}/>
+//               <Route exact path="/gallery" component={Gallery}/>
+//               <Route exact path="/courses" component={Courses}/>
+//               <Route exact path="/signup" component={sign_up}/>
+//               {<Route exact path="/courses/:id" component={Courses}/>}
+//               <Route exact path="/events" component={Events}/>
+//               <Route exact path="/newsletter" component={Newsletter}/>
+//               {/*<Route exact path="/newsletter/:id" component={Newsletter}/>*/}
+//           </Switch>
+//         </Router>
+//
+//
+//
+//       </header>
+//     </div>
+//       </>
+//   );
+// }
+
+
