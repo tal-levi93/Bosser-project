@@ -1,5 +1,6 @@
-import React from 'react'
-
+import React, {Component} from 'react'
+import firebase from "firebase";
+import {auth} from "../../../Firebase/firebase";
 import { Route, Switch} from "react-router-dom";
 import Blog from "../../../Pages/blog";
 import Gallery from "../../../Pages/Gallery/gallery";
@@ -21,9 +22,97 @@ import {
     NavBtnLink
 } from './Navbar';
 
+class Navbar extends Component {
+    constructor(props) {
+        super(props);
+
+    }
+
+    LogOut() {
+        firebase.auth().signOut().then(() => {
+            console.log("signed out success")
+        }).catch((error) => {
+            console.log(error)
+        });
+
+    }
 
 
+    render() {
+        const {toggle} = this.props.toggle
+        let buildNav
+        if (this.props.isLoggedIn == true) {
+            console.log("1")
+            buildNav = (<Nav>
+                <NavContainer>
+                    <Bars onClick={toggle}> <FaBars/> </Bars>
+                    <NavMenu>
+                        <NavItem>
+                            <NavLink to="/"> <FaHome/> דף הבית </NavLink>
+                            <NavLink to="/artists"><FaUserFriends/>אמנים </NavLink>
+                            <NavLink to="/blog"><FaNewspaper/>בלוג </NavLink>
+                            <NavLink to="/gallery"> <FaImages/> גלריה </NavLink>
+                            <NavLink to="/courses"> <GoMortarBoard/> קורסים</NavLink>
+                            <NavLink to="/events"> <GoCalendar/>אירועים </NavLink>
+                        </NavItem>
+                    </NavMenu>
+                    <NavBtn>
+                        <button onClick={this.LogOut}>התנתק</button>
+                        <FNavBtnLink href='https://www.facebook.com/bosserco/'><FaFacebookF/> </FNavBtnLink>
+                    </NavBtn>
+                </NavContainer>
+            </Nav>)
+        } else {
+            console.log("2")
+            buildNav = (
+                <Nav>
+                    <NavContainer>
+                        <Bars onClick={toggle}> <FaBars/> </Bars>
+                        <NavMenu>
+                            <NavItem>
+                                <NavLink to="/"> <FaHome/> דף הבית </NavLink>
+                                <NavLink to="/artists"><FaUserFriends/>אמנים </NavLink>
+                                <NavLink to="/blog"><FaNewspaper/>בלוג </NavLink>
+                                <NavLink to="/gallery"> <FaImages/> גלריה </NavLink>
+                                <NavLink to="/courses"> <GoMortarBoard/> קורסים</NavLink>
+                                <NavLink to="/events"> <GoCalendar/>אירועים </NavLink>
+                                <NavLink to="/signup"> <AiOutlineUserAdd/>הרשמה </NavLink>
+                            </NavItem>
+                        </NavMenu>
+                        <NavBtn>
+                            <NavBtnLink to="login">התחברות</NavBtnLink>
+                            <FNavBtnLink href='https://www.facebook.com/bosserco/'><FaFacebookF/> </FNavBtnLink>
+                        </NavBtn>
+                    </NavContainer>
+                </Nav>
+
+            )
+
+        }
+        return (
+            <>
+                {buildNav}
+
+
+            </>
+        )
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
 const Navbar = ( {toggle}) => {
+
     return (
         <>
             <Nav>
@@ -49,6 +138,8 @@ const Navbar = ( {toggle}) => {
             </>
     );
 };
+*/
+
 export default Navbar;
 
 

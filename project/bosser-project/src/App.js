@@ -77,7 +77,7 @@ class App extends Component{
           <div className="App" dir="rtl">
             <header className="App-header">
               <Router>
-
+                {/*{console.log(this.state.UserLog)}*/}
                 <Index isLoggedIn = {this.state.UserLog}/>
                 <Switch>
                   <Route exact path="/" component={Home} />

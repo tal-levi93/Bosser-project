@@ -4,8 +4,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Home from "./Home";
 
-/*
 
+/*
 class Index extends Component {
     constructor(props) {
         super(props);
@@ -39,9 +39,9 @@ class Index extends Component {
     }
 }
 export default Index
-
-
 */
+
+
 
 
 

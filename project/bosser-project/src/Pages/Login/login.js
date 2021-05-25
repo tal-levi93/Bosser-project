@@ -26,7 +26,7 @@ class login extends Component{
     handleSubmit = async (e) => {
         e.preventDefault()
         auth.signInWithEmailAndPassword(this.state.email , this.state.password).then((res )=> {
-            console.log(res)
+            this.props.history.push('/')
         }).catch((e)=>{
             console.log(e)
         })
@@ -52,7 +52,7 @@ class login extends Component{
     render() {
         return(
             <div className="container">
-            {/*<Header style={{display:'none'}}> <Header/>*/}
+                {/*<Header style={{display:'none'}}> <Header/>*/}
 
                 <form id='form' onSubmit={this.handleSubmit} className="white">
                     <br/>
