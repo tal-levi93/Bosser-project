@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Route, Switch} from "react-router-dom";
 import Blog from "../../../Pages/blog";
-import Gallery from "../../../Pages/gallery";
+import Gallery from "../../../Pages/Gallery/gallery";
 import Courses from "../../../Pages/Courses/courses";
 import Events from "../../../Pages/Events/events";
 import Newsletter from "../../../Pages/newsletter";

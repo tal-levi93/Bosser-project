@@ -11,10 +11,10 @@ export const BTN = styled.button`
   opacity: 0.9;
   position: fixed;
   bottom: 23px;
-  left: 23px;
+  left: 20px;
   border-radius: 200px;
-  padding: 30px;
-  font-size: 45px;
+  padding: 2.2%;
+  font-size: 190%;
 
   &:hover {
     transition: all 0.2s ease-in-out;
@@ -22,23 +22,21 @@ export const BTN = styled.button`
     opacity: 0.8;
     font-size: 55px;
     border-bottom-color: white;
-
-
-  }
+    
+    }
 `;
 
 export const PopUp = styled.div`
   position: fixed;
   bottom: 0;
   display: ${({ipOpen}) => (ipOpen ? 'grid' : 'none') };
-  left: 15px;
+  left: 0px;
   border: 3px solid #f1f1f1;
   z-index: 9;
   
 `;
 export const Form = styled.div`
-
-  padding: 20px;
+  padding: 30px;
   background-color: white;
   z-index: 9;
 `;
@@ -48,7 +46,7 @@ export const In = styled.input`
   width: 100%;
   margin: 8px 0 14px 0;
   border: none;
-  font-size: 40px;
+  font-size: 190%;
   text-align: center;
   background: #f1f1f1;
   outline: none;
@@ -60,7 +58,7 @@ export const In = styled.input`
 export const Confirm = styled.button`
   background-color: red;
   color: white;
-  font-size: 40px;
+  font-size: 190%;
   padding: 10px 10px;
   border: none;
   cursor: pointer;
@@ -79,7 +77,7 @@ export const Close = styled.button`
   padding: 10px 10px;
   border: none;
   cursor: pointer;
-  font-size: 40px;
+  font-size: 190%;
   width: 100%;
   margin-bottom:10px;
   opacity: 0.8;

@@ -6,11 +6,11 @@ import {Link as LinkR} from 'react-router-dom'
 export const Nav = styled.nav`
   cursor: pointer;
   background: white;
-  height: 80px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 47px;
+  font-size: 50px;
   color: black;
   position: sticky;
   top:0;
@@ -18,7 +18,14 @@ export const Nav = styled.nav`
   
   @media screen and (max-width:1250px){
     transition: 0.8s all ease;
-    width: 20%;
+    width: 150px;
+    height: 90px;
+  }
+
+  @media screen and (max-width:190px){
+    transition: 0.8s all ease;
+    width: 50%;
+    height: 60px;
 
   }
 `;
@@ -29,8 +36,8 @@ export const NavContainer = styled.div`
   height: 80px;
   z-index: 1;
   width: 100%;
-  padding: 0 20px;
-  //max-width: 1290px;
+  padding: 0 10px;
+
 `;
 export const NavItem = styled.li`
   height: 80px;
@@ -42,7 +49,7 @@ export const NavLink = styled(LinkR)`
   float: right;
   align-items: center;
   text-decoration:none;
-  padding: 0 13px;
+  padding: 10px 10px;
   height: 100%;
   cursor: pointer;
   
@@ -64,14 +71,16 @@ export const Bars = styled.div`
   @media screen and (max-width: 1250px) {
     display: grid;
     color: black;
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
+    text-align: center;
+    transform: translate(-10%, 30%);
+    font-size: 59px;
     cursor: pointer;
-    padding: 0;
-    
+  }
+
+  @media screen and (max-width: 190px) {
+    font-size: 30px;
   }
 `;
 
@@ -79,7 +88,7 @@ export const NavMenu = styled.ul`
   display: flex;
   align-items: center;
   list-style: none;
-  margin-right: -22px;
+  //margin-right: -22px;
   text-align: center;
  
   @media screen and (max-width: 1250px) {
@@ -91,7 +100,7 @@ export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
   float: right;
-  padding: 0 20px;
+  padding: 0 5px;
   
   @media screen and (max-width: 1250px) {
     display: none;
@@ -100,18 +109,20 @@ export const NavBtn = styled.nav`
 `;
 
 export const NavBtnLink = styled(Link)`
-  padding: 16px 16px;
+  border-radius: 200px;
+  border-color: #fa2727;
+  border-bottom-style: double;
+  border-top-style: double;
+  padding: 15px 20px;
   color: black;
-  outline: none;
-  border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  margin: 14px;
+  margin: 18px;
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #ddd;
+    background: #F55656;
     color: white;
   }
 
@@ -121,7 +132,7 @@ export const NavBtnLink = styled(Link)`
 export const FNavBtnLink = styled.a`
   border-radius: 200px;
   background: #3B5998;
-  padding: 13px 22px;
+  padding: 20px 25px;
   color: #fff;
   outline: none;
   border: none;

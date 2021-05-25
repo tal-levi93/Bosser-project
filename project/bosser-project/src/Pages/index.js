@@ -14,7 +14,6 @@ const Index = () => {
 
     return (
         <>
-
             <Header isOpen={isOpen} toggle={toggle}/>
             <Footer isOpen={isOpen} toggle={toggle}/>
 

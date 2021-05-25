@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import {Link as LinkS} from 'react-scroll'
 import {Link as LinkR} from 'react-router-dom'
 import { Link as Link} from "react-router-dom";
 import {FaFacebook, FaTimes} from "react-icons/fa";
@@ -8,8 +7,8 @@ export const SidebarContainer = styled.aside`
   display: none;
   
   
-  @media screen and (max-width:1200px){
-    position: absolute;
+  @media screen and (max-width:1250px){
+    position: ${({ipOpen}) => (ipOpen ? 'fixed' : 'absolute') };
     cursor: pointer;
     z-index: 999;
     width: 100%;
@@ -28,6 +27,13 @@ export const SidebarContainer = styled.aside`
 
 export const CloseIcon = styled(FaTimes)`
  color: #fff;
+  font-size: 40px;
+
+  &:hover {
+    font-size: 50px;
+    color: #7A8B8D;
+    transition: 0.2s ease-in-out;
+  }
   
 `;
 
@@ -35,26 +41,27 @@ export const Icon = styled.div`
   position: absolute;
   top:1.2rem;
   right: 1.5rem;
-
   background: transparent;
   font-size: 2.1rem;
   cursor: pointer;
   outline: none;
+  
 `;
 
 export const SidebarWrapper = styled.div`
     color: #fff;
+  
 `;
 
 export const SidebarMenu = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
- 
   grid-template-rows: repeat(6, 60px);
   text-align: center;
+
   
-  @media screen and (max-width: 480px ) {
-    grid-template-rows: repeat(5 , 30px);
+  @media screen and (max-height: 430px ) {
+    grid-template-rows: repeat(6 , 30px);
     
   }
   
@@ -65,19 +72,22 @@ export const SidebarLink = styled(LinkR) `
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 30px;
   text-decoration: none;
   list-style: none;
   transition: 0.2s ease-in-out;
   text-decoration: none;
-
-
   color: #fff;
 
   &:hover {
-    color: #7A8B8D;
+    color: #717677;
     transition: 0.2s ease-in-out;
   }
+
+  @media screen and (max-height: 400px ) {
+    font-size: 20px;
+  }
+  
 `;
 export const SideBtnWrap = styled.div`
   display: grid;
@@ -88,36 +98,42 @@ export const SideBtnWrap = styled.div`
 
   @media screen and (max-width: 480px) {
     grid-template-rows: repeat(6, 60px);
+
+  }
+
+  @media screen and (max-height: 500px) {
+    grid-template-rows: repeat(6, 40px);
   }
 `;
 
 export const SideBtn = styled(Link)`
-  border-radius: 90px;
+  border-radius: 100px;
+  text-align: center;
   background: white;
   display: flex;
   white-space: nowrap;
-  padding: 21px 40px ;
+  padding: 10px 14px;
   color: #010606;
-  font-size: 20px;
+  font-size: 26px;
   outline: none;
-  border:none;
+  border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  margin-bottom: 10px;
-  
-  &:hover{
+
+  &:hover {
     transition: all 0.2s ease-in-out;
-    background: #536162;
+    background: #717677;
     color: #fff;
   }
-  
-  
+
+
 `;
 
 export const FSideBtn = styled.a`
   border-radius: 50px;
   background: #3B5998;
+  text-align: center;
   display: flex;
   padding: 16px 20px;
   align-items: center;

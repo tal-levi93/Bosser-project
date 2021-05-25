@@ -4,7 +4,7 @@ import {auth} from "./Firebase/firebase";
 import Home from "./Pages/Home";
 import Artists from "./Pages/Artists/artists";
 import Blog from "./Pages/blog";
-import Gallery from "./Pages/gallery";
+import Gallery from "./Pages/Gallery/gallery";
 import Courses from "./Pages/Courses/courses";
 import Events from "./Pages/Events/events";
 import Newsletter from "./Pages/newsletter";
