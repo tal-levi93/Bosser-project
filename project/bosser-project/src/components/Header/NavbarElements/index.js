@@ -71,7 +71,6 @@ class Navbar extends Component {
                 </NavContainer>
             </Nav>)
         } else {
-            console.log("2")
             buildNav = (
                 <Nav>
                     <NavContainer>
