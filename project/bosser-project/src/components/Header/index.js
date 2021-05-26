@@ -51,11 +51,10 @@ const Header = (props) => {
     return (
         <>
             <Sidebar isOpen={isOpen} toggle={toggle}/>
-            <Navbar toggle={toggle} isLoggedIn = {props.isLoggedIn}/>
-
+            <Navbar toggle={toggle} isLoggedIn = {props.isLoggedIn} UserDetails = {props.UserDetails}/>
         </>
     );
-};
+}
 
 
 export default Header

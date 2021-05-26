@@ -34,6 +34,13 @@ class Navbar extends Component {
         }).catch((error) => {
             console.log(error)
         });
+    }
+
+    UserTab(){
+        console.log(this.props.UserDetails)
+        return(
+            <h1>שלום  {this.props.UserDetails.FullName}</h1>
+        )
 
     }
 
@@ -42,7 +49,7 @@ class Navbar extends Component {
         const {toggle} = this.props.toggle
         let buildNav
         if (this.props.isLoggedIn == true) {
-            console.log("1")
+
             buildNav = (<Nav>
                 <NavContainer>
                     <Bars onClick={toggle}> <FaBars/> </Bars>
@@ -57,7 +64,7 @@ class Navbar extends Component {
                         </NavItem>
                     </NavMenu>
                     <NavBtn>
-                        <button onClick={this.LogOut}>התנתק</button>
+                        {this.UserTab()}
                         <FNavBtnLink href='https://www.facebook.com/bosserco/'><FaFacebookF/> </FNavBtnLink>
                     </NavBtn>
                 </NavContainer>
@@ -98,7 +105,7 @@ class Navbar extends Component {
         )
 
     }
-}
+};
 
 
 

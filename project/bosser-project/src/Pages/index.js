@@ -55,12 +55,10 @@ const Index = (props) => {
 
     return (
         <>
-
-            <Header isOpen={isOpen} toggle={toggle} isLoggedIn={props.isLoggedIn}/>
+            <Header isOpen={isOpen} toggle={toggle} isLoggedIn={props.isLoggedIn} UserDetails = {props.userDetails}/>
             <Footer isOpen={isOpen} toggle={toggle}/>
-
         </>
-    );
-};
+    )
+}
 
 export default Index
