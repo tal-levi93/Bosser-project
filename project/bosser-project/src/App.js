@@ -116,7 +116,8 @@ class App extends Component{
             <header className="App-header">
               <Router>
                 {/*{console.log(this.state.UserLog)}*/}
-                <Index isLoggedIn = {this.state.UserLog} userDetails = {this.state.UserDetails}/>
+                <Index isLoggedIn = {this.state.UserLog} UserDetails = {this.state.UserDetails}/>
+
                 <Switch>
                   <Route exact path="/" component={Home} />
                   <Route exact path="/login" component={Login} />

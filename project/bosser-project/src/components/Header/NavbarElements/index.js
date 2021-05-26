@@ -65,6 +65,7 @@ class Navbar extends Component {
                     </NavMenu>
                     <NavBtn>
                         {this.UserTab()}
+
                         <FNavBtnLink href='https://www.facebook.com/bosserco/'><FaFacebookF/> </FNavBtnLink>
                     </NavBtn>
                 </NavContainer>
