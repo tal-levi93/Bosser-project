@@ -50,7 +50,7 @@ const Header = (props) => {
 
     return (
         <>
-            <Sidebar isOpen={isOpen} toggle={toggle}  isLoggedIn = {props.isLoggedIn}/>
+            <Sidebar isOpen={isOpen} toggle={toggle}  isLoggedIn = {props.isLoggedIn} UserDetails = {props.UserDetails}/>
             <Navbar toggle={toggle} isLoggedIn = {props.isLoggedIn} UserDetails = {props.UserDetails}/>
         </>
     );

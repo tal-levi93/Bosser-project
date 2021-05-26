@@ -19,7 +19,9 @@ import {
     Bars,
     NavMenu,
     NavBtn,
-    NavBtnLink
+    NavBtnLink,
+    FullName,
+    LogOutBtn
 } from './Navbar';
 
 class Navbar extends Component {
@@ -39,7 +41,9 @@ class Navbar extends Component {
     UserTab(){
         console.log(this.props.UserDetails)
         return(
-            <h1>שלום  {this.props.UserDetails.FullName}</h1>
+            <FullName>שלום  {this.props.UserDetails.FullName}
+            <br/>
+            <LogOutBtn onClick={this.LogOut}>התנתק</LogOutBtn></FullName>
         )
 
     }

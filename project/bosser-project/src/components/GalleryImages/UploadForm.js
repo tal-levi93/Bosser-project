@@ -20,12 +20,12 @@ const UploadForm = () => {
     };
 
     return (
-        <form>
-            <label>
-                <input type="file" onChange={handleChange} />
-                <span>+</span>
+        <form id={"gform"}>
+            <label id={"glabel"}>
+                <input id={"ginput"} type="file" onChange={handleChange} />
+                <span id={"gspan"} >+</span>
             </label>
-            <div className="output">
+            <div className="goutput">
                 { error && <div className="error">{ error }</div>}
                 { file && <div> מעלה את הקובץ: { file.name }</div> }
                 { file && <ProgressBar file={file} setFile={setFile} /> }

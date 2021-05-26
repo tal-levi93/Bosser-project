@@ -3,12 +3,32 @@ import {FaFacebookF, FaHome, FaImages, FaNewspaper, FaUserFriends} from "react-i
 import {GoCalendar, GoMortarBoard} from "react-icons/go";
 import {AiOutlineUserAdd} from "react-icons/ai";
 import React, {Component} from "react";
+import firebase from "firebase";
+import {FullName,LogOutBtn} from "../NavbarElements/Navbar";
 
 
 
 class Sidebar extends Component{
     constructor(props) {
         super(props);
+    }
+
+    LogOut() {
+        firebase.auth().signOut().then(() => {
+            console.log("signed out success")
+        }).catch((error) => {
+            console.log(error)
+        });
+    }
+
+    UserTab(){
+        console.log(this.props.UserDetails)
+        return(
+            <FullName>שלום  {this.props.UserDetails.FullName}
+                <br/>
+                <LogOutBtn onClick={this.LogOut}>התנתק</LogOutBtn></FullName>
+        )
+
     }
     render() {
         let BuildSideBar
@@ -28,6 +48,7 @@ class Sidebar extends Component{
                     </SidebarMenu>
 
                     <SideBtnWrap>
+                        {this.UserTab()}
                         <FSideBtn href='https://www.facebook.com/bosserco/'> <FaFacebookF/></FSideBtn>
 
                     </SideBtnWrap>

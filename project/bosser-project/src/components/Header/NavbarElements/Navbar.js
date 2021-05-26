@@ -148,6 +148,35 @@ export const FNavBtnLink = styled.a`
   
 `;
 
+export const FullName = styled.div`
+    font-size: 35px;
+    margin: 50px;
+    color: black;
+  text-align: center;
+  
+`;
 
+export const LogOutBtn = styled.button`
+  border-radius: 200px;
+  border-color: #fa2727;
+  border-bottom-style: double;
+  border-top-style: double;
+  border-left-style: none;
+  border-right-style: none;
+  padding: 4px 25px;
+  color: black;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  font-size: 35px;
+
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #F55656;
+    color: white;
+  }
+  
+`;
 
 
