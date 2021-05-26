@@ -1,10 +1,10 @@
-import {SidebarContainer, Icon, CloseIcon , SidebarLink , SidebarWrapper,SidebarMenu, SideBtn,FSideBtn, SideBtnWrap} from "./SidebarElements";
+import {SideLogOutBtn, SideFullName, SidebarContainer, Icon, CloseIcon , SidebarLink , SidebarWrapper,SidebarMenu, SideBtn,FSideBtn, SideBtnWrap} from "./SidebarElements";
 import {FaFacebookF, FaHome, FaImages, FaNewspaper, FaUserFriends} from "react-icons/fa";
 import {GoCalendar, GoMortarBoard} from "react-icons/go";
 import {AiOutlineUserAdd} from "react-icons/ai";
 import React, {Component} from "react";
 import firebase from "firebase";
-import {FullName,LogOutBtn} from "../NavbarElements/Navbar";
+
 
 
 
@@ -24,9 +24,9 @@ class Sidebar extends Component{
     UserTab(){
         console.log(this.props.UserDetails)
         return(
-            <FullName>שלום  {this.props.UserDetails.FullName}
-                <br/>
-                <LogOutBtn onClick={this.LogOut}>התנתק</LogOutBtn></FullName>
+            <SideFullName>שלום  {this.props.UserDetails.FullName}
+
+                </SideFullName>
         )
 
     }
@@ -38,6 +38,7 @@ class Sidebar extends Component{
                     <CloseIcon/>
                 </Icon>
                 <SidebarWrapper>
+                    {this.UserTab()}
                     <SidebarMenu>
                         <SidebarLink to='/'><FaHome/> דף הבית </SidebarLink>
                         <SidebarLink to='./artists'><FaUserFriends/>אמנים </SidebarLink>
@@ -48,7 +49,8 @@ class Sidebar extends Component{
                     </SidebarMenu>
 
                     <SideBtnWrap>
-                        {this.UserTab()}
+                        <SideLogOutBtn onClick={this.LogOut}>התנתק</SideLogOutBtn>
+
                         <FSideBtn href='https://www.facebook.com/bosserco/'> <FaFacebookF/></FSideBtn>
 
                     </SideBtnWrap>
