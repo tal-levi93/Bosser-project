@@ -1,6 +1,6 @@
 
 import './App.css';
-import {auth} from "./Firebase/firebase";
+import {auth, db} from "./Firebase/firebase";
 import Home from "./Pages/Home";
 import Artists from "./Pages/Artists/artists";
 import Blog from "./Pages/blog";
@@ -30,9 +30,16 @@ class App extends Component{
 
     this.state = {
       UserLog:false,
-      UserName:''
+      UserDetails:{
+        UserName:"",
+        Email:"",
+        FullName:"",
+        UserUid:""
+      }
     }
   }
+
+
 
 
 
@@ -65,10 +72,41 @@ class App extends Component{
     this.IsLoggedIn().then(r => {
 
     });
+    let users = [];
+    const db = firebase.firestore()
+
+
+    db.collection('artists').get().then((result)=>{
+      result.docs.forEach(doc=>{
+        users.push(doc.data());
+      });
+      let current_user_uid = firebase.auth().currentUser.uid;
+      console.log(current_user_uid)
+      users.forEach(user => {
+        if(user.user_uid == current_user_uid){
+          this.setState({
+            UserDetails:{
+              FullName:user.full_name,
+              Email:user.email,
+              UserUid:user.user_uid,
+              UserName:user.user_name
+            }
+          })
+        }
+      })
+    }).catch(function(err){
+      console.log(err)
+    })
   }
 
 
+
+
+
+
+
   render(){
+
 
 
 
@@ -78,7 +116,8 @@ class App extends Component{
             <header className="App-header">
               <Router>
                 {/*{console.log(this.state.UserLog)}*/}
-                <Index isLoggedIn = {this.state.UserLog}/>
+                <Index isLoggedIn = {this.state.UserLog} UserDetails = {this.state.UserDetails}/>
+
                 <Switch>
                   <Route exact path="/" component={Home} />
                   <Route exact path="/login" component={Login} />

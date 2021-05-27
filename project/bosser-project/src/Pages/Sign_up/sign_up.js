@@ -9,13 +9,14 @@ import "./sign_up.css"
 
 
 class sign_up extends Component{
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             username:"",
             email:"",
             password:"",
             full_name:"",
+            user_id:"",
             age:0
         }
     }
@@ -31,9 +32,12 @@ class sign_up extends Component{
         e.preventDefault();
         await auth.createUserWithEmailAndPassword(this.state.email, this.state.password).then(res =>{
             console.log(this.state)
+
             const db = firebase.firestore();
             const userRef = db.collection("artists").add({
-                fullname: this.state.full_name,
+                user_name:this.state.username,
+                user_uid:res.user.uid,
+                full_name: this.state.full_name,
                 email: this.state.email,
                 age:this.state.age
             });

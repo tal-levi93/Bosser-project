@@ -154,3 +154,41 @@ export const FSideBtn = styled.a`
 
   
 `;
+
+export const SideFullName = styled.div`
+  font-size: 26px;
+  justify-content: center;
+  text-align: center;
+
+
+  @media screen and (max-width: 480px) {
+    grid-template-rows: repeat(6, 60px);
+
+  }
+
+  @media screen and (max-height: 500px) {
+    grid-template-rows: repeat(6, 40px);
+  }
+
+  
+`;
+
+export const SideLogOutBtn = styled.button`
+  border-radius: 100px;
+  background: white;
+  margin-bottom: 10px;
+  padding: 0px 10px;
+  color: #010606;
+  font-size: 25px;
+  outline: none;
+  border-color: red;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: red;
+    color: #fff;
+  }
+  
+`;

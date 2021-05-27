@@ -43,7 +43,7 @@ class Artists extends Component{
             <div style={ {color: '#bab9b9' ,border: '3px solid #bab9b9', padding: '10px', margin: '14px', textAlign:'center', width: '24rem'} }>
                 <div>
                     <img src={artistLogo} width="250" height="100"/>
-                    <h2 style={ { color:'white'} }>{artist_id.fullname}</h2>
+                    <h3 style={ { color:'white'} }>{artist_id.full_name}</h3>
                     <br/>
                     <Button id={'enterCourseButton'} style={ { color:'black' , border: '3px solid white' , background:'#c3c3c3'} }>כניסה לעמוד אמן</Button>
                 </div>

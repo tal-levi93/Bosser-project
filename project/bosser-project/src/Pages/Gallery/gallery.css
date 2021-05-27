@@ -6,19 +6,19 @@
 }
 
 /* upload form styles */
-form{
+#gform{
     margin: 30px auto 10px;
     text-align: center;
     /*font-size: 50px;*/
 }
-label input{
+#ginput{
 
     height: 0;
     width: 0;
     opacity: 0;
 }
 
-label{
+#glabel{
     display: block;
     width: 50px;
     height: 50px;
@@ -30,7 +30,7 @@ label{
     font-size: 80px;
     cursor: pointer;
 }
-label:hover{
+#glabel:hover{
     background: var(--primary);
     opacity: 1;
     color: black;
@@ -97,7 +97,7 @@ label:hover{
     border: 5px solid white;
 }
 
-.output{
+.goutput{
     color: white;
     font-size: 30px;
 }
