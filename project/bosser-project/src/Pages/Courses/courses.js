@@ -45,7 +45,7 @@ class Courses extends Component {
                     <img src={courseLogo} width='250' height='100'/>
                     <h2>{course_id.name}</h2>
                     <h2>{course_id.description}</h2>
-                    <h2> משך זמן: {course_id.duration}</h2>
+                    <h2> משך זמן: {course_id.duration} שעות</h2>
                     <h2> מספר נרשמים: {course_id.currentParticipants} מתוך {course_id.participants}</h2>
                     <h2>{course_id.date.toDate().toString()}</h2>
                     <br/>
