@@ -3,13 +3,15 @@ import './App.css';
 import {auth, db} from "./Firebase/firebase";
 import Home from "./Pages/Home";
 import Artists from "./Pages/Artists/artists";
-import Blog from "./Pages/blog";
+import Blog from "./Pages/Blog/blog";
 import Gallery from "./Pages/Gallery/gallery";
 import Courses from "./Pages/Courses/courses";
 import Events from "./Pages/Events/events";
 import Newsletter from "./Pages/newsletter";
+import Post from "./components/Blog/Post"
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Login from "./Pages/Login/login";
+import CreatePost from "./Pages/CreatePost"
 
 
 import Navbar from "./components/Header/NavbarElements";
@@ -129,6 +131,8 @@ class App extends Component{
                   {<Route exact path="/courses/:id" component={Courses}/>}
                   <Route exact path="/events" component={Events}/>
                   <Route exact path="/newsletter" component={Newsletter}/>
+                  <Route exact path="/blog/post/:postId" component={Post}/>
+                  <Route exact path="/blog/createPost" component={CreatePost}/>
                   {/*<Route exact path="/newsletter/:id" component={Newsletter}/>*/}
                 </Switch>
               </Router>

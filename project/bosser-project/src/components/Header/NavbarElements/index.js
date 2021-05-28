@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import firebase from "firebase";
 import {auth} from "../../../Firebase/firebase";
 import { Route, Switch} from "react-router-dom";
-import Blog from "../../../Pages/blog";
+import Blog from "../../../Pages/Blog/blog";
 import Gallery from "../../../Pages/Gallery/gallery";
 import Courses from "../../../Pages/Courses/courses";
 import Events from "../../../Pages/Events/events";
