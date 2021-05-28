@@ -1,0 +1,32 @@
+
+#context {
+    color: black;
+    font-size: 50px;
+    text-align: center;
+    top: 50px;
+}
+
+.modal_content {
+    background-color: rgba(255, 255, 255, 0.91);
+    position: fixed;
+    top: 25%;
+    left: 30%;
+    width: 40%;
+    height: 230px;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.close {
+    color: Black;
+    background: #87FC89;
+    border-radius: 200px;
+    font-size:35px;
+    /*float: right;*/
+}
+
+.close:hover {
+    background: #62C864;
+    cursor: pointer;
+}

@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8f5bf18-5aba-4985-a33d-58c7c239ca56" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="e8f5bf18-5aba-4985-a33d-58c7c239ca56" name="Default Changelist" comment="finished forgot password page and functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bosser-project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bosser-project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/bosser-project/src/Pages/Courses/courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/Pages/Courses/courses.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/bosser-project/src/Pages/Login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/Pages/Login/login.js" afterDir="false" />
     </list>
@@ -51,8 +47,17 @@
       <option name="presentableId" value="Default" />
       <updated>1619966950358</updated>
       <workItem from="1619966955378" duration="54000" />
-      <workItem from="1622046519925" duration="16660000" />
+      <workItem from="1622046519925" duration="16814000" />
+      <workItem from="1622107239168" duration="8070000" />
+      <workItem from="1622123240526" duration="18400000" />
     </task>
+    <task id="LOCAL‎00001" summary="finished forgot password page and functionality">
+      <created>1622075520338</created>
+      <option name="number" value="LOCAL‎00001" />
+      <option name="presentableId" value="LOCAL‎00001" />
+      <updated>1622075520338</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -68,5 +73,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="finished forgot password page and functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished forgot password page and functionality" />
   </component>
 </project>

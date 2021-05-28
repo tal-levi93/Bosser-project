@@ -37,29 +37,10 @@ class login extends Component {
 
     }
 
-    // forgot_password(bool) {
-    //     // auth.onAuthStateChanged(function(user) {
-    //     //     if (user) {
-    //     //         console.log("logged-in");
-    //     //     } else {
-    //     //         console.log("Not-logged-in");
-    //     //     }
-    //     // });
-    //
-    //
-    //
-    // }
-
-    forgotPassword = (bool) => {
-        this.setState({
-            forgot_pass: bool
-        });
-    }
-
     toggleForgotPass = () => {
         this.setState({
             forgot_pass: !this.state.forgot_pass
-        })
+        });
     }
 
     render() {
@@ -86,13 +67,13 @@ class login extends Component {
                                 <button className="login"><span>התחבר </span></button>
                             </div>
                         </form>
-                        <button className="forgot_pass" onClick={this.forgotPassword.bind(null, true)}><span>שכחתי סיסמא </span>
+                        <button className="forgot_pass" onClick={this.toggleForgotPass}><span>שכחתי סיסמא </span>
                         </button>
                     </div>
                 )}
                 {this.state.forgot_pass && (
                     <div className='forgotPassword'>
-                        <ForgotPassword onToggleChange={this.toggleForgotPass}/>
+                        <ForgotPassword toggleForgotPass={this.toggleForgotPass}/>
                     </div>
                 )}
             </div>

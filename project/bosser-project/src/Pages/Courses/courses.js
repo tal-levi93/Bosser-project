@@ -15,8 +15,8 @@ class Courses extends Component {
 
     componentDidMount() {
         let courses = [];
-        db.collection('courses').get().then((result)=>{
-            result.docs.forEach(doc=>{
+        db.collection('courses').get().then((result) => {
+            result.docs.forEach(doc => {
                 courses.push(doc.data());
             });
             this.setState({courses: courses});
