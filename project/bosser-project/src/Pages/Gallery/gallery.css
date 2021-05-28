@@ -12,7 +12,6 @@
     /*font-size: 50px;*/
 }
 #ginput{
-
     height: 0;
     width: 0;
     opacity: 0;
@@ -57,18 +56,21 @@
 
 /* image grid styles */
 .img-grid{
-    margin: 10px ;
+    margin : auto 27px 135px 45px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 40px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+
+
 }
 .img-wrap{
     overflow: hidden;
-    height: 0;
-    padding: 50% 0;
-    /* padding controls height, will always be perfectly square regardless of width */
+    height: 100px;
+    padding: 55% 53% ;
     position: relative;
     opacity: 0.8;
+
+
 }
 .img-wrap img{
     min-width: 100%;
@@ -82,7 +84,7 @@
 /* modal styles */
 .backdrop{
     position: fixed;
-    top: 10%;
+    top: 6%;
     left: 0;
     width: 100%;
     height: 100%;
@@ -90,14 +92,69 @@
 }
 .backdrop img{
     display: grid;
-    max-width: 90%;
-    max-height: 80%;
-    margin: 60px auto;
+    max-width: 80%;
+    max-height: 70%;
+    margin: auto auto;
     box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
     border: 5px solid white;
+}
+
+#close {
+    margin-top: 100px;
+    color: #f2f2f2;
+    font-size: 40px;
+    text-align: center;
 }
 
 .goutput{
     color: white;
     font-size: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .img-grid{
+        grid-template-columns: 1fr 1fr 1fr;
+
+    }
+    .img-wrap{
+        padding: 55% 58% ;
+    }
+
+    .backdrop{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+    }
+
+    #close {
+        margin-top: 35%;
+        color: #f2f2f2;
+        font-size: 20px;
+        text-align: center;
+    }
+
+
+}
+
+#information{
+    color: white;
+    text-align: center;
+    font-size: 40px;
+
+}
+
+@media only screen and (max-height: 400px) {
+
+    #close {
+        margin-top: 31%;
+        color: #f2f2f2;
+        font-size: 12px;
+        text-align: center;
+    }
+
+
 }

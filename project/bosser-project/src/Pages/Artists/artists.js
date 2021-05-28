@@ -26,8 +26,7 @@ class Artists extends Component{
     render() {
         return(
             <div>
-                {/*<h1>אמנים</h1>*/}
-                <h1>האמנים שלנו:</h1>
+                <div id={'title'}>האמנים שלנו</div>
                 <div className="tmp" style={ {display: 'flex', flexDirection: "row", flexWrap: "wrap"}}>
                     {this.state.artists.map((artist , idx)=>(
                         this.create_artist(artist,idx)

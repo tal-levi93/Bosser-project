@@ -26,7 +26,7 @@ class Courses extends Component {
     render() {
         return(
             <div>
-                <h1>רשימת קורסים:</h1>
+                <div id={'title'}>הקורסים שלנו</div>
 
                 <div className='background' style={ {display: 'flex', flexDirection: 'row', flexWrap: 'wrap'} }>
                     {this.state.courses.map(
