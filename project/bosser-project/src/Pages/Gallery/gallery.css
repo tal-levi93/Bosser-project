@@ -12,7 +12,6 @@
     /*font-size: 50px;*/
 }
 #ginput{
-
     height: 0;
     width: 0;
     opacity: 0;
@@ -22,11 +21,11 @@
     display: block;
     width: 50px;
     height: 50px;
-    border: 3px solid white;
+    border: 3px solid #C86767;
     border-radius: 100%;
     margin: 10px auto;
     line-height: 35px;
-    color:white ;
+    color: #C86767 ;
     font-size: 80px;
     cursor: pointer;
 }

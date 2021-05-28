@@ -1,0 +1,12 @@
+.postPage {
+    margin: 0 auto;
+    border: 1px solid black;
+    background: #e9eaed;
+    width: 90%;
+}
+
+.cont {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
