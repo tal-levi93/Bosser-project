@@ -44,9 +44,6 @@ class App extends Component{
 
 
 
-
-
-
   IsLoggedIn = async()=>{
     try {
       await new Promise((resolve, reject) =>

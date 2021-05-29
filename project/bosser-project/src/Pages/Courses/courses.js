@@ -27,8 +27,8 @@ class Courses extends Component {
         return(
             <div>
                 <div id={'title'}>הקורסים שלנו</div>
-
-                <div className='background' style={ {display: 'flex', flexDirection: 'row', flexWrap: 'wrap'} }>
+                {/*style={ {display: 'flex', flexDirection: 'row', flexWrap: 'wrap'} }*/}
+                <div className='courses' >
                     {this.state.courses.map(
                         (course, index)=>(
                             this.card(course, index)
@@ -40,17 +40,24 @@ class Courses extends Component {
 
     card(course_id, index) {
         return (<div key={index}>
-            <div style={ { textAlign:'center' ,color:'#bab9b9',border: '3px solid white', padding: '10px', margin:'10px', text:'center',width: '18rem'} }>
-                <div>
-                    <img src={courseLogo} width='250' height='100'/>
-                    <h2>{course_id.name}</h2>
-                    <h2>{course_id.description}</h2>
-                    <h2> משך זמן: {course_id.duration} שעות</h2>
-                    <h2> מספר נרשמים: {course_id.currentParticipants} מתוך {course_id.participants}</h2>
-                    <h2>{course_id.date.toDate().toString()}</h2>
+            <div >
+                <div id={"course"}>
+                    {/*<img src={courseLogo} width='250' height='100'/>*/}
+                    <div id={'course_name'}> {course_id.name} - {course_id.description}</div>
+
+                    <h2 id={'course_dit'}>
+                        <div id={'c_title'} > משך זמן:</div>
+                        {course_id.duration}שעות</h2>
+
+                    <h2 id={'course_dit'}>  <div id={'c_title'} >מספר נרשמים:</div>
+                        {course_id.currentParticipants} מתוך {course_id.participants}</h2>
+
+                    <h2 id={'course_dit'}> <div id={'c_title'} >תאריך:</div>
+                        {course_id.date.toDate().toLocaleDateString()} </h2>
+                    <br/>
                     <br/>
 
-                    <Button id={course_id} style={ { color:'black' , border: '3px solid white' , background:'#c3c3c3'} } >רישום לקורס</Button>
+                    <Button id={course_id} className={'c_btn'}  >רישום לקורס</Button>
                 </div>
             </div>
         </div>)

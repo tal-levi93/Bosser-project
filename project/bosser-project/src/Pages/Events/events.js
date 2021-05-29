@@ -37,14 +37,14 @@ class Events extends Component{
 
     create_event(event_id, idx) {
         return (<div key={idx}>
-            <div style={ {color: '#bab9b9' ,border: '3px solid #bab9b9', padding: '10px', margin: '10px', textAlign:'center', width: '18rem'} }>
+            <div style={ {color: 'white' , fontWeight: 'normal',border: '1px solid #bab9b9', padding: '10px', margin: '15px 30px 5px 30px', textAlign:'center', width: '18rem'} }>
                 <div>
                     <img src={eventLogo} width="250" height="100"/>
-                    <h2>{event_id.name}</h2>
-                    <h2>{event_id.description}</h2>
-                    <h2>{event_id.date.toDate().toString()}</h2>
+                    <h2 style={{fontWeight: 'normal'}}>{event_id.name}</h2>
+                    <h2 style={{fontWeight: 'normal'}}>{event_id.description}</h2>
+                    <h2 style={{fontWeight: 'normal'}}>{event_id.date.toDate().toLocaleDateString()}</h2>
                     <br/>
-                    <Button id={'enterCourseButton'} style={ { color:'black' , border: '3px solid white' , background:'#c3c3c3'} }>רישום לאירוע</Button>
+                    <Button id={'enterCourseButton'} style={ { color:'black' , border: '0 solid white' , background:'#c3c3c3'} }>רישום לאירוע</Button>
                 </div>
             </div>
         </div>)
