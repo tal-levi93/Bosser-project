@@ -18,16 +18,10 @@ export const Nav = styled.nav`
   
   @media screen and (max-width:1250px){
     transition: 0.8s all ease;
-    width: 150px;
-    height: 90px;
-  }
-
-  @media screen and (max-width:190px){
-    transition: 0.8s all ease;
-    width: 50%;
+    width: 60px;
     height: 60px;
-
   }
+  
 `;
 
 export const NavContainer = styled.div`
@@ -48,12 +42,12 @@ export const NavLink = styled(LinkR)`
   display: flex;
   float: right;
   align-items: center;
-  text-decoration:none;
+  text-decoration: none;
   padding: 10px 10px;
   height: 100%;
   cursor: pointer;
-  
-  &.active {
+
+  &:active {
     border-bottom: 3px solid #dddddd;
     color: black;
   }
@@ -62,6 +56,10 @@ export const NavLink = styled(LinkR)`
     transition: all 0.2s ease-in-out;
     background-color: #ddd;
     color: white;
+  }
+
+  &:focus {
+    border: 1.5px inset #bcbcbc;
   }
 `;
 
@@ -75,20 +73,16 @@ export const Bars = styled.div`
     top: 0;
     text-align: center;
     transform: translate(-10%, 30%);
-    font-size: 59px;
+    font-size: 40px;
     cursor: pointer;
   }
-
-  @media screen and (max-width: 190px) {
-    font-size: 30px;
-  }
+  
 `;
 
 export const NavMenu = styled.ul`
   display: flex;
   align-items: center;
   list-style: none;
-  //margin-right: -22px;
   text-align: center;
  
   @media screen and (max-width: 1250px) {

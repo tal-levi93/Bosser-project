@@ -2,6 +2,7 @@ import react from 'react';
 import { motion } from 'framer-motion';
 import {db} from '../../Firebase/firebase';
 import useFirestore from "../../hooks/useFirestore";
+import {FaRegWindowClose} from "react-icons/fa";
 
 
 
@@ -11,7 +12,7 @@ const Modal = ({ setSelectedImg, selectedImg }) => {
     const data = db.collection('gallery');
 
     const handleClick = (e) => {
-        if (e.target.classList.contains('backdrop')) {
+        if (document.getElementsByClassName('backdrop')) {
             setSelectedImg(null);
         }
     }
@@ -19,11 +20,11 @@ const Modal = ({ setSelectedImg, selectedImg }) => {
     return (
         <>
 
-        <motion.div className="backdrop" onClick={handleClick}
+        <motion.div className="backdrop"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
         >
-            <div id={'close'}>לחץ על המסך לסגירה</div>
+            <button id={'close'} onClick={handleClick}> <FaRegWindowClose/> </button>
             <motion.img src={selectedImg} alt="enlarged pic"
                         initial={{ y: "-100vh" } }
                         animate={{ y: 0 }}
