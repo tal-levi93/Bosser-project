@@ -5,6 +5,7 @@ import './style.css'
 const UploadBlogImage = (props) => {
     const [file, setFile] = useState(null);
     const [error, setError] = useState(null);
+    const [url , setUrl] = useState("");
 
     const types = ['image/png', 'image/jpeg'];
 
@@ -19,6 +20,16 @@ const UploadBlogImage = (props) => {
         }
     };
 
+    const handleUrl = (e)=>{
+        props.SetUrl(e)
+    }
+
+
+
+
+
+
+
     return (
         <div id={"gform"}>
             <label id={"glabel"}>
@@ -28,7 +39,7 @@ const UploadBlogImage = (props) => {
             <div className="goutput">
                 { error && <div className="error">{ error }</div>}
                 { file && <div> מעלה את הקובץ: { file.name }</div> }
-                { file && <BlogProgressBar file={file} setFile={setFile} /> }
+                { file && <BlogProgressBar file={file} setFile={setFile}  setUrl = {handleUrl} /> }
             </div>
         </div>
     );

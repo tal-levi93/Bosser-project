@@ -12,7 +12,7 @@ const Post = (props) => {
         <div className="postPage">
             <section className="cont" >
                 <BlogPost {...props}/>
-                <Sidebar/>
+                {/*<Sidebar/>*/}
             </section>
         </div>
 

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8f5bf18-5aba-4985-a33d-58c7c239ca56" name="Default Changelist" comment="finished forgot password page and functionality">
+    <list default="true" id="e8f5bf18-5aba-4985-a33d-58c7c239ca56" name="Default Changelist" comment="finished forgot password functionality">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/bosser-project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bosser-project/src/Pages/ForgotPassword/forgotPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/Pages/ForgotPassword/forgotPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/bosser-project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/bosser-project/src/Pages/Artists/artists.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/Pages/Artists/artists.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/bosser-project/src/Pages/ForgotPassword/forgotPassPopUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/Pages/ForgotPassword/forgotPassPopUp.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +24,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1rz7DEOSrAT8kYDTZ3GTvqxQq6m" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -51,7 +62,7 @@
       <workItem from="1622107239168" duration="8070000" />
       <workItem from="1622123240526" duration="18400000" />
       <workItem from="1622206609504" duration="276000" />
-      <workItem from="1622308238988" duration="606000" />
+      <workItem from="1622308238988" duration="6680000" />
     </task>
     <task id="LOCAL‎00001" summary="finished forgot password page and functionality">
       <created>1622075520338</created>
@@ -65,7 +76,13 @@
       <option name="presentableId" value="LOCAL‎00002" />
       <updated>1622206789767</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL‎00003" summary="finished forgot password functionality">
+      <created>1622308925489</created>
+      <option name="number" value="LOCAL‎00003" />
+      <option name="presentableId" value="LOCAL‎00003" />
+      <updated>1622308925489</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -85,6 +102,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="finished forgot password page and functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished forgot password page and functionality" />
+    <MESSAGE value="finished forgot password functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished forgot password functionality" />
   </component>
 </project>

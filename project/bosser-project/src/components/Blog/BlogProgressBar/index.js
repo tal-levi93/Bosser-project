@@ -3,12 +3,12 @@ import AddImageToStorage from "../AddImageToStorage";
 // import useStorage from '../hooks/useStorage';
 import { motion } from 'framer-motion';
 
-const BlogProgressBar = ({ file, setFile }) => {
+const BlogProgressBar = ({ file, setFile , setUrl }) => {
     const { progress, url } = AddImageToStorage(file);
 
     useEffect(() => {
         if (url) {
-
+            setUrl(url)
             setFile(null);
         }
     }, [url, setFile]);
