@@ -1,0 +1,28 @@
+
+.postImageWrapper {
+    height: 450px;
+    overflow: hidden;
+}
+
+.postImageWrapper img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.blogTitleS {
+    font-size: 30px;
+}
+
+.blogCategoryS {
+    font-size: 22px;
+}
+
+.blogPostedOnS {
+    font-size: 18px;
+    font-style: italic ;
+}
+
+.TextContainer {
+    font-size: 20px;
+}
