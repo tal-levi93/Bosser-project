@@ -120,7 +120,7 @@ class App extends Component{
                 {/*{console.log(this.state.UserLog)}*/}
                 <Index isLoggedIn = {this.state.UserLog} UserDetails = {this.state.UserDetails}/>
 
-                <Switch>
+                <Switch >
                   <Route exact path="/" component={Home} />
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/artists" component={Artists}/>
@@ -132,7 +132,7 @@ class App extends Component{
                   <Route exact path="/events" component={Events}/>
                   <Route exact path="/newsletter" component={Newsletter}/>
                   <Route exact path="/blog/post/:postId" component={Post}/>
-                  <Route exact path="/blog/createPost" component={CreatePost}/>
+                  <Route exact path="/blog/createPost" component={CreatePost} />
                   {/*<Route exact path="/newsletter/:id" component={Newsletter}/>*/}
                 </Switch>
               </Router>

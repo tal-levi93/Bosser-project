@@ -20,10 +20,14 @@ function Gallery(){
         const [selectedImg, setSelectedImg] = useState(null);
         return(
             <div>
-                <h1>גלריה</h1>
 
-                {/*for Admin*/}
+                <div id={'title'}>הגלריה שלנו</div>
+                <br/>
+                <div id={'information'}>לחץ על תמונה להגדלה</div>
+
+                {/*for Admin Only*/}
                 <UploadForm />
+
                 <ImageGrid setSelectedImg={setSelectedImg} />
                 { selectedImg && (
                     <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />

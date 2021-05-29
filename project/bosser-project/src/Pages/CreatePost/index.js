@@ -7,46 +7,50 @@ import {db} from '../../Firebase/firebase';
 import sign_up from "../Sign_up/sign_up";
 import UploadForm from "../../components/GalleryImages/UploadForm";
 import UploadBlogImage from "../../components/Blog/UplodeImage";
-import SubmitBlogPost from "../../components/Blog/submitPostPage"
 
 class CreatePost extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            blogCtagory:"",
+            blogCategory:"",
             blogTitle:"",
             postText:"",
             postedOn: new Date(),
             author:"",
             image:"",
-            url:""
+            url:"",
+            user_uid:""
         }
     }
+
+
 
     handleChange = (e) =>{
         this.setState({
             [e.target.id]:e.target.value
         })
     }
+
+
     handleSubmit = async (e) => {
         e.preventDefault();
 
         const postsRef = db.collection('posts');
         console.log(postsRef)
         const post = {
-            blogCtagory: this.state.blogCtagory,
+            blogCategory: this.state.blogCtagory,
             blogTitle: this.state.blogTitle,
             postText: this.state.postText,
             postedOn: this.state.postedOn,
             author: this.state.author,
-            image: this.state.image
+            image: this.state.url
         }
         await postsRef.add(post).then(res => {
                 this.setState({
-                    blogCtagory:"",
+                    blogCategory:"",
                     blogTitle:"",
                     postText:"",
-                    postedOn: Date(),
+                    postedOn: new Date(),
                     author:"",
                     image:""
                 })
@@ -55,12 +59,14 @@ class CreatePost extends Component{
             alert(err)
         })
     }
-    setUrl(file_url){
+
+
+    handleUrl = (file_url)=>{
         this.setState({
             url:file_url
         })
-        console.log("you changed the state and the new state is:" + this.state.url)
     }
+
 
     render() {
 
@@ -85,7 +91,7 @@ class CreatePost extends Component{
 
                         <div className = "input-field">
                         <label className = "line" htmlFor="image">צרף תמונה: </label><br></br>
-                        <UploadBlogImage SetUrl = {this.setUrl}/>
+                        <UploadBlogImage SetUrl = {this.handleUrl}/>
                     </div>
 
                     <div><br></br>

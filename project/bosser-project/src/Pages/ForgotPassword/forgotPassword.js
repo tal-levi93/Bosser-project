@@ -26,43 +26,25 @@ class ForgotPassword extends Component {
         let auth = firebase.auth();
         let emailAddress = this.state.email;
 
-        // if(this.state.email !== "") {
-        //     auth.sendPasswordResetEmail(emailAddress).then(() => {
-        //         this.setState({
-        //             showPopup: true,
-        //             popUpText: "נשלח אימייל לאיפוס הסיסמא"
-        //         });
-        //
-        //     }).catch(() => {
-        //         this.setState({
-        //             showPopup: true,
-        //             popUpText: "שגיאה! אנא נסה שוב"
-        //         });
-        //         console.log("error");
-        //     });
-        // }
-        // else {
-        //     this.setState({
-        //         showPopup: true,
-        //         popUpText: "הכנס את כתובת הדוא''ל"
-        //     })
-        // }
-
-        //-------------------------------------------------------------------------------
-
         if(this.state.email !== "") {
-
             auth.sendPasswordResetEmail(emailAddress).then(() => {
-                console.log("OK")
+                this.setState({
+                    showPopup: true,
+                    popUpText: "נשלח אימייל לאיפוס הסיסמא"
+                });
             }).catch(() => {
-                console.log("error")
+                this.setState({
+                    showPopup: true,
+                    popUpText: "שגיאה! אנא נסה שוב"
+                });
             });
         }
         else {
-            console.log("empty")
+            this.setState({
+                showPopup: true,
+                popUpText: "הכנס את כתובת הדוא''ל"
+            });
         }
-
-    // });
 
     }
 
@@ -75,7 +57,8 @@ class ForgotPassword extends Component {
         this.setState({
             showPopup: !this.state.showPopup
         });
-
+        if(this.state.popUpText === "נשלח אימייל לאיפוס הסיסמא")
+            this.props.toggleForgotPass();
     }
 
     render() {

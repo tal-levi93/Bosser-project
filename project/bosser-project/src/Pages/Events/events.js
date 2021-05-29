@@ -24,7 +24,7 @@ class Events extends Component{
     render() {
         return(
             <div>
-                <h1>אירועים עתידיים:</h1>
+                <div id={'title'}>האירועים שלנו</div>
 
                 <div className="tmp" style={ {display: 'flex', flexDirection: "row", flexWrap: "wrap"}}>
                     {this.state.events.map((event , idx)=>(
