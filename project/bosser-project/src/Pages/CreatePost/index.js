@@ -7,7 +7,6 @@ import {db} from '../../Firebase/firebase';
 import sign_up from "../Sign_up/sign_up";
 import UploadForm from "../../components/GalleryImages/UploadForm";
 import UploadBlogImage from "../../components/Blog/UplodeImage";
-import SubmitBlogPost from "../../components/Blog/submitPostPage"
 
 class CreatePost extends Component{
     constructor(props) {
@@ -46,7 +45,7 @@ class CreatePost extends Component{
                     blogCtagory:"",
                     blogTitle:"",
                     postText:"",
-                    postedOn: Date(),
+                    postedOn: new Date(),
                     author:"",
                     image:""
                 })

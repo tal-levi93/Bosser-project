@@ -31,6 +31,7 @@ class Sidebar extends Component {
     render() {
         return (
             <div className="sidebarContainer">
+                {/*
                 <Card style={{marginBottom: '20px', padding: '20px', boxSizing: "border-box"}}>
                     <div className="cardHeader">
                         <span>About us</span>
@@ -47,10 +48,10 @@ class Sidebar extends Component {
                         <span>Social Network</span>
                     </div>
                 </Card>
-
-                <Card style={{marginBottom: '20px', padding: '20px', boxSizing: "border-box"}}>
+                   */}
+                <Card style={{marginBottom: '20px', padding: '20px', boxSizing: "border-box", height: '100%'}}>
                     <div className="cardHeader">
-                        <span>פןסטים אחרונים:</span>
+                        <span>פוסטים אחרונים:</span>
                     </div>
 
                     <div className="recentPosts">
