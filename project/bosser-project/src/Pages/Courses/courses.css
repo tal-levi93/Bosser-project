@@ -5,7 +5,7 @@
 
 }
 
-.c_btn{
+#co_btn{
     padding: 4px;
     font-size: 30px;
     color: #000000;
@@ -16,7 +16,7 @@
     background-color: white;
 }
 
-.c_btn :hover{
+#co_btn:hover{
     padding: 3px;
     font-size: 40px;
     color: white;

@@ -57,7 +57,7 @@ class Courses extends Component {
                     <br/>
                     <br/>
 
-                    <Button id={course_id} className={'c_btn'} >רישום לקורס</Button>
+                    <Button className={course_id} id={'co_btn'} >רישום לקורס</Button>
                 </div>
             </div>
         </div>)
