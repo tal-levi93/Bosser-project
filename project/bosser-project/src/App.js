@@ -36,7 +36,8 @@ class App extends Component{
         UserName:"",
         Email:"",
         FullName:"",
-        UserUid:""
+        UserUid:"",
+        IsAdmin:""
       }
     }
   }
@@ -88,7 +89,8 @@ class App extends Component{
               FullName:user.full_name,
               Email:user.email,
               UserUid:user.user_uid,
-              UserName:user.user_name
+              UserName:user.user_name,
+              IsAdmin:user.IsAdmin
             }
           })
         }
@@ -119,16 +121,25 @@ class App extends Component{
                 <Switch >
                   <Route exact path="/" component={Home} />
                   <Route exact path="/login" component={Login} />
-                  <Route exact path="/artists" component={Artists}/>
-                  <Route exact path="/blog" component={Blog}/>
-                  <Route exact path="/gallery" component={Gallery}/>
-                  <Route exact path="/courses" component={Courses}/>
+                  <Route exact path="/artists" component={Artists}render={(props) => (
+                      <CreatePost UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
+                  )} />
+                  <Route exact path="/blog" component={Blog}render={(props) => (
+                      <CreatePost UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
+                  )} />
+                  <Route exact path="/gallery" render={(props) => (
+                      <CreatePost UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>)} />
+                  <Route exact path="/courses" render={(props) => (
+                      <CreatePost UserDetails={this.state.UserDetails}/>)} />
                   <Route exact path="/signup" component={sign_up}/>
                   {<Route exact path="/courses/:id" component={Courses}/>}
-                  <Route exact path="/events" component={Events}/>
+                  <Route exact path="/events" render={(props) => (
+                      <CreatePost UserDetails={this.state.UserDetails}/>)} />/>
                   <Route exact path="/newsletter" component={Newsletter}/>
                   <Route exact path="/blog/post/:postId" component={Post}/>
-                  <Route exact path="/blog/createPost" component={CreatePost} />
+                  <Route exact path="/blog/createPost"  render={(props) => (
+                      <CreatePost UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
+                  )} />
                   {/*<Route exact path="/newsletter/:id" component={Newsletter}/>*/}
                 </Switch>
               </Router>

@@ -61,6 +61,7 @@ class CreatePost extends Component{
     }
 
 
+
     handleUrl = (file_url)=>{
         this.setState({
             url:file_url
@@ -69,6 +70,7 @@ class CreatePost extends Component{
 
 
     render() {
+        console.log(this.props.UserDetails)
 
         return (
 

@@ -39,7 +39,6 @@ class Navbar extends Component {
     }
 
     UserTab(){
-        console.log(this.props.UserDetails)
         return(
             <FullName>שלום  {this.props.UserDetails.FullName}
             <br/>

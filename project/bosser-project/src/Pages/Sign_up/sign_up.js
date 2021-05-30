@@ -17,16 +17,17 @@ class sign_up extends Component{
             password:"",
             full_name:"",
             user_id:"",
-            age:0,
-            isAdmin:false
+            age:0
         }
     }
+
 
 
 
     handleChange = (e) =>{
         this.setState({
             [e.target.id]:e.target.value
+
         })
     }
     handleSubmit = async (e) => {
@@ -41,7 +42,7 @@ class sign_up extends Component{
                 full_name: this.state.full_name,
                 email: this.state.email,
                 age:this.state.age,
-                IsAdmin:this.state.IsAdmin
+                IsAdmin:false
             });
             this.props.history.push('/')
         }).catch(err=>{
