@@ -10,7 +10,7 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
+  font-size: 55px;
   color: black;
   position: sticky;
   top:0;
@@ -43,7 +43,7 @@ export const NavLink = styled(LinkR)`
   float: right;
   align-items: center;
   text-decoration: none;
-  padding: 10px 10px;
+  padding: 10px 20px;
   height: 100%;
   cursor: pointer;
 
@@ -94,7 +94,7 @@ export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
   float: right;
-  padding: 0 5px;
+  padding: 0 10px;
   
   @media screen and (max-width: 1250px) {
     display: none;
@@ -112,7 +112,7 @@ export const NavBtnLink = styled(Link)`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  margin: 18px;
+  margin: 20px;
 
   &:hover {
     transition: all 0.2s ease-in-out;
@@ -129,8 +129,10 @@ export const FNavBtnLink = styled.a`
   padding: 20px 25px;
   color: #fff;
   outline: none;
+  font-size: 40px;
   border: none;
   cursor: pointer;
+  margin-right: 10px;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   

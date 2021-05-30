@@ -1,29 +1,31 @@
 
-#courseButton {
-    background-color: #aba4c8;
-    text-align: center;
-
-}
 
 #co_btn{
-    padding: 4px;
+    padding: 4px 20px 4px 20px;
     font-size: 30px;
     color: #000000;
     border: 3px solid #d0d0d0;
-    border-radius: 90px;
+    border-radius: 200px;
     border-left-style: none;
     border-right-style: none;
     background-color: white;
+    border-bottom-color: white;
+    cursor: pointer;
+    margin: 10px;
 }
 
 #co_btn:hover{
-    padding: 3px;
+    padding: 4px 20px 4px 20px;
     font-size: 40px;
     color: white;
-    border: none;
+    border-bottom-color: white;
     border-radius: 90px;
     outline: none;
     background: #7e7d7d;
+    transition: all 0.2s ease-in-out;
+    opacity: 0.8;
+    border-bottom-color: white;
+
 }
 
 h1{
@@ -35,9 +37,9 @@ h1{
 #course{
    text-align:center;
     color: white;
-    border: 1px inset white;
-    padding: 6px;
-    margin:20px;
+    border: 2px inset white;
+    padding: 7px;
+    margin:30px;
 }
 
 .courses{
@@ -46,7 +48,7 @@ h1{
 
 #course_name{
     font-size: 40px;
-    background: #aba4c8;
+    background: #F8722E;
     color: #ffffff;
 
 }
@@ -61,7 +63,5 @@ h1{
 #c_title{
     margin: 0.5%;
     display: inline;
-
-
 
 }

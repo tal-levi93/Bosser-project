@@ -42,7 +42,7 @@ class Courses extends Component {
         return (<div key={index}>
             <div >
                 <div id={"course"}>
-                    {/*<img src={courseLogo} width='250' height='100'/>*/}
+                    <img src={courseLogo} width='100%' height='20%'/>
                     <div id={'course_name'}> {course_id.name} - {course_id.description}</div>
 
                     <h2 id={'course_dit'}>

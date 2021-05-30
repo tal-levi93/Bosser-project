@@ -7,7 +7,7 @@ const Home = () => {
 
     return (
         <div>
-            <div id={'title'}>דף הבית</div>
+
             <Img></Img>
 
             <Title>מי היא בוסר?</Title>
