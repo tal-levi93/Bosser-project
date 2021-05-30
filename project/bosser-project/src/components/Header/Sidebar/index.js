@@ -40,11 +40,12 @@ class Sidebar extends Component{
                 <SidebarWrapper>
                     {this.UserTab()}
                     <SidebarMenu>
-                        <SidebarLink to='/'><FaHome/> דף הבית </SidebarLink>
-                        <SidebarLink to='./artists'><FaUserFriends/>אמנים </SidebarLink>
-                        <SidebarLink to='/blog'><FaNewspaper/>בלוג </SidebarLink>
-                        <SidebarLink to='/gallery'> <FaImages/> גלריה </SidebarLink>
-                        <SidebarLink to='/courses'><GoMortarBoard/> קורסים</SidebarLink>
+                        <SidebarLink to='/'> דף הבית </SidebarLink>
+                        <SidebarLink to='./artists'>אמנים </SidebarLink>
+                        <SidebarLink to='/blog'> </SidebarLink>
+                        <SidebarLink to='/gallery'>  גלריה </SidebarLink>
+                        <SidebarLink to='/courses'> קורסים</SidebarLink>
+                        <SidebarLink to='/events'> אירועים</SidebarLink>
 
                     </SidebarMenu>
 
@@ -65,18 +66,20 @@ class Sidebar extends Component{
                     </Icon>
                     <SidebarWrapper>
                         <SidebarMenu>
-                            <SidebarLink to='/'><FaHome/> דף הבית </SidebarLink>
-                            <SidebarLink to='./artists'><FaUserFriends/>אמנים </SidebarLink>
-                            <SidebarLink to='/blog'><FaNewspaper/>בלוג </SidebarLink>
-                            <SidebarLink to='/gallery'> <FaImages/> גלריה </SidebarLink>
-                            <SidebarLink to='/courses'><GoMortarBoard/> קורסים</SidebarLink>
-                            <SidebarLink to="/signup"><AiOutlineUserAdd/>הרשמה</SidebarLink>
+                            <SidebarLink to='/'>דף הבית </SidebarLink>
+                            <SidebarLink to='./artists'>אמנים </SidebarLink>
+                            <SidebarLink to='/blog'>בלוג </SidebarLink>
+                            <SidebarLink to='/gallery'>  גלריה </SidebarLink>
+                            <SidebarLink to='/courses'> קורסים</SidebarLink>
+                            <SidebarLink to='/events'> אירועים</SidebarLink>
+                            <SidebarLink to="/signup">הרשמה</SidebarLink>
 
                         </SidebarMenu>
 
                         <SideBtnWrap>
-                            <FSideBtn href='https://www.facebook.com/bosserco/'> <FaFacebookF/></FSideBtn>
                             <SideBtn to='login' onClick={this.props.toggle}> התחברות</SideBtn>
+                            <FSideBtn href='https://www.facebook.com/bosserco/'> <FaFacebookF/></FSideBtn>
+
 
                         </SideBtnWrap>
                     </SidebarWrapper>
