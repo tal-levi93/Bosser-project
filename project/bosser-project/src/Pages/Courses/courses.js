@@ -1,48 +1,65 @@
-import {Component} from 'react';
+import React, {Component} from 'react';
 import {db} from '../../Firebase/firebase';
 import './courses.css';
 import courseLogo from './courseLogo.jpg';
 import {Button, Card} from '@material-ui/core';
+import deleteDoc from "../../hooks/deleteDoc";
+import {FaTrashAlt} from "react-icons/fa";
 
 class Courses extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            courses:[]
+            courses:[],
+            courses_id:[]
         }
     }
 
     componentDidMount() {
         let courses = [];
+        let courses_id= [];
         db.collection('courses').get().then((result) => {
             result.docs.forEach(doc => {
                 courses.push(doc.data());
+
+
+                courses_id.push(doc.id);
+                console.log(courses_id)
+
             });
             this.setState({courses: courses});
+
+            this.setState({courses_id: courses_id});
         });
     }
 
 
 
     render() {
+        if(!this.state.courses_id == undefined){return (<div></div>)}
+
         return(
             <div>
                 <div id={'title'}>הקורסים שלנו</div>
-                {/*style={ {display: 'flex', flexDirection: 'row', flexWrap: 'wrap'} }*/}
                 <div className='courses' >
                     {this.state.courses.map(
-                        (course, index)=>(
-                            this.card(course, index)
+                        (course,index)=>(
+                            this.card(course,index)
                         ))}
                 </div>
             </div>
         )
     }
 
-    card(course_id, index) {
-        return (<div key={index}>
-            <div key={index}>
+    card(course_id,index) {
+        if(!this.state.courses_id == undefined){return (<div></div>)}
+        return (<div key={course_id.name}>
+
+
+                <button  id={'delete'} style={{color:'white'}} onClick={() =>
+                { deleteDoc(this.state.courses_id[index],'courses');}} >
+                    <FaTrashAlt/></button>
                 <div id={"course"}>
                     <img src={courseLogo} width='100%' height='20%'/>
                     <div id={'course_name'}> {course_id.name} - {course_id.description}</div>
@@ -59,8 +76,8 @@ class Courses extends Component {
                     <br/>
                     <br/>
 
-                    <Button className={course_id} id={'co_btn'} >רישום לקורס</Button>
-                </div>
+                    <Button id={'co_btn'} >רישום לקורס</Button>
+
             </div>
         </div>)
     }
