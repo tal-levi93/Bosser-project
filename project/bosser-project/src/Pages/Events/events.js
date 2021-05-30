@@ -2,6 +2,7 @@ import {Component} from "react";
 import {db} from "../../Firebase/firebase";
 import eventLogo from "./eventLogo.jpg";
 import {Button} from "@material-ui/core";
+import './events.css';
 class Events extends Component{
 
     constructor(props) {
@@ -26,7 +27,7 @@ class Events extends Component{
             <div>
                 <div id={'title'}>האירועים שלנו</div>
 
-                <div className="tmp" style={ {display: 'flex', flexDirection: "row", flexWrap: "wrap"}}>
+                <div className="contain" >
                     {this.state.events.map((event , idx)=>(
                         this.create_event(event,idx)
                     ))}
@@ -36,16 +37,16 @@ class Events extends Component{
     }
 
     create_event(event_id, idx) {
-        return (<div key={idx}>
-            <div style={ {color: 'white' , fontWeight: 'normal',border: '1px solid #bab9b9', padding: '10px', margin: '15px 30px 5px 30px', textAlign:'center', width: '18rem'} }>
-                <div>
+        return (<div key={idx} >
+
+                <div id={'event'}>
                     <img src={eventLogo} width="250" height="100"/>
                     <h2 style={{fontWeight: 'normal'}}>{event_id.name}</h2>
                     <h2 style={{fontWeight: 'normal'}}>{event_id.description}</h2>
                     <h2 style={{fontWeight: 'normal'}}>{event_id.date.toDate().toLocaleDateString()}</h2>
                     <br/>
-                    <Button id={'enterCourseButton'} style={ { color:'black' , border: '0 solid white' , background:'#c3c3c3'} }>רישום לאירוע</Button>
-                </div>
+                    <button className={'e_btn'}  >רישום לאירוע</button>
+
             </div>
         </div>)
 
