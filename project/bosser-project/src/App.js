@@ -100,17 +100,7 @@ class App extends Component{
     })
   }
 
-
-
-
-
-
-
   render(){
-
-
-
-
     return (
         <>
           <div className="App" dir="rtl">
@@ -121,20 +111,20 @@ class App extends Component{
                 <Switch >
                   <Route exact path="/" component={Home} />
                   <Route exact path="/login" component={Login} />
-                  <Route exact path="/artists" component={Artists}render={(props) => (
-                      <CreatePost UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
+                  <Route exact path="/artists" render={(props) => (
+                      <Artists UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
                   )} />
-                  <Route exact path="/blog" component={Blog}render={(props) => (
-                      <CreatePost UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
+                  <Route exact path="/blog" render={(props) => (
+                      <Blog UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
                   )} />
                   <Route exact path="/gallery" render={(props) => (
-                      <CreatePost UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>)} />
+                      <Gallery UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>)} />
                   <Route exact path="/courses" render={(props) => (
-                      <CreatePost UserDetails={this.state.UserDetails}/>)} />
+                      <Courses UserDetails={this.state.UserDetails}/>)} />
                   <Route exact path="/signup" component={sign_up}/>
                   {<Route exact path="/courses/:id" component={Courses}/>}
                   <Route exact path="/events" render={(props) => (
-                      <CreatePost UserDetails={this.state.UserDetails}/>)} />/>
+                      <Events UserDetails={this.state.UserDetails}/>)} />/>
                   <Route exact path="/newsletter" component={Newsletter}/>
                   <Route exact path="/blog/post/:postId" component={Post}/>
                   <Route exact path="/blog/createPost"  render={(props) => (

@@ -73,7 +73,6 @@ class CreatePost extends Component{
         console.log(this.props.UserDetails)
 
         return (
-
             <div className="createPostCon">
                 <form onSubmit={this.handleSubmit} className="white">
                     <h5 className="headline">יצירת פוסט חדש:</h5>

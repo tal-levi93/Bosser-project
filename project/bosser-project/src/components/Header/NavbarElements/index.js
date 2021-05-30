@@ -44,7 +44,6 @@ class Navbar extends Component {
             <br/>
             <LogOutBtn onClick={this.LogOut}>התנתק</LogOutBtn></FullName>
         )
-
     }
 
 
@@ -103,8 +102,6 @@ class Navbar extends Component {
         return (
             <>
                 {buildNav}
-
-
             </>
         )
 
