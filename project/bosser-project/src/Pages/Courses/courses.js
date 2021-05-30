@@ -40,7 +40,7 @@ class Courses extends Component {
 
     card(course_id, index) {
         return (<div key={index}>
-            <div >
+            <div key={index}>
                 <div id={"course"}>
                     <img src={courseLogo} width='100%' height='20%'/>
                     <div id={'course_name'}> {course_id.name} - {course_id.description}</div>
