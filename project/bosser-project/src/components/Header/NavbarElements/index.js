@@ -59,12 +59,12 @@ class Navbar extends Component {
                     <Bars onClick={toggle}> <FaBars/> </Bars>
                     <NavMenu>
                         <NavItem>
-                            <NavLink to="/"> <FaHome/> דף הבית </NavLink>
-                            <NavLink to="/artists"><FaUserFriends/>אמנים </NavLink>
-                            <NavLink to="/blog"><FaNewspaper/>בלוג </NavLink>
-                            <NavLink to="/gallery"> <FaImages/> גלריה </NavLink>
-                            <NavLink to="/courses"> <GoMortarBoard/> קורסים</NavLink>
-                            <NavLink to="/events"> <GoCalendar/>אירועים </NavLink>
+                            <NavLink to="/">  דף הבית </NavLink>
+                            <NavLink to="/artists">אמנים </NavLink>
+                            <NavLink to="/blog">בלוג </NavLink>
+                            <NavLink to="/gallery">  גלריה </NavLink>
+                            <NavLink to="/courses"> קורסים</NavLink>
+                            <NavLink to="/events"> אירועים </NavLink>
                         </NavItem>
                     </NavMenu>
                     <NavBtn>
@@ -81,16 +81,17 @@ class Navbar extends Component {
                         <Bars onClick={toggle}> <FaBars/> </Bars>
                         <NavMenu>
                             <NavItem>
-                                <NavLink to="/"> <FaHome/> דף הבית </NavLink>
-                                <NavLink to="/artists"><FaUserFriends/>אמנים </NavLink>
-                                <NavLink to="/blog"><FaNewspaper/>בלוג </NavLink>
-                                <NavLink to="/gallery"> <FaImages/> גלריה </NavLink>
-                                <NavLink to="/courses"> <GoMortarBoard/> קורסים</NavLink>
-                                <NavLink to="/events"> <GoCalendar/>אירועים </NavLink>
-                                <NavLink to="/signup"> <AiOutlineUserAdd/>הרשמה </NavLink>
+                                <NavLink to="/">  דף הבית </NavLink>
+                                <NavLink to="/artists">אמנים </NavLink>
+                                <NavLink to="/blog">בלוג </NavLink>
+                                <NavLink to="/gallery">  גלריה </NavLink>
+                                <NavLink to="/courses">  קורסים</NavLink>
+                                <NavLink to="/events"> אירועים </NavLink>
+
                             </NavItem>
                         </NavMenu>
                         <NavBtn>
+                            <NavLink to="/signup"> הרשמה </NavLink>
                             <NavBtnLink to="login">התחברות</NavBtnLink>
                             <FNavBtnLink href='https://www.facebook.com/bosserco/'><FaFacebookF/> </FNavBtnLink>
                         </NavBtn>

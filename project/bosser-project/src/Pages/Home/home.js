@@ -18,8 +18,9 @@ export const P = styled.p`
   padding-left: 30px;
   text-align: center;
   color: white;
-  font-size: 56px;
+  font-size: 40px;
   margin-bottom: 100px;
+
 
 `;
 
@@ -29,7 +30,7 @@ export const Title = styled.div`
   padding-left: 30px;
   text-align: center;
   color: white;
-  font-size: 70px;
+  font-size: 120px;
   text-decoration: underline;
   text-decoration-color: red;
 
@@ -38,7 +39,7 @@ export const Title = styled.div`
 export const Img = styled.div`
 background-image: url(${logo});
 width: 100%;
-height: 350px;
+height: 360px;
 margin-top: 15px;
 margin-bottom: 15px;
 padding: 10px 10px;

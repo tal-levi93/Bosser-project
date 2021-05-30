@@ -54,7 +54,7 @@ export const SidebarWrapper = styled.div`
 `;
 
 export const SidebarMenu = styled.ul`
-  display: grid;
+  display:grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, 60px);
   text-align: center;
@@ -85,7 +85,7 @@ export const SidebarLink = styled(LinkR) `
   }
 
   @media screen and (max-height: 400px ) {
-    font-size: 20px;
+    font-size: 18px;
   }
   
 `;
@@ -103,6 +103,8 @@ export const SideBtnWrap = styled.div`
 
   @media screen and (max-height: 500px) {
     grid-template-rows: repeat(6, 40px);
+    display: flow;
+    margin: 10px;
   }
 `;
 
@@ -120,12 +122,19 @@ export const SideBtn = styled(Link)`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
+  margin-bottom: 10px;
 
   &:hover {
     transition: all 0.2s ease-in-out;
     background: #717677;
     color: #fff;
   }
+
+  @media screen and (max-height: 500px) {
+    margin: 17px;
+  }
+  
+
 
 
 `;
@@ -144,7 +153,7 @@ export const FSideBtn = styled.a`
   transition: 0.2s ease-in-out;
   text-decoration: none;
   color: #fff;
-  margin-bottom: 10px;
+  
   
   &:hover{
     transition: all 0.2s ease-in-out;
@@ -152,6 +161,11 @@ export const FSideBtn = styled.a`
     color: #3B5998;
   }
 
+  @media screen and (max-height: 500px) {
+    font-size: 20px;
+    
+    
+  }
   
 `;
 

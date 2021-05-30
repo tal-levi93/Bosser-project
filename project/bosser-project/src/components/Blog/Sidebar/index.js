@@ -43,12 +43,17 @@ class Sidebar extends Component {
                         <p className="personalBio">My name is Ofir and I am a software enginiree student</p>
                     </div>
                 </Card>
-                <Card style={{marginBottom: '20px', padding: '20px', boxSizing: "border-box"}}>
-                    <div className="cardHeader">
-                        <span>Social Network</span>
+                */}
+                <Card style={{marginBottom: '20px', padding: '20px', boxSizing: "border-box", backgroundColor:'#C86767'}}>
+                    <div className="cardHeader" style={{fontSize:'30px'}}>
+                        <span>
+                            <a href={"/blog/createPost"}>
+                                צור פוסט
+                            </a>
+                        </span>
                     </div>
                 </Card>
-                   */}
+
                 <Card style={{marginBottom: '20px', padding: '20px', boxSizing: "border-box", height: '100%'}}>
                     <div className="cardHeader">
                         <span>פוסטים אחרונים:</span>

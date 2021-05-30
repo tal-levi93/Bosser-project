@@ -6,6 +6,7 @@ import ImageGrid from "../../components/GalleryImages/ImageGrid";
 import UploadForm from "../../components/GalleryImages/UploadForm";
 import Modal from "../../components/GalleryImages/Modal";
 import './gallery.css'
+import {FaSearch} from "react-icons/fa";
 
 function Gallery(){
 
@@ -23,7 +24,7 @@ function Gallery(){
 
                 <div id={'title'}>הגלריה שלנו</div>
                 <br/>
-                <div id={'information'}>לחץ על תמונה להגדלה</div>
+                <div id={'information'}> לחץ על תמונה להגדלה <FaSearch/></div>
 
                 {/*for Admin Only*/}
                 <UploadForm />

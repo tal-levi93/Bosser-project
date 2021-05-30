@@ -9,7 +9,7 @@
 #gform{
     margin: 30px auto 10px;
     text-align: center;
-    /*font-size: 50px;*/
+
 }
 #ginput{
     height: 0;
@@ -62,6 +62,7 @@
     grid-gap: 30px;
 
 
+
 }
 .img-wrap{
     overflow: hidden;
@@ -84,7 +85,7 @@
 /* modal styles */
 .backdrop{
     position: fixed;
-    top: 6%;
+    top: 18%;
     left: 0;
     width: 100%;
     height: 100%;
@@ -94,16 +95,28 @@
     display: grid;
     max-width: 80%;
     max-height: 70%;
-    margin: auto auto;
+    margin: 0px auto auto auto;
     box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
     border: 5px solid white;
 }
 
 #close {
-    margin-top: 100px;
-    color: #f2f2f2;
+
+    margin: auto 48% 0 52%;
+    color: white;
     font-size: 40px;
     text-align: center;
+    align-items: center;
+    background: none;
+    padding: 2px ;
+    opacity: 0.6;
+
+}
+
+#close:hover{
+    opacity: 1;
+    font-size: 50px;
+
 }
 
 .goutput{
@@ -111,7 +124,7 @@
     font-size: 30px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1250px) {
 
     .img-grid{
         grid-template-columns: 1fr 1fr 1fr;
@@ -131,10 +144,16 @@
     }
 
     #close {
-        margin-top: 35%;
-        color: #f2f2f2;
+
+        margin: 9% 48% 0 52%;
         font-size: 20px;
-        text-align: center;
+
+    }
+
+    #close:hover{
+        opacity: 1;
+        font-size: 30px;
+
     }
 
 
@@ -147,14 +166,3 @@
 
 }
 
-@media only screen and (max-height: 400px) {
-
-    #close {
-        margin-top: 31%;
-        color: #f2f2f2;
-        font-size: 12px;
-        text-align: center;
-    }
-
-
-}
