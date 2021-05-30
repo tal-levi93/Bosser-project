@@ -17,7 +17,8 @@ class sign_up extends Component{
             password:"",
             full_name:"",
             user_id:"",
-            age:0
+            age:0,
+            isAdmin:false
         }
     }
 
@@ -39,7 +40,8 @@ class sign_up extends Component{
                 user_uid:res.user.uid,
                 full_name: this.state.full_name,
                 email: this.state.email,
-                age:this.state.age
+                age:this.state.age,
+                IsAdmin:this.state.IsAdmin
             });
             this.props.history.push('/')
         }).catch(err=>{
