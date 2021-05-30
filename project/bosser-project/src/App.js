@@ -12,6 +12,7 @@ import Post from "./components/Blog/Post"
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Login from "./Pages/Login/login";
 import CreatePost from "./Pages/CreatePost"
+import SignUpForEvent from "./Pages/SignUpForEvent"
 
 
 import Navbar from "./components/Header/NavbarElements";
@@ -128,8 +129,11 @@ class App extends Component{
                       <Events UserDetails={this.state.UserDetails} IsLoggedIn = {this.state.UserLog}/>)}  />
                   <Route exact path="/newsletter" component={Newsletter}/>
                   <Route exact path="/blog/post/:postId" component={Post}/>
+                  <Route exact path="/events/signUpEvent"  render={(props) => (
+                      <SignUpForEvent />)}/>
                   <Route exact path="/blog/createPost"  render={(props) => (
                       <CreatePost UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
+
                   )} />
                   {/*<Route exact path="/newsletter/:id" component={Newsletter}/>*/}
                 </Switch>
