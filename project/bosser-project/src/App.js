@@ -101,6 +101,7 @@ class App extends Component{
   }
 
   render(){
+
     return (
         <>
           <div className="App" dir="rtl">
@@ -124,7 +125,7 @@ class App extends Component{
                   <Route exact path="/signup" component={sign_up}/>
                   {<Route exact path="/courses/:id" component={Courses}/>}
                   <Route exact path="/events" render={(props) => (
-                      <Events UserDetails={this.state.UserDetails}/>)} />/>
+                      <Events UserDetails={this.state.UserDetails} IsLoggedIn = {this.state.UserLog}/>)}  />
                   <Route exact path="/newsletter" component={Newsletter}/>
                   <Route exact path="/blog/post/:postId" component={Post}/>
                   <Route exact path="/blog/createPost"  render={(props) => (
