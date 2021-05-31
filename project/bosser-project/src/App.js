@@ -23,7 +23,6 @@ import Sidebar from "./components/Header/Sidebar";
 import Index from "./Pages";
 import sign_up from "./Pages/Sign_up/sign_up";
 import firebase from "firebase";
-import ArtistProfile from "./Pages/ArtistProfile/ArtistProfile";
 
 
 
@@ -37,13 +36,11 @@ class App extends Component{
         UserName:"",
         Email:"",
         FullName:"",
-        UserUid:""
+        UserUid:"",
+        IsAdmin:""
       }
     }
   }
-
-
-
 
 
 
@@ -92,7 +89,8 @@ class App extends Component{
               FullName:user.full_name,
               Email:user.email,
               UserUid:user.user_uid,
-              UserName:user.user_name
+              UserName:user.user_name,
+              IsAdmin:user.IsAdmin
             }
           })
         }
@@ -102,39 +100,36 @@ class App extends Component{
     })
   }
 
-
-
-
-
-
-
   render(){
-
-
-
-
     return (
-        <div>
+        <>
           <div className="App" dir="rtl">
             <header className="App-header">
               <Router>
                 {/*{console.log(this.state.UserLog)}*/}
                 <Index isLoggedIn = {this.state.UserLog} UserDetails = {this.state.UserDetails}/>
-
-                <Switch>
+                <Switch >
                   <Route exact path="/" component={Home} />
                   <Route exact path="/login" component={Login} />
-                  <Route exact path="/artists" component={Artists}/>
-                  <Route exact path="/artistProfile" component={ArtistProfile}/>
-                  <Route exact path="/blog" component={Blog}/>
-                  <Route exact path="/gallery" component={Gallery}/>
-                  <Route exact path="/courses" component={Courses}/>
+                  <Route exact path="/artists" render={(props) => (
+                      <Artists UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
+                  )} />
+                  <Route exact path="/blog" render={(props) => (
+                      <Blog UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
+                  )} />
+                  <Route exact path="/gallery" render={(props) => (
+                      <Gallery UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>)} />
+                  <Route exact path="/courses" render={(props) => (
+                      <Courses UserDetails={this.state.UserDetails}/>)} />
                   <Route exact path="/signup" component={sign_up}/>
                   {<Route exact path="/courses/:id" component={Courses}/>}
-                  <Route exact path="/events" component={Events}/>
+                  <Route exact path="/events" render={(props) => (
+                      <Events UserDetails={this.state.UserDetails}/>)} />/>
                   <Route exact path="/newsletter" component={Newsletter}/>
                   <Route exact path="/blog/post/:postId" component={Post}/>
-                  <Route exact path="/blog/createPost" component={CreatePost}/>
+                  <Route exact path="/blog/createPost"  render={(props) => (
+                      <CreatePost UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
+                  )} />
                   {/*<Route exact path="/newsletter/:id" component={Newsletter}/>*/}
                 </Switch>
               </Router>
@@ -143,7 +138,7 @@ class App extends Component{
 
             </header>
           </div>
-        </div>
+        </>
     );
   }
 
@@ -168,7 +163,7 @@ export default App;
 //   });
 //
 //   return (
-//       <div>
+//       <>
 //     <div className="App" dir="rtl">
 //       <header className="App-header">
 //
@@ -193,7 +188,7 @@ export default App;
 //
 //       </header>
 //     </div>
-//       </div>
+//       </>
 //   );
 // }
 
