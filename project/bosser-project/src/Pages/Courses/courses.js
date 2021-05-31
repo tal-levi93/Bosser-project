@@ -6,8 +6,11 @@ import {Button, Card} from '@material-ui/core';
 import deleteDoc from "../../hooks/deleteDoc";
 import {FaTrashAlt} from "react-icons/fa";
 
+
+/* This component represents the courses page. Shows all the association's courses. */
 class Courses extends Component {
 
+    /* Constructor. Initialize the component state. */
     constructor(props) {
         super(props);
         this.state = {
@@ -16,24 +19,23 @@ class Courses extends Component {
         }
     }
 
+    /* This method get all the courses data from the data base. */
     componentDidMount() {
         let courses = [];
         let courses_id= [];
         db.collection('courses').get().then((result) => {
             result.docs.forEach(doc => {
                 courses.push(doc.data());
-
-
                 courses_id.push(doc.id);
                 console.log(courses_id)
 
             });
             this.setState({courses: courses});
-
             this.setState({courses_id: courses_id});
         });
     }
 
+    /* This method renders the list of the courses in the page. */
     render() {
         if(!this.state.courses_id == undefined){return (<div></div>)}
 
@@ -41,7 +43,7 @@ class Courses extends Component {
             <div>
                 <div id={'title'}>הקורסים שלנו</div>
                 <div className='courses' >
-                    {this.state.courses.map(
+                    {this.state.courses.map(            /* Sends each course data to represent the course in the fixed format. */
                         (course,index)=>(
                             this.card(course,index)
                         ))}
@@ -50,10 +52,11 @@ class Courses extends Component {
         )
     }
 
+    /* This method returns a card that presents the course information in a uniform format. */
     card(course_id,index) {
         if(!this.state.courses_id == undefined){return (<div></div>)}
-        return (<div key={course_id.name}>
 
+        return (<div key={course_id.name}>
 
                 <button  id={'delete'} style={{color:'white'}} onClick={() =>
                 { deleteDoc(this.state.courses_id[index],'courses');}} >
@@ -64,7 +67,7 @@ class Courses extends Component {
 
                     <h2 id={'course_dit'}>
                         <div id={'c_title'} > משך זמן:</div>
-                        {course_id.duration}שעות</h2>
+                        {course_id.duration} שעות</h2>
 
                     <h2 id={'course_dit'}>  <div id={'c_title'} >מספר נרשמים:</div>
                         {course_id.currentParticipants} מתוך {course_id.participants}</h2>

@@ -1,4 +1,4 @@
-import {Component} from "react";
+import React,{Component} from "react";
 import {db} from "../../Firebase/firebase";
 import eventLogo from "./eventLogo.jpg";
 import show from './show.png';

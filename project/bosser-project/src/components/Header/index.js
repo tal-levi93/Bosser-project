@@ -27,11 +27,11 @@ class Header extends Component{
 
         return(
 
-            <>
+            <div>
                 <Sidebar isOpen={this.isOpen} toggle={this.toggle}/>
                 <Navbar toggle={this.toggle} isLoggedIn = {this.props.isLoggedIn}/>
 
-            </>
+            </div>
         )
     }
 
@@ -49,10 +49,10 @@ const Header = (props) => {
 
 
     return (
-        <>
+        <div>
             <Sidebar isOpen={isOpen} toggle={toggle}  isLoggedIn = {props.isLoggedIn} UserDetails = {props.UserDetails}/>
             <Navbar toggle={toggle} isLoggedIn = {props.isLoggedIn} UserDetails = {props.UserDetails}/>
-        </>
+        </div>
     );
 }
 
