@@ -132,7 +132,7 @@ class App extends Component{
                   <Route exact path="/newsletter" component={Newsletter}/>
                   <Route exact path="/blog/post/:postId" component={Post}/>
                   <Route exact path="/blog/createPost"  render={(props) => (
-                      <CreatePost UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
+                      <CreatePost UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog} {...props}/>
                   )} />
                   <Route exact path="/events/signUpEvent"  render={(props) => (
                       <SignUpForEvent />)}/>

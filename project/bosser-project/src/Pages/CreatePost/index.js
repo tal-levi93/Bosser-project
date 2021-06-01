@@ -11,12 +11,13 @@ import UploadBlogImage from "../../components/Blog/UplodeImage";
 class CreatePost extends Component{
     constructor(props) {
         super(props);
+        console.log(this.props)
         this.state = {
             blogCategory:"",
             blogTitle:"",
             postText:"",
             postedOn: new Date(),
-            author:"",
+            author: "",
             image:"",
             url:"",
             user_uid:""
@@ -36,26 +37,26 @@ class CreatePost extends Component{
         e.preventDefault();
 
         const postsRef = db.collection('posts');
-        console.log(postsRef)
         const post = {
             blogCategory: this.state.blogCtagory,
             blogTitle: this.state.blogTitle,
             postText: this.state.postText,
             postedOn: this.state.postedOn,
-            author: this.state.author,
+            author: this.props.UserDetails.FullName,
             image: this.state.url
         }
         await postsRef.add(post).then(res => {
+
                 this.setState({
                     blogCategory:"",
                     blogTitle:"",
                     postText:"",
                     postedOn: new Date(),
-                    author:"",
+                    author:this.props.UserDetails.FullName,
                     image:""
                 })
-            }
-        ).catch(err=>{
+            this.props.history.push('/blog')
+            }).catch(err=>{
             alert(err)
         })
     }
@@ -70,7 +71,6 @@ class CreatePost extends Component{
 
 
     render() {
-        console.log(this.props.UserDetails)
 
         return (
             <div className="createPostCon">
@@ -87,7 +87,7 @@ class CreatePost extends Component{
 
                     <div className = "input-field">
                         <label className = "line" htmlFor="postText">תוכן הפוסט: </label><br></br>
-                        <input className = "box" type="text" id="postText" onChange={this.handleChange}/>
+                        <textarea id="postText" name="w3review" rows="20" cols="200" onChange={this.handleChange}/>
                     </div>
 
                         <div className = "input-field">
