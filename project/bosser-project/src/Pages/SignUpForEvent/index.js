@@ -1,4 +1,4 @@
-import {Component, useState} from "react";
+import React,  {Component, useState} from "react";
 import firebase from "firebase";
 import {BrowserRouter as Router , Link , Route, Switch} from "react-router-dom";
 import Home from "../Home";
