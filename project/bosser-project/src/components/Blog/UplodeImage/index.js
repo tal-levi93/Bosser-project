@@ -1,4 +1,4 @@
-import react, { useState } from 'react';
+import React, { useState } from 'react';
 import BlogProgressBar from '../BlogProgressBar';
 import './style.css'
 
