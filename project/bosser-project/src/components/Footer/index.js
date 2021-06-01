@@ -19,7 +19,7 @@ const Footer = () => {
     };
     return (
 
-        <>
+        <div>
             <BTN ipOpen={isOpen} onClick={toggle} > <FaEnvelope/> הרשמה לדיוור אלקטרוני</BTN>
 
             <PopUp ipOpen={isOpen} toggle={toggle}>
@@ -33,7 +33,7 @@ const Footer = () => {
             </PopUp>
 
 
-        </>
+        </div>
     );
 };
 export default Footer;
