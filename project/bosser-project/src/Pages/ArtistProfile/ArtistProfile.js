@@ -65,14 +65,6 @@ class ArtistProfile extends Component {
         )
     }
 
-<<<<<<< HEAD
-=======
-    // profileCard() {
-    //     return (
-    //
-    //     )
-    // }
->>>>>>> origin/main
 
 }
 export default ArtistProfile;

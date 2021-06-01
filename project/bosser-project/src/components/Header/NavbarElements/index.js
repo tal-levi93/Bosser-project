@@ -71,7 +71,7 @@ class Navbar extends Component {
                     <NavBtn>
                         {this.UserTab()}
                         <NavLink to="/ArtistProfile">
-                            <ReactRoundedImage to="/ArtistProfile"
+                            <ReactRoundedImage
                                 image={artistLogo}
                                 roundedColor="#66A5CC"
                                 imageWidth="100"

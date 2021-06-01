@@ -23,6 +23,7 @@ import Sidebar from "./components/Header/Sidebar";
 import Index from "./Pages";
 import sign_up from "./Pages/Sign_up/sign_up";
 import firebase from "firebase";
+import ArtistProfile from "./Pages/ArtistProfile/ArtistProfile";
 
 
 
@@ -102,7 +103,7 @@ class App extends Component{
 
   render(){
     return (
-        <>
+        <div>
           <div className="App" dir="rtl">
             <header className="App-header">
               <Router>
@@ -111,6 +112,7 @@ class App extends Component{
                 <Switch >
                   <Route exact path="/" component={Home} />
                   <Route exact path="/login" component={Login} />
+                  <Route exact path="/ArtistProfile" component={ArtistProfile} />
                   <Route exact path="/artists" render={(props) => (
                       <Artists UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
                   )} />
@@ -138,7 +140,7 @@ class App extends Component{
 
             </header>
           </div>
-        </>
+        </div>
     );
   }
 
