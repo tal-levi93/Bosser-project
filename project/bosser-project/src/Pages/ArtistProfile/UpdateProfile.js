@@ -24,14 +24,14 @@ class UpdateProfile extends Component {
 
 
 
-    async upload(files,path)
+    async upload(files, path)
     {
 
-        if(files!==null && files!==undefined&& files.length<=0)
+        if(files!==null && files!==undefined && files.length<=0)
             return;
 
         var file = files[files.length-1]
-        var user =  this.state.user
+        var user = this.state.user
         var metadata = {
             customMetadata: {
                 'user': user.uid,
@@ -39,9 +39,6 @@ class UpdateProfile extends Component {
         };
 
         var storageRef = storage.ref()
-
-
-
 
         var uploadTask = storageRef.child(path+'/' + file.key).put(file,metadata);
 
@@ -106,8 +103,6 @@ class UpdateProfile extends Component {
     }
 
 
-
-
     render() {
         const files = this.state.files.map(file => (
             <li key={file.name}>
@@ -119,44 +114,41 @@ class UpdateProfile extends Component {
         return (
             <Dropzone onDrop={this.onDrop}>
                 {({getRootProps, getInputProps}) => (
-                    <section className="container">
+                    <section className="container" style={{cursor: "pointer"}}>
                         <div {...getRootProps({className: 'dropzone'})}>
 
-                            <div style={{backgroundColor: "#a0a0a0", width: 400, height: 170,textAlign: 'center', padding: '100px 0px 0px 0px'}}>
+                            <div style={{backgroundColor: "#a0a0a0", width: 400, height: 170,textAlign: 'center', padding: '70px 0px 0px 0px'}}>
 
-                                יש לגרור לכאן את הקבצים
+                                <h2 id="updateTxt">גרור לכאן קבצים להעלאה</h2>
                                 <br/>
-                                <br/>
-                                או ללחוץ כאן
+                                <h2 id="updateTxt">או לחץ כאן</h2>
 
                                 <input {...getInputProps()} />
                             </div>
                         </div>
                         <aside>
                             {
-
                                 files.length <= 0 ?
                                     <h4></h4>:
                                     <div>
                                         {
-                                            this.state.maxFile!=undefined && files.length > this.state.maxFile?
-                                                <h4> מספר הקבצים המקסימלי להעלאה הוא {this.state.maxFile}</h4>:
+                                            this.state.maxFile != undefined && files.length > this.state.maxFile?
+                                                <h3> מספר הקבצים המקסימלי להעלאה הוא {this.state.maxFile}</h3>:
                                                 <div>
-                                                    <h4> מספר הקבצים להעלאה - {files.length}</h4>
+                                                    <h2> מספר הקבצים להעלאה - {files.length}</h2>
                                                     <ul>{files}</ul>
-                                                    <button onClick={()=>{
+
+                                                    <button style={{padding: 5}} onClick={()=>{
                                                         this.upload(files,'ArtistsPhoto')
-                                                    }}>העלה תמונת פרופיל חדשה</button>
-                                                    <button onClick={()=>{
+                                                    }}><h2>העלה תמונת פרופיל</h2></button>
+
+                                                    <button style={{padding: 5}} onClick={()=>{
                                                         this.upload(files,'GalleryPhotos')
-                                                    }}>העלה תמונות גלריה</button>
+                                                    }}><h2>העלה תמונות גלריה</h2></button>
                                                 </div>
                                         }
-
                                     </div>
                             }
-
-
                         </aside>
                     </section>
                 )}

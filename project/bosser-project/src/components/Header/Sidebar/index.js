@@ -41,6 +41,9 @@ class Sidebar extends Component{
                     {this.UserTab()}
                     <SidebarMenu>
                         <SidebarLink to='/'> דף הבית </SidebarLink>
+                        {this.props.isLoggedIn && (
+                            <SidebarLink to='./ArtistProfile'> פרופיל </SidebarLink>
+                        )}
                         <SidebarLink to='./artists'>אמנים </SidebarLink>
                         <SidebarLink to='/blog'> </SidebarLink>
                         <SidebarLink to='/gallery'>  גלריה </SidebarLink>

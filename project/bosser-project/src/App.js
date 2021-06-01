@@ -112,7 +112,9 @@ class App extends Component{
                 <Switch >
                   <Route exact path="/" component={Home} />
                   <Route exact path="/login" component={Login} />
-                  <Route exact path="/ArtistProfile" component={ArtistProfile} />
+                  <Route exact path="/ArtistProfile" render={(props) => (
+                      <ArtistProfile UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
+                  )} />
                   <Route exact path="/artists" render={(props) => (
                       <Artists UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
                   )} />

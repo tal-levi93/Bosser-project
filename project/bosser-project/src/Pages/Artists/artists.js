@@ -29,7 +29,8 @@ class Artists extends Component{
         return(
             <div>
                 <div id={'title'}>האמנים שלנו</div>
-                <div className="tmp" style={ {display: 'flex', flexDirection: "row", flexWrap: "wrap"}}>
+                <div className="artist" style={ {display: "flex", flexDirection: "row", flexWrap: "wrap"}}>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                     {this.state.artists.map((artist , idx)=>(
                         this.create_artist(artist,idx)
                     ))}
