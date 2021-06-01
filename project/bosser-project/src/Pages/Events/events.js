@@ -4,11 +4,10 @@ import eventLogo from "./eventLogo.jpg";
 import show from './show.png';
 import {Button} from "@material-ui/core";
 import './events.css';
-import {FaThumbtack, FaTrashAlt} from "react-icons/fa";
+import { FaThumbtack } from "react-icons/fa";
 import firebase from "firebase"
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import SignUpForEvent from "../SignUpForEvent";
-import deleteDoc from "../../hooks/deleteDoc";
 
 class Events extends Component{
 
@@ -66,17 +65,6 @@ class Events extends Component{
     }
     create_event_offline(event_id , idx){
         return (<div key={idx} >
-            {/*Delete course from courses array and update in DB*/}
-            <button  id={'delete'} style={{color:'white'}} onClick={() =>
-            {
-                {/*Delete event from events array and update in Firebase*/}
-                deleteDoc(this.state.events_id[idx],'events');
-                let array = this.state.events;
-                array.splice(idx,1);
-                this.setState({events : array});
-                this.state.events_id.splice(idx,1);
-            }}>
-                <FaTrashAlt/></button>
 
             <div id={'event'}>
                 <i>
@@ -114,7 +102,6 @@ class Events extends Component{
         else{
             BuildEvents = (
                 <div >
-
                     <div id={'frame'}>
                         <div id={'title'} style={{color:'black'}}>האירועים שלנו</div>
                         <div className="contain" >

@@ -10,7 +10,7 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 55px;
+  font-size: 50px;
   color: black;
   position: sticky;
   top:0;
@@ -18,10 +18,16 @@ export const Nav = styled.nav`
   
   @media screen and (max-width:1250px){
     transition: 0.8s all ease;
-    width: 60px;
-    height: 60px;
+    width: 150px;
+    height: 90px;
   }
-  
+
+  @media screen and (max-width:190px){
+    transition: 0.8s all ease;
+    width: 50%;
+    height: 60px;
+
+  }
 `;
 
 export const NavContainer = styled.div`
@@ -42,12 +48,12 @@ export const NavLink = styled(LinkR)`
   display: flex;
   float: right;
   align-items: center;
-  text-decoration: none;
-  padding: 10px 20px;
+  text-decoration:none;
+  padding: 10px 10px;
   height: 100%;
   cursor: pointer;
-
-  &:active {
+  
+  &.active {
     border-bottom: 3px solid #dddddd;
     color: black;
   }
@@ -56,10 +62,6 @@ export const NavLink = styled(LinkR)`
     transition: all 0.2s ease-in-out;
     background-color: #ddd;
     color: white;
-  }
-
-  &:focus {
-    border: 1.5px inset #bcbcbc;
   }
 `;
 
@@ -73,16 +75,20 @@ export const Bars = styled.div`
     top: 0;
     text-align: center;
     transform: translate(-10%, 30%);
-    font-size: 40px;
+    font-size: 59px;
     cursor: pointer;
   }
-  
+
+  @media screen and (max-width: 190px) {
+    font-size: 30px;
+  }
 `;
 
 export const NavMenu = styled.ul`
   display: flex;
   align-items: center;
   list-style: none;
+  //margin-right: -22px;
   text-align: center;
  
   @media screen and (max-width: 1250px) {
@@ -94,7 +100,7 @@ export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
   float: right;
-  padding: 0 10px;
+  padding: 0 5px;
   
   @media screen and (max-width: 1250px) {
     display: none;
@@ -112,7 +118,7 @@ export const NavBtnLink = styled(Link)`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  margin: 20px;
+  margin: 18px;
 
   &:hover {
     transition: all 0.2s ease-in-out;
@@ -129,10 +135,8 @@ export const FNavBtnLink = styled.a`
   padding: 20px 25px;
   color: #fff;
   outline: none;
-  font-size: 40px;
   border: none;
   cursor: pointer;
-  margin-right: 10px;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   

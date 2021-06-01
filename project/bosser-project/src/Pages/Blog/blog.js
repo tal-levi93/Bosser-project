@@ -11,15 +11,16 @@ import RecentPost from "../../components/Blog/recentPost";
 
 const SideImage = props => {
     return (
-        <div style={{height: `${props.height}px` , padding:'3px 3px' , flex:1 , justifyContent:"center", alignItems:'center' ,  position: 'relative' ,textAlign: 'center', color: 'white'}}>
-            <img src={props.post.image} alt=""/>
-            <div className="textInImage" >
-                <a  href={"/blog/post/" + props.id}>
-                    {props.post.blogTitle}
-                </a>
 
+        <Card style={{height: `${props.height}px` , padding:'3px 3px', textAlign:'center', display:'block' , objectFit:'cover'}}>
+            <img src={props.post.image} alt="" style={{width:'95%',height:'70%'}}/>
+            <div >
+                <p style={{ fontWeight:'bold'}}>{props.post.blogTitle}</p>
+                <a  href={"/blog/post/" + props.id}>
+                    <p style={{fontWeight:'bold', fontSize:'12px'}}>לחץ לקריאה</p>
+                </a>
             </div>
-        </div>
+        </Card>
     )
 }
 
@@ -64,17 +65,23 @@ class Blog extends Component{
                 <div>
                     <Card style={{margin: '20px 0'}}>
                         <div className="GalleryPost" style={galleryStyle}>
+                            <Card style={{width:'70%', height:"450px",textAlign:'center', display:'block' , objectFit:'cover'}}>
+                                <img src={this.state.posts[0].image} style={{width:'95%',height:'87%'}}/>
+                                <p style={{fontSize:'24px', fontWeight:'bold'}}>{this.state.posts[0].blogTitle}</p>
+                                <a  href={"/blog/post/" + this.state.postIds[0]}>
+                                    <p style={{fontWeight:'bold'}}>לחץ לקריאה</p>
+                                </a>
+                            </Card>
+                            {/*
                             <section style={{width:'70%'}}>
                                 <div className="mainImageWrapper">
-                                    <div style={{position:'absolute',textAlign: 'center', textShadow:'2px 2px #6c6c6c', left:'50%', transform:'translate(-50%, 100%)', fontSize:'40px'}}>
-                                        <a  href={"/blog/post/" + this.state.postIds[0]}>
-                                            {this.state.posts[0].blogTitle}
-                                        </a>
-
-                                    </div>
                                     <img src={this.state.posts[0].image} style={{width:'100%', padding:'3px 3px'}}/>
+                                    <a  href={"/blog/post/" + this.state.postIds[0]}>
+                                        {this.state.posts[0].blogTitle}
+                                    </a>
                                 </div>
                             </section>
+                            */}
                             <section className="sideImageWrapper" style={{width:'30%'}}>
                                 < SideImage
                                     height={sideImageHeight}

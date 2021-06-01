@@ -1,4 +1,4 @@
-import {Component} from "react";
+import React,{Component} from "react";
 import {auth, db} from "../../Firebase/firebase";
 import Search from '../../components/Search/index'
 import artistLogo from "../Artists/artistLogo.jpg";

@@ -1,8 +1,8 @@
-import react from 'react';
 import { motion } from 'framer-motion';
 import {db} from '../../Firebase/firebase';
 import useFirestore from "../../hooks/useFirestore";
 import {FaRegWindowClose} from "react-icons/fa";
+import React,{Component} from "react";
 
 
 
@@ -18,7 +18,7 @@ const Modal = ({ setSelectedImg, selectedImg }) => {
     }
 
     return (
-        <>
+        <div>
 
         <motion.div className="backdrop"
                     initial={{ opacity: 0 }}
@@ -35,7 +35,7 @@ const Modal = ({ setSelectedImg, selectedImg }) => {
 
 
 
-    </>
+    </div>
     )
 }
 

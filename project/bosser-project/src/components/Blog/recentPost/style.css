@@ -12,14 +12,15 @@
 
 .blogTitleS {
     font-size: 30px;
+    font-weight: bold;
 }
 
 .blogCategoryS {
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .blogPostedOnS {
-    font-size: 18px;
+    font-size: 16px;
     font-style: italic ;
 }
 

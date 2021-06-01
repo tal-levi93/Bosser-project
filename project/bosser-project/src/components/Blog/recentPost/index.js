@@ -15,11 +15,11 @@ const ReadMore = (props) => {
     };
     return (
         <div className="text">
-            {text.slice(0, 250) + "..."}
+            <p>{text.slice(0, 250) + "..."}</p>
             <span onClick={toggleReadMore} className="read-or-hide">
                 <h4>
                     <a  href={"/blog/post/" + props.id}>
-                    המשך קריאה
+                    <p>המשך קריאה</p>
                     </a>
                 </h4>
             </span>
@@ -36,9 +36,15 @@ const RecentPost = (props) => {
                     <img src={props.post.image}/>
                 </div>
                 <div style={{textAlign:'center'}}>
-                    <span className="blogCategoryS">{props.post.blogCtagory}</span>
-                    <h2 className="blogTitleS">{props.post.blogTitle}</h2>
-                    <span className="blogPostedOnS">פורסם בתאריך {props.post.postedOn.toDate().toDateString()} </span>
+                    <span className="blogCategoryS">
+                        <p>{props.post.blogCtagory}</p>
+                    </span>
+                    <p className="blogTitleS">{props.post.blogTitle}</p>
+                    <span className="blogPostedOnS">
+                        <p>
+                             פורסם בתאריך {props.post.postedOn.toDate().toDateString()}
+                        </p>
+                    </span>
                     <div className="TextContainer">
                         <ReadMore
                             children={props.post.postText} id={props.id}
