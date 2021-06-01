@@ -29,53 +29,69 @@ class Sidebar extends Component {
     }
 
     render() {
-        return (
-            <div className="sidebarContainer">
-                {/*
-                <Card style={{marginBottom: '20px', padding: '20px', boxSizing: "border-box"}}>
-                    <div className="cardHeader">
-                        <span>About us</span>
-                    </div>
-                    <div className="profileImageContainer">
-                        <img src={ProfileImage}/>
-                    </div>
-                    <div className="cardBody">
-                        <p className="personalBio">My name is Ofir and I am a software enginiree student</p>
-                    </div>
-                </Card>
-                */}
-                <Card style={{marginBottom: '20px', padding: '20px', boxSizing: "border-box", backgroundColor:'#C86767'}}>
-                    <div className="cardHeader" style={{fontSize:'30px'}}>
+        if (this.props.IsLoggedIn == true) {
+            return (
+                <div className="sidebarContainer">
+                    <Card style={{marginBottom: '20px', padding: '20px', boxSizing: "border-box", backgroundColor:'palevioletred'}}>
+                        <div className="cardHeader" style={{fontSize:'30px'}}>
                         <span>
                             <a href={"/blog/createPost"}>
-                                צור פוסט
+                                <p style={{fontWeight:'bold'}}>צור פוסט</p>
                             </a>
                         </span>
-                    </div>
-                </Card>
+                        </div>
+                    </Card>
 
-                <Card style={{marginBottom: '20px', padding: '20px', boxSizing: "border-box", height: '100%'}}>
-                    <div className="cardHeader">
-                        <span>פוסטים אחרונים:</span>
-                    </div>
+                    <Card style={{marginBottom: '20px', padding: '20px', boxSizing: "border-box", height: '100%'}}>
+                        <div className="cardHeader">
+                            <span><p style={{fontWeight:'bold'}}>פוסטים אחרונים:</p></span>
+                        </div>
 
-                    <div className="recentPosts">
-                        {
-                            this.state.posts.map((post, index) => {
-                                return (
-                                    <a key={index} href={"/blog/post/" + this.state.postIds[index]}>
-                                        <div className="recentPost">
-                                            <h3>{post.blogTitle}</h3>
-                                            <span>{post.postedOn.toDate().toDateString()}</span>
-                                        </div>
-                                    </a>
-                                );
-                            })
-                        }
-                    </div>
-                </Card>
-            </div>
-        )
+                        <div className="recentPosts">
+                            {
+                                this.state.posts.map((post, index) => {
+                                    return (
+                                        <a key={index} href={"/blog/post/" + this.state.postIds[index]}>
+                                            <div className="recentPost">
+                                                <p style={{fontSize:'18px'}}>{post.blogTitle}</p>
+                                                <span><p style={{fontSize:'14px'}}>{post.postedOn.toDate().toDateString()}</p></span>
+                                            </div>
+                                        </a>
+                                    );
+                                })
+                            }
+                        </div>
+                    </Card>
+                </div>
+            )
+        } else {
+            return (
+                <div className="sidebarContainer">
+
+                    <Card style={{marginBottom: '20px', padding: '20px', boxSizing: "border-box", height: '100%'}}>
+                        <div className="cardHeader">
+                            <span><p style={{fontWeight:'bold'}}>פוסטים אחרונים:</p></span>
+                        </div>
+
+                        <div className="recentPosts">
+                            {
+                                this.state.posts.map((post, index) => {
+                                    return (
+                                        <a key={index} href={"/blog/post/" + this.state.postIds[index]}>
+                                            <div className="recentPost">
+                                                <p style={{fontSize:'18px'}}>{post.blogTitle}</p>
+                                                <span><p style={{fontSize:'14px'}}>{post.postedOn.toDate().toDateString()}</p></span>
+                                            </div>
+                                        </a>
+                                    );
+                                })
+                            }
+                        </div>
+                    </Card>
+                </div>
+            )
+        }
+
     }
 
 }

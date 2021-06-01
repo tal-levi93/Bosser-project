@@ -108,8 +108,7 @@ class Blog extends Component{
                             <RecentPost style={{width:'100%', padding:'3px 3px'}} post={this.state.posts[4]} id={this.state.postIds[4]}/>
                             <RecentPost style={{width:'100%' , padding:'3px 3px'}} post={this.state.posts[5]} id={this.state.postIds[5]}/>
                         </div>
-
-                        <Sidebar/>
+                        <Sidebar IsLoggedIn = {this.props.IsLoggedIn}/>
                     </section>
 
 

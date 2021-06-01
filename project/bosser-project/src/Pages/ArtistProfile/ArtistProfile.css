@@ -1,0 +1,80 @@
+
+.editDetailsBtn {
+    margin: 10px;
+    background: #87b6fc;
+    padding: 10px 10px;
+    color: black;
+    border-radius: 200px;
+    font-size:20px;
+}
+
+.editDetailsBtn:hover {
+    background: #5a99ee;
+    cursor: pointer;
+}
+
+.editInfoBtn {
+    margin: 10px;
+    background: #87b6fc;
+    padding: 10px 10px;
+    color: black;
+    border-radius: 200px;
+    font-size:35px;
+}
+
+.editInfoBtn:hover {
+    background: #5a99ee;
+    cursor: pointer;
+}
+
+.submitInfoBtn {
+    margin: 10px;
+    background: #87FC89;
+    padding: 10px 10px;
+    color: black;
+    border-radius: 200px;
+    font-size:35px;
+}
+
+.submitInfoBtn:hover {
+    background: #62C864;
+    cursor: pointer;
+}
+
+.cancelInfoBtn {
+    margin: 10px;
+    background: #FC8787;
+    padding: 10px 10px;
+    color: black;
+    border-radius: 200px;
+    font-size:35px;
+}
+
+.cancelInfoBtn:hover {
+    background: #C86767;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 50px;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+h2 {
+    font-size: 30px;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.uploadFiles {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#updateTxt {
+    color: black;
+}
