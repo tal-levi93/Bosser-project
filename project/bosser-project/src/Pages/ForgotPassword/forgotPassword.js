@@ -4,10 +4,8 @@ import "./forgotPassword.css";
 import ForgotPassPopUp from "./forgotPassPopUp";
 
 
-/* This component represents the forgot password page. Allows the user to reset the password. */
 class ForgotPassword extends Component {
 
-    /* Constructor. Initialize the component state. */
     constructor(props) {
         super(props);
         this.state = {
@@ -17,33 +15,31 @@ class ForgotPassword extends Component {
         }
     }
 
-    /* This method update the email state immediately when the user write it. */
     handleChange = (e) => {
         this.setState({
             email: e.target.value
         });
     }
 
-    /* This method checks if the email the user entered is valid. If so send an email to reset the password. */
     handleSubmit = async (e) => {
         e.preventDefault();
         let auth = firebase.auth();
         let emailAddress = this.state.email;
 
         if(this.state.email !== "") {
-            auth.sendPasswordResetEmail(emailAddress).then(() => {      // Email is valid. Send mail for reset password.
+            auth.sendPasswordResetEmail(emailAddress).then(() => {
                 this.setState({
                     showPopup: true,
                     popUpText: "נשלח אימייל לאיפוס הסיסמא"
                 });
-            }).catch(() => {                                // Email is invalid.
+            }).catch(() => {
                 this.setState({
                     showPopup: true,
                     popUpText: "שגיאה! אנא נסה שוב"
                 });
             });
         }
-        else {                          // Email is empty.
+        else {
             this.setState({
                 showPopup: true,
                 popUpText: "הכנס את כתובת הדוא''ל"
@@ -52,13 +48,11 @@ class ForgotPassword extends Component {
 
     }
 
-    /* This method return the user to the login page. */
     handleCancel = async (e) => {
         e.preventDefault();
         this.props.toggleForgotPass();
     }
 
-    /* This method eliminates the pop-up that gives user feedback. */
     togglePopUp = () => {
         this.setState({
             showPopup: !this.state.showPopup
@@ -67,7 +61,6 @@ class ForgotPassword extends Component {
             this.props.toggleForgotPass();
     }
 
-    /* This method renders the forgot password page. */
     render() {
         return (
             <div className='forgotPasswordComp'>

@@ -1,5 +1,6 @@
-import React,{Component} from "react";
+import {Component} from "react";
 import searchLogo from "../../../icons/searchLogo.png";
+import React from "react";
 import './style.css'
 
 const  BlogHeader = (props) => {

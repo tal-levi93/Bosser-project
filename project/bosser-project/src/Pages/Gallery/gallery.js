@@ -1,6 +1,6 @@
 
 
-import React, { useState } from 'react';
+import react, { useState } from 'react';
 
 import ImageGrid from "../../components/GalleryImages/ImageGrid";
 import UploadForm from "../../components/GalleryImages/UploadForm";

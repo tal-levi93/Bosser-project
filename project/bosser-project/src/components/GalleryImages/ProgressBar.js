@@ -1,5 +1,4 @@
 import react, { useEffect } from 'react';
-import React, { Component }  from 'react';
 import useStorage from "../../hooks/useStorage";
 // import useStorage from '../hooks/useStorage';
 import { motion } from 'framer-motion';

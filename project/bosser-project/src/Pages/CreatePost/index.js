@@ -1,4 +1,4 @@
-import React,{Component} from "react";
+import {Component} from "react";
 import firebase from "firebase";
 import {Route, Switch} from "react-router-dom";
 import Home from "../Home";

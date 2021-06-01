@@ -87,9 +87,9 @@ class Sidebar extends Component{
             )
         }
         return (
-            <div>
+            <>
             {BuildSideBar}
-            </div>
+            </>
         )
 
     }

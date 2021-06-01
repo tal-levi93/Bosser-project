@@ -1,5 +1,6 @@
-import React,{Component} from "react";
-import firebase,{db,auth} from "../../Firebase/firebase";
+import {Component} from "react";
+import firebase from "firebase";
+import {auth} from "../../Firebase/firebase";
 import {Route, Switch} from "react-router-dom";
 import Home from "../Home";
 import "./sign_up.css"
@@ -29,23 +30,21 @@ class sign_up extends Component{
 
         })
     }
-    handleSubmit =  (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
-        auth.createUserWithEmailAndPassword(this.state.email, this.state.password).then(res =>{
-            console.log(res)
+        await auth.createUserWithEmailAndPassword(this.state.email, this.state.password).then(res =>{
+            console.log(this.state)
 
-            db.collection("artists").doc(res.user.uid).set({
+            const db = firebase.firestore();
+            const userRef = db.collection("artists").add({
                 user_name:this.state.username,
                 user_uid:res.user.uid,
                 full_name: this.state.full_name,
                 email: this.state.email,
                 age:this.state.age,
                 IsAdmin:false
-            }).then(result=>{
-                console.log(result)
-                this.props.history.push('/')
             });
-
+            this.props.history.push('/')
         }).catch(err=>{
             alert(err)
         })

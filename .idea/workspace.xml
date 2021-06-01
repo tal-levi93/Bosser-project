@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8f5bf18-5aba-4985-a33d-58c7c239ca56" name="Default Changelist" comment="artists page design">
+    <list default="true" id="e8f5bf18-5aba-4985-a33d-58c7c239ca56" name="Default Changelist" comment="finished forgot password functionality">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/bosser-project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/bosser-project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bosser-project/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bosser-project/src/Pages/Courses/courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/Pages/Courses/courses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bosser-project/src/Pages/ForgotPassword/forgotPassPopUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/Pages/ForgotPassword/forgotPassPopUp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bosser-project/src/Pages/ForgotPassword/forgotPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/Pages/ForgotPassword/forgotPassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bosser-project/src/Pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/Pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bosser-project/src/components/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/components/Footer/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bosser-project/src/components/GalleryImages/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/components/GalleryImages/Modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bosser-project/src/components/Header/NavbarElements/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/components/Header/NavbarElements/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bosser-project/src/components/Header/NavbarElements/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/components/Header/NavbarElements/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bosser-project/src/components/Header/Sidebar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/components/Header/Sidebar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bosser-project/src/components/Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/components/Header/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/bosser-project/src/Pages/Artists/artists.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/Pages/Artists/artists.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/bosser-project/src/Pages/ForgotPassword/forgotPassPopUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/bosser-project/src/Pages/ForgotPassword/forgotPassPopUp.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -42,9 +34,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1rz7DEOSrAT8kYDTZ3GTvqxQq6m" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -72,9 +62,7 @@
       <workItem from="1622107239168" duration="8070000" />
       <workItem from="1622123240526" duration="18400000" />
       <workItem from="1622206609504" duration="276000" />
-      <workItem from="1622308238988" duration="14002000" />
-      <workItem from="1622399574286" duration="11449000" />
-      <workItem from="1622472069115" duration="4587000" />
+      <workItem from="1622308238988" duration="6680000" />
     </task>
     <task id="LOCAL‎00001" summary="finished forgot password page and functionality">
       <created>1622075520338</created>
@@ -94,13 +82,7 @@
       <option name="presentableId" value="LOCAL‎00003" />
       <updated>1622308925489</updated>
     </task>
-    <task id="LOCAL‎00004" summary="artists page design">
-      <created>1622315049694</created>
-      <option name="number" value="LOCAL‎00004" />
-      <option name="presentableId" value="LOCAL‎00004" />
-      <updated>1622315049694</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,7 +103,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="finished forgot password page and functionality" />
     <MESSAGE value="finished forgot password functionality" />
-    <MESSAGE value="artists page design" />
-    <option name="LAST_COMMIT_MESSAGE" value="artists page design" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished forgot password functionality" />
   </component>
 </project>

@@ -7,7 +7,6 @@ import Gallery from "../../../Pages/Gallery/gallery";
 import Courses from "../../../Pages/Courses/courses";
 import Events from "../../../Pages/Events/events";
 import Newsletter from "../../../Pages/newsletter";
-import ArtistProfile from "../../../Pages/ArtistProfile/ArtistProfile";
 import {FaFacebookF, FaUserFriends, FaImages, FaNewspaper, FaHome, FaBars} from 'react-icons/fa';
 import { GoMortarBoard , GoCalendar } from "react-icons/go";
 import { AiOutlineUserAdd } from "react-icons/ai";
@@ -24,8 +23,6 @@ import {
     FullName,
     LogOutBtn
 } from './Navbar';
-import artistLogo from "../../../Pages/Artists/artistLogo.jpg";
-import ReactRoundedImage from "react-rounded-image";
 
 class Navbar extends Component {
     constructor(props) {
@@ -50,7 +47,7 @@ class Navbar extends Component {
     }
 
 
-    render(padding) {
+    render() {
         const {toggle} = this.props.toggle
         let buildNav
         if (this.props.isLoggedIn == true) {
@@ -70,17 +67,6 @@ class Navbar extends Component {
                     </NavMenu>
                     <NavBtn>
                         {this.UserTab()}
-                        <NavLink to="/ArtistProfile">
-                            <ReactRoundedImage to="/ArtistProfile"
-                                image={artistLogo}
-                                roundedColor="#66A5CC"
-                                imageWidth="100"
-                                imageHeight="100"
-                                roundedSize="13"
-                                borderRadius="150"
-                                hoverColor="#DD1144"
-                            />
-                        </NavLink>
 
                         <FNavBtnLink href='https://www.facebook.com/bosserco/'><FaFacebookF/> </FNavBtnLink>
                     </NavBtn>
@@ -114,9 +100,9 @@ class Navbar extends Component {
 
         }
         return (
-            <div>
+            <>
                 {buildNav}
-            </div>
+            </>
         )
 
     }
@@ -136,7 +122,7 @@ class Navbar extends Component {
 const Navbar = ( {toggle}) => {
 
     return (
-        <div>
+        <>
             <Nav>
                 <NavContainer>
                 <Bars onClick={toggle}> <FaBars/> </Bars>
@@ -157,7 +143,7 @@ const Navbar = ( {toggle}) => {
             </NavBtn>
                 </NavContainer>
         </Nav>
-            </div>
+            </>
     );
 };
 */

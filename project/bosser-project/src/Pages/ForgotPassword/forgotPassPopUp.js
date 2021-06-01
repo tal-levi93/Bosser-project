@@ -1,11 +1,9 @@
-import React,{Component} from "react";
+import {Component} from "react";
 import "./forgotPassPopUp.css"
 
 
-/* This component represents pop-up for user feedback about the forgot password process. */
 class ForgotPassPopUp extends Component {
 
-    /* Constructor. Initialize the component state. */
     constructor(props) {
         super(props);
         this.state = {
@@ -13,7 +11,6 @@ class ForgotPassPopUp extends Component {
         }
     }
 
-    /* This method renders the pop-up page with the appropriate feedback. */
     render() {
         return (
             <div className='modal'>

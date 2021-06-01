@@ -31,10 +31,10 @@ class Index extends Component {
 
 
         return (
-            <div>
+            <>
                 <Header isOpen={this.isOpen} toggle={this.toggle} isLoggedIn={this.props.isLoggedIn}/>
                 <Footer isOpen={this.isOpen} toggle={this.toggle}/>
-            </div>
+            </>
         );
     }
 }
@@ -54,10 +54,10 @@ const Index = (props) => {
 
 
     return (
-        <div>
+        <>
             <Header isOpen={isOpen} toggle={toggle} isLoggedIn={props.isLoggedIn} UserDetails = {props.UserDetails}/>
             <Footer isOpen={isOpen} toggle={toggle}/>
-        </div>
+        </>
     )
 }
 

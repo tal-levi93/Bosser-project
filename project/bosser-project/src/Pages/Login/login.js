@@ -1,4 +1,4 @@
-import React,{Component} from "react";
+import {Component} from "react";
 import firebase from "firebase";
 import {auth} from "../../Firebase/firebase";
 import {Route, Switch} from "react-router-dom";
