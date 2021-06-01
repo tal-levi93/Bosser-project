@@ -22,7 +22,7 @@ code {
   outline: 3px groove #808080;
 }
 
-p,b{
+p,b,input{
   font-family: 'Assistant', sans-serif;
 
 }

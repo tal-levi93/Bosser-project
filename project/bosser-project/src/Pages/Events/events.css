@@ -36,25 +36,25 @@ div#frame {
 }
 .e_btn {
     color: #181818;
-    padding: 10px;
-    margin: 0 70px;
+    padding: 20px;
+    margin: 0 50px;
     border: 2px double #7a7979;
     background: #bbf8a0;
-    font-size: 20px;
+    font-size: 30px;
     border-left-style: none;
     border-right-style: none;
     border-radius: 200px;
+    text-decoration: none;
 }
 
 .e_btn:hover{
-    font-size: 25px;
+    font-size: 35px;
     background: #8eff47;
     opacity: 1;
     color: black;
     cursor: pointer;
     border: 2px solid #b5b2b2;
     opacity: 1;
-
     border-radius: 200px;
 }
 i{
@@ -76,15 +76,17 @@ i{
     }
 
 
-
     #event{
         margin: 0 ;
+        padding: 2px;
 
     }
     .contain{
+        width: 100%;
         display: grid;
+        margin-right: 0;
+        padding: 10%;
         grid-template-columns: 1fr ;
-        padding:90px;
         font-size: 13px;
 
 
@@ -95,12 +97,20 @@ i{
 
     }
 
-    .e_btn {
-        font-size: 15px;
-    }
+
 
 
 }
 
 
+@media only screen and (max-width: 280px) {
+
+    .contain{
+        width: 70%;
+        padding:2%;
+
+    }
+
+
+}
 

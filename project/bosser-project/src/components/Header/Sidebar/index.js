@@ -42,7 +42,7 @@ class Sidebar extends Component{
                     <SidebarMenu>
                         <SidebarLink to='/'> דף הבית </SidebarLink>
                         <SidebarLink to='./artists'>אמנים </SidebarLink>
-                        <SidebarLink to='/blog'> </SidebarLink>
+                        <SidebarLink to='/blog'> בלוג</SidebarLink>
                         <SidebarLink to='/gallery'>  גלריה </SidebarLink>
                         <SidebarLink to='/courses'> קורסים</SidebarLink>
                         <SidebarLink to='/events'> אירועים</SidebarLink>

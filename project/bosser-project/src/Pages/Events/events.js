@@ -4,10 +4,11 @@ import eventLogo from "./eventLogo.jpg";
 import show from './show.png';
 import {Button} from "@material-ui/core";
 import './events.css';
-import { FaThumbtack } from "react-icons/fa";
+import {FaThumbtack, FaTrashAlt} from "react-icons/fa";
 import firebase from "firebase"
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import SignUpForEvent from "../SignUpForEvent";
+import deleteDoc from "../../hooks/deleteDoc";
 
 class Events extends Component{
 
@@ -45,7 +46,23 @@ class Events extends Component{
 
 
     create_event_logged_in(event_id, idx) {
+
+
+
         return (<div key={idx} >
+
+            {this.props.UserDetails.IsAdmin  &&
+
+            // Delete event from events array and update in Firebase
+            <button id={'delete'} style={{color: 'white'}} onClick={() => {
+                deleteDoc(this.state.events_id[idx], 'events');
+                let array = this.state.events;
+                array.splice(idx, 1);
+                this.setState({events: array});
+                this.state.events_id.splice(idx, 1);
+            }}>
+                <FaTrashAlt/></button>
+             }
 
 
             <div id={'event'}>
@@ -53,6 +70,7 @@ class Events extends Component{
                     <FaThumbtack/>
                 </i>
 
+                {/*Show event details*/}
                 <img src={show} width="250" height="100"/>
                 <h2 style={{fontWeight: 'normal'}}>{event_id.name} - {event_id.description}</h2>
                 <h2 style={{fontWeight: 'normal'}}>{event_id.date.toDate().toLocaleDateString()}</h2>

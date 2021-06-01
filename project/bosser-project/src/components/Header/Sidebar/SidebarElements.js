@@ -4,25 +4,27 @@ import { Link as Link} from "react-router-dom";
 import {FaFacebook, FaTimes} from "react-icons/fa";
 
 export const SidebarContainer = styled.aside`
-  display: none;
+display: none;
   
-  
+
   @media screen and (max-width:1250px){
-    position: ${({ipOpen}) => (ipOpen ? 'fixed' : 'absolute') };
-    cursor: pointer;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    background: #0d0d0d;
-    display:inline-block;
-    text-align: center;
-    align-items: center;
-    top: 0;
-    left: 0 ;
-    transition: 0.3s ease-in-out;
-    opacity: ${({ipOpen}) => (ipOpen ? '100%' : '0') };
-    top: ${({ipOpen }) => (ipOpen ? '0' : '-100%') };
-  
+  position: ${({ipOpen}) => (ipOpen ? 'fixed' : 'fixed')};
+  cursor: pointer;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: #0d0d0d;
+  display: grid;
+  text-align: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  transition: 0.3s ease-in-out;
+  opacity: ${({ipOpen}) => (ipOpen ? '100%' : '0')};
+  top: ${({ipOpen}) => (ipOpen ? '0' : '-90%')};
+
+
+}
 `;
 
 export const CloseIcon = styled(FaTimes)`

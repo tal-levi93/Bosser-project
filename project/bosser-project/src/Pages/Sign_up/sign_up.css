@@ -10,7 +10,7 @@
     font-size: 30px;
 }
 .box{
-    width: 20%;
+    width: 30%;
     font-size: 30px;
     height: 40px;
     border-radius: 4px;
@@ -60,4 +60,11 @@
 .button:hover span:after {
     opacity: 1;
     right: 0;
+}
+
+@media only screen and (max-width: 800px) {
+
+.box{
+    width: 70%;
+}
 }

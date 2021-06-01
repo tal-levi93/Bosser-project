@@ -37,6 +37,7 @@ export const NavContainer = styled.div`
   z-index: 1;
   width: 100%;
   padding: 0 10px;
+  
 
 `;
 export const NavItem = styled.li`
@@ -69,9 +70,9 @@ export const Bars = styled.div`
   display: none;
   
   @media screen and (max-width: 1250px) {
-    display: grid;
+    display: flex;
     color: black;
-    position: fixed;
+    position: absolute;
     top: 0;
     text-align: center;
     transform: translate(-10%, 30%);
@@ -88,7 +89,6 @@ export const NavMenu = styled.ul`
   display: flex;
   align-items: center;
   list-style: none;
-  //margin-right: -22px;
   text-align: center;
  
   @media screen and (max-width: 1250px) {

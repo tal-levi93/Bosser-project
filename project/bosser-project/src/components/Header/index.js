@@ -44,6 +44,7 @@ class Header extends Component{
 const Header = (props) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => {
+        console.log('isset');
         setIsOpen(!isOpen);
     };
 
