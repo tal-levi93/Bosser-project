@@ -1,4 +1,4 @@
-import react, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import AddImageToStorage from "../AddImageToStorage";
 // import useStorage from '../hooks/useStorage';
 import { motion } from 'framer-motion';

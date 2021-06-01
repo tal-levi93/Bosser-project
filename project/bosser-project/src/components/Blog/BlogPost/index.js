@@ -33,10 +33,15 @@ class BlogPost extends Component {
             <div className="blogPostContainer">
                 <Card>
                     <div className="blogHeader">
-                        <span className="blogCategory">{this.state.post.blogCtagory}</span>
-                        <h2 className="postTitle">{this.state.post.blogTitle}</h2>
-                        <span
-                            className='postDate'> פורסם בתאריך {this.state.post.postedOn.toDate().toDateString()} על ידי {this.state.post.author} </span>
+                        <span className="blogCategory">
+                            <p>{this.state.post.blogCtagory}</p>
+                        </span>
+                        <p className="postTitle" style={{fontWeight:'bold'}}>{this.state.post.blogTitle}</p>
+                        <span className='postDate'>
+                            <p>
+                                פורסם בתאריך {this.state.post.postedOn.toDate().toDateString()} על ידי {this.state.post.author}
+                            </p>
+                        </span>
                     </div>
 
                     <div className="postImageContainer">
@@ -44,8 +49,8 @@ class BlogPost extends Component {
                     </div>
 
                     <div className="postContent">
-                        <h3>{this.state.post.blogTitle}</h3>
-                        <p>{this.state.post.postText}</p>
+                        <p style={{fontSize:"26px", fontWeight:'bold'}}>{this.state.post.blogTitle}</p>
+                        <p  style={{fontSize:"20px"}}>{this.state.post.postText}</p>
                     </div>
                 </Card>
 
