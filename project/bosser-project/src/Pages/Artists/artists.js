@@ -29,9 +29,10 @@ class Artists extends Component{
         db.collection('artists').get().then((snapshot) => {
             snapshot.docs.forEach( doc => {
 
-                if(doc.data().IsAdmin == false)
+                if(doc.data().IsAdmin == false) {
                     artists.push(doc.data());
                     artists_id.push(doc.id);
+                }
             });
             this.setState({artists: artists});
             this.setState({artists_id: artists_id});
