@@ -1,6 +1,6 @@
 
 td{
-    color: #ffffff;
+    color: black;
 }
 
 .editDetailsInput {
@@ -38,8 +38,6 @@ td{
     background: #a9a9a9;
     cursor: pointer;
     opacity: 0.8;
-    padding: 20px 35px;
-    font-size:30px;
 }
 
 .editDetailsBtn {
@@ -55,8 +53,6 @@ td{
     background: #a9a9a9;
     cursor: pointer;
     opacity: 0.8;
-    padding: 20px 35px;
-    font-size:30px;
 }
 
 .editInfoBtn {
@@ -65,15 +61,13 @@ td{
     padding: 15px 30px;
     color: white;
     border-radius: 200px;
-    font-size:35px;
+    font-size:25px;
 }
 
 .editInfoBtn:hover {
     background: #a9a9a9;
     cursor: pointer;
     opacity: 0.8;
-    padding: 20px 35px;
-    font-size:40px;
 }
 
 .submitInfoBtn {
@@ -104,16 +98,9 @@ td{
     opacity: 0.7;
 }
 
-h1 {
-    font-size: 50px;
-    color: white;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-h2 {
+.artistInfo {
     font-size: 30px;
-    color: white;
+    color: black;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -122,9 +109,4 @@ h2 {
     display: flex;
     justify-content: center;
     text-align: center;
-}
-
-#updateTxt {
-    color: black;
-
 }

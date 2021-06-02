@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {auth, db} from '../../Firebase/firebase';
-import firebase from "firebase";
 import artistLogo from "../Artists/artistLogo.jpg";
 import UpdateProfile from "./UpdateProfile";
 import "./ArtistProfile.css";
@@ -17,6 +16,7 @@ class ArtistProfile extends Component {
             profession: "",
             age: "",
             info: "",
+            tempInfo: "",
             showEditDetails: false,
             showEditInfo: false
         }
@@ -69,9 +69,14 @@ class ArtistProfile extends Component {
     }
 
     handleInfoChange = (e) => {
-        this.setState({
-            info: e.target.value
-        });
+        if(e.target.value.length < 500) {
+            this.setState({
+                tempInfo: e.target.value
+            });
+        }
+        else {
+            console.log("info should be max 500 chars")
+        }
     }
 
    toggleEditDetails = () => {
@@ -103,8 +108,11 @@ class ArtistProfile extends Component {
 
    updateInfo = () => {
         db.collection("artists").doc(this.state.user_uid).set({
-            info: this.state.info
+            info: this.state.tempInfo
         }, {merge: true}).then(() => {
+            this.setState({
+                info: this.state.tempInfo
+            })
             console.log("Document successfully written")
         }).catch(() => {
             console.log("Error writing document")
@@ -117,30 +125,33 @@ class ArtistProfile extends Component {
 
     render() {
         return(
-            <div>
+            <div id="page" style={{flexDirection: "row"}}>
                 <div className="profile"><br/>
                     <div className="artistPhoto" id="title" style={{display: "flex", justifyContent: "center"}}>
                         <img src={artistLogo} style={{width: 130, height: 130, borderRadius: 150/2}}/>
                     </div>
                     <div className="table" style={{display: "flex", justifyContent: "center"}}>
-                        <table style={{textAlign: "center", fontSize: 40, color: "white"}}>
+                        <table style={{textAlign: "center", fontSize: 40, color: "black"}}>
                             <tbody>
                                 <tr>
                                     <td>שם: {this.state.full_name}  </td>
                                     <td>{this.props.IsLoggedIn && this.state.showEditDetails && (
-                                        <input className="editDetailsInput" onChange={this.handleNameChange} defaultValue={this.state.full_name} autoFocus={true}/>
+                                        <input className="editDetailsInput" onChange={this.handleNameChange}
+                                               defaultValue={this.state.full_name} autoFocus={true}/>
                                     )}</td>
                                 </tr>
                                 <tr>
                                     <td>מקצוע: {this.state.profession}</td>
                                     <td>{this.props.IsLoggedIn && this.state.showEditDetails && (
-                                        <input className="editDetailsInput" onChange={this.handleProfChange} defaultValue={this.state.profession}/>
+                                        <input className="editDetailsInput" onChange={this.handleProfChange}
+                                               defaultValue={this.state.profession}/>
                                     )}</td>
                                 </tr>
                                 <tr>
                                     <td>גיל: {this.state.age}</td>
                                     <td>{this.props.IsLoggedIn && this.state.showEditDetails && (
-                                        <input className="editDetailsInput" onChange={this.handleAgeChange} defaultValue={this.state.age}/>
+                                        <input className="editDetailsInput" onChange={this.handleAgeChange}
+                                               defaultValue={this.state.age}/>
                                     )}</td>
                                 </tr>
                                 <tr>
@@ -158,18 +169,21 @@ class ArtistProfile extends Component {
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                    </div><br/><br/><br/><br/>
 
-                    <div style={{display: "inline-flex", width: "250", height: "auto", padding: 30}}>
-                        <h2>על האמן: {this.state.info}</h2>
+                    <div style={{flexShrink: 1, width: "auto", height: "auto", padding: 30}}>
+                        <p className="artistInfo" style={{flexShrink: 1}}>
+                            <h1 style={{color: "black"}}>על האמן: </h1>
+                            {this.state.info}
+                        </p>
                     </div>
                     {this.props.IsLoggedIn && (
                         <button className="editInfoBtn" onClick={this.toggleEditInfo}>ערוך מידע אישי</button>
                     )}
                     {this.state.showEditInfo && (
                         <div>
-                            <TextareaAutosize onChange={this.handleInfoChange} defaultValue={this.state.info} autoFocus={true} cols={200}
-                                              style={{fontSize: 50,width:'600px',marginRight:'100px',height:'300px'}}/>
+                            <TextareaAutosize onChange={this.handleInfoChange} defaultValue={this.state.info} autoFocus={true}
+                                              cols={200} style={{fontSize: 50,width:'600px',marginRight:'100px',height:'300px'}}/>
                             <br/>
                             <button className="submitInfoBtn" onClick={this.updateInfo}>אישור</button>
                             <button className="cancelInfoBtn" onClick={this.toggleEditInfo}>ביטול</button>
