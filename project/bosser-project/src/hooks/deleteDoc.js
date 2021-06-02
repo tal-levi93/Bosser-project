@@ -5,7 +5,7 @@ import useFirestore from "./useFirestore";
 const deleteDoc = (img , collection) =>{
 
 
-    console.log(img)
+    console.log('id:',img)
          firebase.firestore()
         .collection(collection)
         .doc(img).delete()

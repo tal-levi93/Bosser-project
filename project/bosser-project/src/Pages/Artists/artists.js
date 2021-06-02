@@ -29,11 +29,14 @@ class Artists extends Component{
         db.collection('artists').get().then((snapshot) => {
             snapshot.docs.forEach( doc => {
 
-                if(doc.data().IsAdmin == false)
+                if(doc.data().IsAdmin == false) {
                     artists.push(doc.data());
                     artists_id.push(doc.id);
+                }
+
             });
             this.setState({artists: artists});
+            this.setState({artists_id: artists_id});
         })
     }
 
@@ -45,6 +48,8 @@ class Artists extends Component{
                     {this.props.UserDetails.IsAdmin &&
                     // Delete course from courses array and update in Firebase
                     <button id={'delete'} style={{color: 'white'}} onClick={() => {
+                        console.log('artist:',this.state.artists[idx])
+                        console.log('artist_id:',this.state.artists_id[idx])
                         deleteDoc(this.state.artists_id[idx], 'artists');
                         let array = this.state.artists;
                         array.splice(idx, 1);
@@ -92,25 +97,6 @@ class Artists extends Component{
 
 
             </div>
-            {/*<div style={ {color: '#bab9b9' ,border: '3px solid #bab9b9', padding: '10px', margin: '14px', textAlign:'center', width: '24rem'} }>*/}
-            {/*<div style={ {color: '#bab9b9', padding: '10px', margin: '14px', textAlign:'center', width: '24rem'} }>*/}
-            {/*    <div style={ {position: "fixed", justifyContent: "center", alignItems: "center"} }>*/}
-            {/*        /!*<img src={artistLogo} width="250" height="100"/>*!/*/}
-            {/*        <ReactRoundedImage*/}
-            {/*            image={artistLogo}*/}
-            {/*            roundedColor="#66A5CC"*/}
-            {/*            imageWidth="150"*/}
-            {/*            imageHeight="150"*/}
-            {/*            roundedSize="13"*/}
-            {/*            borderRadius="150"*/}
-            {/*            hoverColor="#DD1144"*/}
-            {/*        />*/}
-            {/*        <br/>*/}
-            {/*        <h3 style={ { color:'white'} }>{artist_id.full_name}</h3>*/}
-            {/*        <br/>*/}
-            {/*        /!*<Button id={'enterArtistButton'} style={ { color:'black' , border: '3px solid white' , background:'#c3c3c3'} }>כניסה לעמוד אמן</Button>*!/*/}
-            {/*    </div>*/}
-            {/*</div>*/}
         </div>)
 
     }
