@@ -24,6 +24,7 @@ import Index from "./Pages";
 import sign_up from "./Pages/Sign_up/sign_up";
 import firebase from "firebase";
 import ArtistProfile from "./Pages/ArtistProfile/ArtistProfile";
+import ArtistPage from "./components/Artists/ArtistPage";
 
 
 
@@ -50,7 +51,6 @@ class App extends Component{
                   const curr_user = await db.collection('artists').doc(user.uid)
                   curr_user.get().then((res)=>{
                     let data = res.data()
-                    console.log("data is " , data)
                     if(res.exists){
                       this.setState({
                         UserLog:true,
@@ -122,6 +122,7 @@ class App extends Component{
                   <Route exact path="/blog" render={(props) => (
                       <Blog UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
                   )} />
+                  <Route exact path="/artists/:userid" component={ArtistPage}/>
                   <Route exact path="/gallery" render={(props) => (
                       <Gallery UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>)} />
                   <Route exact path="/courses" render={(props) => (

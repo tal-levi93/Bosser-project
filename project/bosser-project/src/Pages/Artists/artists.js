@@ -33,7 +33,10 @@ class Artists extends Component{
                     artists.push(doc.data());
                     artists_id.push(doc.id);
             });
-            this.setState({artists: artists});
+            this.setState({
+                artists: artists,
+                artists_id:artists_id
+            });
         })
     }
 
@@ -81,17 +84,17 @@ class Artists extends Component{
 
     create_artist(artist_id, idx) {
         let url = artistLogo
+        console.log("the stats is : " , this.state)
         if(artist_id.photo ){ url = artist_id.photo }
         return (<div className={'artist'} key={idx}>
             {this.admin_is_logged_in(artist_id, idx)}
+            <a href={"/artists/" + this.state.artists_id[idx] } style={{ textDecoration: 'none' }} >
             <div id={'artist_container'}>
                 <img id={'photo'} src={url} />
                 <div id={'a_name'} >{artist_id.full_name}</div>
                 <div id={'prof'}>{artist_id.profession}</div>
-
-
-
             </div>
+            </a>
             {/*<div style={ {color: '#bab9b9' ,border: '3px solid #bab9b9', padding: '10px', margin: '14px', textAlign:'center', width: '24rem'} }>*/}
             {/*<div style={ {color: '#bab9b9', padding: '10px', margin: '14px', textAlign:'center', width: '24rem'} }>*/}
             {/*    <div style={ {position: "fixed", justifyContent: "center", alignItems: "center"} }>*/}

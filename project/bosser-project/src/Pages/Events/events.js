@@ -35,7 +35,7 @@ class Events extends Component {
 
     SignUpForEvent(idx) {
         let eventRef
-        if (window.confirm('האם אתה בטוח שהנך רוצה להירשם לקורס זה?')) {
+        if (window.confirm('האם אתה בטוח שהנך רוצה להירשם לאירוע זה?')) {
             db.collection("events").doc(this.state.events_id[idx]).update({
                 participants: [this.props.UserDetails]
             })
@@ -44,7 +44,7 @@ class Events extends Component {
 
     cancel_reg(idx , event_id){
         console.log(event_id)
-        if (window.confirm('האם אתה בטוח שהנך רוצה לבטל רישום לקורס זה?')) {
+        if (window.confirm('האם אתה בטוח שהנך רוצה לבטל רישום לאירוע זה?')) {
             let event = db.collection("events").doc(event_id).get().then((r)=>{
                 //need to cancel registeration
             })
