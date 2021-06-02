@@ -89,4 +89,20 @@
     #page{
         margin-top: -100px;
     }
+
+    #a_name{
+        font-size: 30px;
+    }
+
+    .artist{
+        width: 80%;
+
+    }
+
+    #photo{
+        margin-right: 10px;
+        width:40px;
+        height:40px;
+        border-radius:100px;
+    }
 }
