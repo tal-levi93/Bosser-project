@@ -30,8 +30,6 @@ import ArtistProfile from "./Pages/ArtistProfile/ArtistProfile";
 class App extends Component{
   constructor(props) {
     super(props);
-
-
     this.state = {
       UserLog:"",
       UserDetails:{
@@ -43,8 +41,6 @@ class App extends Component{
       }
     }
   }
-
-
   IsLoggedIn = async()=>{
     try {
       await new Promise((resolve, reject) =>
@@ -81,7 +77,6 @@ class App extends Component{
               error => reject(error)
           )
       )
-
     } catch (error) {
 
     }
@@ -92,32 +87,6 @@ class App extends Component{
       console.log( "r :: " , r)
 
     });
-    // let users = [];
-    // const db = firebase.firestore()
-
-
-  //   db.collection('artists').get().then((result)=>{
-  //     result.docs.forEach(doc=>{
-  //       users.push(doc.data());
-  //     });
-  //     let current_user_uid = firebase.auth().currentUser.uid;
-  //     console.log(current_user_uid)
-  //     users.forEach(user => {
-  //       if(user.user_uid == current_user_uid){
-  //         this.setState({
-  //           UserDetails:{
-  //             FullName:user.full_name,
-  //             Email:user.email,
-  //             UserUid:user.user_uid,
-  //             UserName:user.user_name,
-  //             IsAdmin:user.IsAdmin
-  //           }
-  //         })
-  //       }
-  //     })
-  //   }).catch(function(err){
-  //     console.log(err)
-  //   })
   }
 
   handleUserDetails = ()=>{

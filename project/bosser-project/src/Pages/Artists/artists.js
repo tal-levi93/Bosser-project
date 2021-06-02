@@ -29,11 +29,9 @@ class Artists extends Component{
         db.collection('artists').get().then((snapshot) => {
             snapshot.docs.forEach( doc => {
 
-                if(doc.data().IsAdmin == false) {
+                if(doc.data().IsAdmin == false)
                     artists.push(doc.data());
                     artists_id.push(doc.id);
-                }
-
             });
             this.setState({artists: artists});
             this.setState({artists_id: artists_id});
@@ -48,8 +46,6 @@ class Artists extends Component{
                     {this.props.UserDetails.IsAdmin &&
                     // Delete course from courses array and update in Firebase
                     <button id={'delete'} style={{color: 'white'}} onClick={() => {
-                        console.log('artist:',this.state.artists[idx])
-                        console.log('artist_id:',this.state.artists_id[idx])
                         deleteDoc(this.state.artists_id[idx], 'artists');
                         let array = this.state.artists;
                         array.splice(idx, 1);
