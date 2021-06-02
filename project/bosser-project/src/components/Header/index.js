@@ -49,8 +49,8 @@ const Header = (props) => {
 
     return (
         <div>
-            <Sidebar isOpen={isOpen} toggle={toggle}  isLoggedIn = {props.isLoggedIn} UserDetails = {props.UserDetails}/>
-            <Navbar toggle={toggle} isLoggedIn = {props.isLoggedIn} UserDetails = {props.UserDetails}/>
+            <Sidebar isOpen={isOpen} toggle={toggle}  isLoggedIn = {props.isLoggedIn} UserDetails = {props.UserDetails} ClearUserDetails = {props.ClearUserDetails}/>
+            <Navbar toggle={toggle} isLoggedIn = {props.isLoggedIn} UserDetails = {props.UserDetails} ClearUserDetails = {props.ClearUserDetails}/>
         </div>
     );
 }

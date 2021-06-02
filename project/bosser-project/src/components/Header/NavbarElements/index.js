@@ -32,15 +32,29 @@ import ReactRoundedImage from "react-rounded-image";
 class Navbar extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            LoggedIn: props.IsLoggedIn
+        }
 
     }
 
-    LogOut() {
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(this.props.isLoggedIn != prevProps.isLoggedIn){
+            this.setState({
+                LoggedIn:this.props.isLoggedIn
+            })
+        }
+    }
+
+    LogOut = ()=> {
+        this.props.ClearUserDetails()
         firebase.auth().signOut().then(() => {
             console.log("signed out success")
         }).catch((error) => {
             console.log(error)
         });
+
+
     }
 
     UserTab(){
@@ -55,7 +69,8 @@ class Navbar extends Component {
     render(padding) {
         const {toggle} = this.props.toggle
         let buildNav
-        if (this.props.isLoggedIn == true) {
+        console.log("the prop is:" ,  this.props.IsLoggedIn)
+        if (this.state.LoggedIn) {
 
             buildNav = (<Nav>
                 <NavContainer>

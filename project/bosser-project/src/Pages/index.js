@@ -55,7 +55,7 @@ const Index = (props) => {
 
     return (
         <div>
-            <Header isOpen={isOpen} toggle={toggle} isLoggedIn={props.isLoggedIn} UserDetails = {props.UserDetails}/>
+            <Header isOpen={isOpen} toggle={toggle} isLoggedIn={props.isLoggedIn} UserDetails = {props.UserDetails} ClearUserDetails = {props.ClearUserDetails}/>
             <Footer isOpen={isOpen} toggle={toggle}/>
         </div>
     )

@@ -31,8 +31,9 @@ class App extends Component{
   constructor(props) {
     super(props);
 
+
     this.state = {
-      UserLog:false,
+      UserLog:"",
       UserDetails:{
         UserName:"",
         Email:"",
@@ -44,15 +45,32 @@ class App extends Component{
   }
 
 
-
-
   IsLoggedIn = async()=>{
     try {
       await new Promise((resolve, reject) =>
           firebase.auth().onAuthStateChanged(
-              user => {
-                if (user) {
-                  this.setState({UserLog:true})
+              async (user) => {
+                if (user && user.uid) {
+                  const curr_user = await db.collection('artists').doc(user.uid)
+                  curr_user.get().then((res)=>{
+                    let data = res.data()
+                    console.log("data is " , data)
+                    if(res.exists){
+                      this.setState({
+                        UserLog:true,
+                        UserDetails:{
+                          FullName:data.full_name,
+                          Email:data.email,
+                          UserUid:data.user_uid,
+                          UserName:data.user_name,
+                          IsAdmin:data.IsAdmin
+                        }
+                      })
+                    }
+                    else{
+                      console.log("errERE!")
+                    }
+                  })
                   resolve(user)
                 } else {
                   this.setState({UserLog:false})
@@ -69,35 +87,49 @@ class App extends Component{
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.IsLoggedIn().then(r => {
+      console.log( "r :: " , r)
 
     });
-    let users = [];
-    const db = firebase.firestore()
+    // let users = [];
+    // const db = firebase.firestore()
 
 
-    db.collection('artists').get().then((result)=>{
-      result.docs.forEach(doc=>{
-        users.push(doc.data());
-      });
-      let current_user_uid = firebase.auth().currentUser.uid;
-      console.log(current_user_uid)
-      users.forEach(user => {
-        if(user.user_uid == current_user_uid){
-          this.setState({
-            UserDetails:{
-              FullName:user.full_name,
-              Email:user.email,
-              UserUid:user.user_uid,
-              UserName:user.user_name,
-              IsAdmin:user.IsAdmin
-            }
-          })
-        }
-      })
-    }).catch(function(err){
-      console.log(err)
+  //   db.collection('artists').get().then((result)=>{
+  //     result.docs.forEach(doc=>{
+  //       users.push(doc.data());
+  //     });
+  //     let current_user_uid = firebase.auth().currentUser.uid;
+  //     console.log(current_user_uid)
+  //     users.forEach(user => {
+  //       if(user.user_uid == current_user_uid){
+  //         this.setState({
+  //           UserDetails:{
+  //             FullName:user.full_name,
+  //             Email:user.email,
+  //             UserUid:user.user_uid,
+  //             UserName:user.user_name,
+  //             IsAdmin:user.IsAdmin
+  //           }
+  //         })
+  //       }
+  //     })
+  //   }).catch(function(err){
+  //     console.log(err)
+  //   })
+  }
+
+  handleUserDetails = ()=>{
+    this.setState({
+      UserLog : "",
+      UserDetails:{
+        UserName:"",
+        Email:"",
+        FullName:"",
+        UserUid:"",
+        IsAdmin:""
+      }
     })
   }
 
@@ -108,7 +140,7 @@ class App extends Component{
             <header className="App-header">
               <Router>
                 {/*{console.log(this.state.UserLog)}*/}
-                <Index isLoggedIn = {this.state.UserLog} UserDetails = {this.state.UserDetails}/>
+                <Index isLoggedIn = {this.state.UserLog} UserDetails = {this.state.UserDetails} ClearUserDetails = {this.handleUserDetails}/>
                 <Switch >
                   <Route exact path="/" component={Home} />
                   <Route exact path="/login" component={Login} />
