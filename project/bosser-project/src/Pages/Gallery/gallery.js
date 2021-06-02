@@ -8,7 +8,7 @@ import Modal from "../../components/GalleryImages/Modal";
 import './gallery.css'
 import {FaSearch} from "react-icons/fa";
 
-function Gallery(){
+const Gallery=(props) => {
 
 // class Gallery extends Component{
 
@@ -17,9 +17,10 @@ function Gallery(){
     //     super(props);
     //
     // }
-    // render() {
+    //     {console.log('this:',props.UserDetails)}
+
         const [selectedImg, setSelectedImg] = useState(null);
-        return(
+        return (
             <div>
 
                 <div id={'title'}>הגלריה שלנו</div>
@@ -27,16 +28,16 @@ function Gallery(){
                 <div id={'information'}> לחץ על תמונה להגדלה <FaSearch/></div>
 
                 {/*for Admin Only*/}
-                {/*<UploadForm />*/}
+                <UploadForm UserDetails={props.UserDetails}/>
 
-                <ImageGrid setSelectedImg={setSelectedImg} />
-                { selectedImg && (
-                    <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+                <ImageGrid setSelectedImg={setSelectedImg} UserDetails={props.UserDetails}/>
+                {selectedImg && (
+                    <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg}/>
                 )}
             </div>
         )
-    }
-// }
+
+}
 
 export default Gallery;
 

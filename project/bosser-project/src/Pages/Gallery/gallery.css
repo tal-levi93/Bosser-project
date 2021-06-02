@@ -85,7 +85,7 @@
 /* modal styles */
 .backdrop{
     position: fixed;
-    top: 18%;
+    top:10%;
     left: 0;
     width: 100%;
     height: 100%;
@@ -98,11 +98,13 @@
     margin: 0px auto auto auto;
     box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
     border: 5px solid white;
+
 }
+
 
 #close {
 
-    margin: auto 48% 0 52%;
+    margin: 4% 48% 0 52%;
     color: white;
     font-size: 40px;
     text-align: center;
@@ -124,7 +126,7 @@
     font-size: 30px;
 }
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 1000px) {
 
     .img-grid{
         grid-template-columns: 1fr 1fr 1fr;
@@ -144,8 +146,7 @@
     }
 
     #close {
-
-        margin: 9% 48% 0 52%;
+        margin: 60% 48% 0 52%;
         font-size: 20px;
 
     }
@@ -153,9 +154,7 @@
     #close:hover{
         opacity: 1;
         font-size: 30px;
-
     }
-
 
 }
 
@@ -182,5 +181,29 @@
 #delete:hover{
     opacity: 1;
     font-size: 30px;
+
+}
+
+/*Ipad*/
+@media screen and (device-width:768px) and (device-height:1024px) {
+
+    #close {
+        margin: 30% 48% 0 52%;
+        font-size: 20px;
+
+    }
+
+
+}
+
+/*Surface*/
+@media screen and (device-width:540px) and (device-height:720px) {
+
+    #close {
+        margin: 30% 48% 0 52%;
+        font-size: 20px;
+
+    }
+
 
 }

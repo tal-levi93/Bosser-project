@@ -20,9 +20,14 @@ display: none;
   left: 0;
   transition: 0.3s ease-in-out;
   opacity: ${({ipOpen}) => (ipOpen ? '100%' : '0')};
-  top: ${({ipOpen}) => (ipOpen ? '0' : '-90%')};
+  top: ${({ipOpen}) => (ipOpen ? '0' : '-93%')};
 
 
+    @media screen and (device-width:375px) and (device-height:667px) {
+      top: ${({ipOpen}) => (ipOpen ? '0' : '-100%')};
+      
+    }
+    
 }
 `;
 
