@@ -2,6 +2,46 @@
 td{
     color: #ffffff;
 }
+
+.editDetailsInput {
+    font-size: 20px;
+}
+
+.submitDetailsBtn {
+    background: #34a935;
+    padding: 15px 30px;
+    color: white;
+    border-radius: 200px;
+    font-size:35px;
+}
+
+.submitDetailsBtn:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.cancelDetailsBtn {
+    margin: 20px;
+    background: #f65e5e;
+    padding: 15px 30px;
+    color: white;
+    border-radius: 200px;
+    font-size:35px;
+}
+
+.cancelDetailsBtn:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.editDetailsBtn:hover {
+    background: #a9a9a9;
+    cursor: pointer;
+    opacity: 0.8;
+    padding: 20px 35px;
+    font-size:30px;
+}
+
 .editDetailsBtn {
     margin: 10px;
     background: #6e6d6d;
