@@ -35,10 +35,39 @@ class Events extends Component {
 
     SignUpForEvent(idx) {
         let eventRef
-        if (window.confirm('האם אתה בטוח שהנך רוצה להירשם לקורס זה?')) {
+        if (window.confirm('האם אתה בטוח שהנך רוצה להירשם לאירוע זה?')) {
             db.collection("events").doc(this.state.events_id[idx]).update({
                 participants: [this.props.UserDetails]
             })
+        }
+    }
+
+    cancel_reg(idx , event_id){
+        console.log(event_id)
+        if (window.confirm('האם אתה בטוח שהנך רוצה לבטל רישום לאירוע זה?')) {
+            let event = db.collection("events").doc(event_id).get().then((r)=>{
+                //need to cancel registeration
+            })
+
+
+        }
+    }
+
+    btn_switch(event_id , idx){
+        let events = this.state.events
+        let signed_in = false;
+        let curr_participants = events[idx].participants
+        curr_participants.forEach( (participant) => {
+            console.log("the par useruid is: " , participant.UserUid , "and the curr user is: " , this.props.UserDetails.UserUid)
+            if(participant.UserUid === this.props.UserDetails.UserUid){
+                signed_in = true;
+            }
+        })
+        if(signed_in){
+            return (<button className={'e_btn'} onClick={() => this.cancel_reg(idx)}>בטל רישום</button>)
+        }
+        else{
+            return (<button className={'e_btn'} onClick={() => this.SignUpForEvent(idx, event_id)}>רישום לאירוע</button>)
         }
     }
 
@@ -55,7 +84,8 @@ class Events extends Component {
                 <img src={show} width="250" height="100"/>
                 <h2 style={{fontWeight: 'normal', color:'black'}}>{event_id.name} - {event_id.description}</h2>
                 <h2 style={{fontWeight: 'normal', color:'black'}}>{event_id.date.toDate().toLocaleDateString()}</h2>
-                <button className={'e_btn'} onClick={() => this.SignUpForEvent(idx)}>רישום לאירוע</button>
+                {this.btn_switch(event_id,idx)}
+                {/*<button className={'e_btn'} onClick={() => this.SignUpForEvent(idx)}>רישום לאירוע</button>*/}
             </div>
         </div>)
 
@@ -107,6 +137,7 @@ class Events extends Component {
     render() {
 
         let BuildEvents;
+
 
         if(!this.props.UserDetails){return (<div></div>)}
 

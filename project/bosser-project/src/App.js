@@ -24,14 +24,13 @@ import Index from "./Pages";
 import sign_up from "./Pages/Sign_up/sign_up";
 import firebase from "firebase";
 import ArtistProfile from "./Pages/ArtistProfile/ArtistProfile";
+import ArtistPage from "./components/Artists/ArtistPage";
 
 
 
 class App extends Component{
   constructor(props) {
     super(props);
-
-
     this.state = {
       UserLog:"",
       UserDetails:{
@@ -43,8 +42,6 @@ class App extends Component{
       }
     }
   }
-
-
   IsLoggedIn = async()=>{
     try {
       await new Promise((resolve, reject) =>
@@ -54,7 +51,6 @@ class App extends Component{
                   const curr_user = await db.collection('artists').doc(user.uid)
                   curr_user.get().then((res)=>{
                     let data = res.data()
-                    console.log("data is " , data)
                     if(res.exists){
                       this.setState({
                         UserLog:true,
@@ -81,7 +77,6 @@ class App extends Component{
               error => reject(error)
           )
       )
-
     } catch (error) {
 
     }
@@ -92,32 +87,6 @@ class App extends Component{
       console.log( "r :: " , r)
 
     });
-    // let users = [];
-    // const db = firebase.firestore()
-
-
-  //   db.collection('artists').get().then((result)=>{
-  //     result.docs.forEach(doc=>{
-  //       users.push(doc.data());
-  //     });
-  //     let current_user_uid = firebase.auth().currentUser.uid;
-  //     console.log(current_user_uid)
-  //     users.forEach(user => {
-  //       if(user.user_uid == current_user_uid){
-  //         this.setState({
-  //           UserDetails:{
-  //             FullName:user.full_name,
-  //             Email:user.email,
-  //             UserUid:user.user_uid,
-  //             UserName:user.user_name,
-  //             IsAdmin:user.IsAdmin
-  //           }
-  //         })
-  //       }
-  //     })
-  //   }).catch(function(err){
-  //     console.log(err)
-  //   })
   }
 
   handleUserDetails = ()=>{
@@ -156,6 +125,7 @@ class App extends Component{
                   <Route exact path="/manageBlog" render={(props) => (
                       <ManageBlog UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
                   )} />
+                  <Route exact path="/artists/:userid" component={ArtistPage}/>
                   <Route exact path="/gallery" render={(props) => (
                       <Gallery UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>)} />
                   <Route exact path="/courses" render={(props) => (
