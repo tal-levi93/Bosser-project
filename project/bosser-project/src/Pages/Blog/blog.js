@@ -8,6 +8,8 @@ import './stype.css'
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import blogImage from "../../blogImages/profileImage.jpg";
 import RecentPost from "../../components/Blog/recentPost";
+import deleteDoc from "../../hooks/deleteDoc";
+import {FaTrashAlt} from "react-icons/fa";
 
 const SideImage = props => {
     return (
@@ -23,6 +25,7 @@ const SideImage = props => {
         </Card>
     )
 }
+
 
 class Blog extends Component{
 
@@ -48,6 +51,9 @@ class Blog extends Component{
             this.setState({loader: true})
         });
     }
+
+
+
     render() {
         if (!this.state.loader) { return (<div></div>)}
         const galleryHeight =450;
@@ -63,25 +69,24 @@ class Blog extends Component{
                 {/*<BlogHeader/>
                 <Hero/>*/}
                 <div>
+                    {
+                        this.state.posts.map((post, index ) => {
+                            if(post.isVerified == false) {
+                                this.state.posts.splice(index, 1);
+                                this.state.postIds.splice(index, 1);
+                            }
+                        })
+                    }
                     <Card style={{margin: '20px 0'}}>
                         <div className="GalleryPost" style={galleryStyle}>
                             <Card style={{width:'70%', height:"450px",textAlign:'center', display:'block' , objectFit:'cover'}}>
+
                                 <img src={this.state.posts[0].image} style={{width:'95%',height:'87%'}}/>
                                 <p style={{fontSize:'24px', fontWeight:'bold'}}>{this.state.posts[0].blogTitle}</p>
                                 <a  href={"/blog/post/" + this.state.postIds[0]}>
                                     <p style={{fontWeight:'bold'}}>לחץ לקריאה</p>
                                 </a>
                             </Card>
-                            {/*
-                            <section style={{width:'70%'}}>
-                                <div className="mainImageWrapper">
-                                    <img src={this.state.posts[0].image} style={{width:'100%', padding:'3px 3px'}}/>
-                                    <a  href={"/blog/post/" + this.state.postIds[0]}>
-                                        {this.state.posts[0].blogTitle}
-                                    </a>
-                                </div>
-                            </section>
-                            */}
                             <section className="sideImageWrapper" style={{width:'30%'}}>
                                 < SideImage
                                     height={sideImageHeight}
@@ -104,9 +109,16 @@ class Blog extends Component{
                     </Card>
 
                     <section className="BlogPageContainer">
+
                         <div style={{width:'100%'} }>
-                            <RecentPost style={{width:'100%', padding:'3px 3px'}} post={this.state.posts[4]} id={this.state.postIds[4]}/>
-                            <RecentPost style={{width:'100%' , padding:'3px 3px'}} post={this.state.posts[5]} id={this.state.postIds[5]}/>
+                            {
+                                this.state.posts.map((postObj, index) => {
+                                    {if(index<4) {return <div key={index}></div>}}
+                                    return(
+                                        <RecentPost key={index} style={{width:'100%', padding:'3px 3px'}} post={postObj} id={this.state.postIds[index]}/>
+                                    )
+                                },)
+                            }
                         </div>
                         <Sidebar IsLoggedIn = {this.props.IsLoggedIn}/>
                     </section>

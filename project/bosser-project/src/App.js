@@ -13,7 +13,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Login from "./Pages/Login/login";
 import CreatePost from "./Pages/CreatePost"
 import SignUpForEvent from "./Pages/SignUpForEvent"
-
+import ManageBlog from "./Pages/ManageBlog"
 import Navbar from "./components/Header/NavbarElements";
 
 
@@ -152,6 +152,9 @@ class App extends Component{
                   )} />
                   <Route exact path="/blog" render={(props) => (
                       <Blog UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
+                  )} />
+                  <Route exact path="/manageBlog" render={(props) => (
+                      <ManageBlog UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
                   )} />
                   <Route exact path="/gallery" render={(props) => (
                       <Gallery UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>)} />

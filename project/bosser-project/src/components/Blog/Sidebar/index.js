@@ -50,6 +50,7 @@ class Sidebar extends Component {
                         <div className="recentPosts">
                             {
                                 this.state.posts.map((post, index) => {
+                                    if (post.isVerified == false) {return <div></div>}
                                     return (
                                         <a key={index} href={"/blog/post/" + this.state.postIds[index]}>
                                             <div className="recentPost">
@@ -76,6 +77,7 @@ class Sidebar extends Component {
                         <div className="recentPosts">
                             {
                                 this.state.posts.map((post, index) => {
+                                    if (post.isVerified == false) {return <div></div>}
                                     return (
                                         <a key={index} href={"/blog/post/" + this.state.postIds[index]}>
                                             <div className="recentPost">

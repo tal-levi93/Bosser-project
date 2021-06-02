@@ -20,7 +20,7 @@ class CreatePost extends Component{
             author: "",
             image:"",
             url:"",
-            user_uid:""
+            isVerified: false
         }
     }
 
@@ -43,7 +43,8 @@ class CreatePost extends Component{
             postText: this.state.postText,
             postedOn: this.state.postedOn,
             author: this.props.UserDetails.FullName,
-            image: this.state.url
+            image: this.state.url,
+            isVerified: this.state.isVerified
         }
         await postsRef.add(post).then(res => {
 
@@ -53,15 +54,14 @@ class CreatePost extends Component{
                     postText:"",
                     postedOn: new Date(),
                     author:this.props.UserDetails.FullName,
-                    image:""
+                    image:"",
+                    isVerified: false
                 })
             this.props.history.push('/blog')
             }).catch(err=>{
             alert(err)
         })
     }
-
-
 
     handleUrl = (file_url)=>{
         this.setState({
