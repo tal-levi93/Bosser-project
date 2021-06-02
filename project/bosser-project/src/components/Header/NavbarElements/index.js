@@ -11,6 +11,8 @@ import ArtistProfile from "../../../Pages/ArtistProfile/ArtistProfile";
 import {FaFacebookF, FaUserFriends, FaImages, FaNewspaper, FaHome, FaBars} from 'react-icons/fa';
 import { GoMortarBoard , GoCalendar } from "react-icons/go";
 import { AiOutlineUserAdd } from "react-icons/ai";
+import { FaRegEdit } from "react-icons/fa";
+
 import {
     Nav,
     NavContainer,
@@ -71,15 +73,7 @@ class Navbar extends Component {
                     <NavBtn>
                         {this.UserTab()}
                         <NavLink to="/ArtistProfile">
-                            <ReactRoundedImage
-                                image={artistLogo}
-                                roundedColor="#66A5CC"
-                                imageWidth="100"
-                                imageHeight="100"
-                                roundedSize="13"
-                                borderRadius="150"
-                                hoverColor="#DD1144"
-                            />
+                            <FaRegEdit/>
                         </NavLink>
 
                         <FNavBtnLink href='https://www.facebook.com/bosserco/'><FaFacebookF/> </FNavBtnLink>

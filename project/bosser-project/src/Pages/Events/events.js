@@ -4,10 +4,11 @@ import eventLogo from "./eventLogo.jpg";
 import show from './show.png';
 import {Button} from "@material-ui/core";
 import './events.css';
-import { FaThumbtack } from "react-icons/fa";
+import {FaThumbtack, FaTrashAlt} from "react-icons/fa";
 import firebase from "firebase"
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import SignUpForEvent from "../SignUpForEvent";
+import deleteDoc from "../../hooks/deleteDoc";
 
 class Events extends Component {
 
@@ -41,18 +42,19 @@ class Events extends Component {
         }
     }
 
+
     create_event_logged_in(event_id, idx) {
+
         return (<div key={idx}>
-
-
+            {this.admin_is_logged_in(event_id, idx)}
             <div id={'event'}>
                 <i>
                     <FaThumbtack/>
                 </i>
 
                 <img src={show} width="250" height="100"/>
-                <h2 style={{fontWeight: 'normal'}}>{event_id.name} - {event_id.description}</h2>
-                <h2 style={{fontWeight: 'normal'}}>{event_id.date.toDate().toLocaleDateString()}</h2>
+                <h2 style={{fontWeight: 'normal', color:'black'}}>{event_id.name} - {event_id.description}</h2>
+                <h2 style={{fontWeight: 'normal', color:'black'}}>{event_id.date.toDate().toLocaleDateString()}</h2>
                 <button className={'e_btn'} onClick={() => this.SignUpForEvent(idx)}>רישום לאירוע</button>
             </div>
         </div>)
@@ -68,8 +70,8 @@ class Events extends Component {
                 </i>
 
                 <img src={show} width="250" height="100"/>
-                <h2 style={{fontWeight: 'normal'}}>{event_id.name} - {event_id.description}</h2>
-                <h2 style={{fontWeight: 'normal'}}>{event_id.date.toDate().toLocaleDateString()}</h2>
+                <h2 style={{fontWeight: 'normal', color:'black'}}>{event_id.name} - {event_id.description}</h2>
+                <h2 style={{fontWeight: 'normal', color:'black'}}>{event_id.date.toDate().toLocaleDateString()}</h2>
                 <Link to={{pathname: "/events/signUpEvent", state: {events_id: this.state.events_id},}}
                       className={'e_btn'}>רישום לאירוע</Link>
 
@@ -78,9 +80,35 @@ class Events extends Component {
 
     }
 
+    admin_is_logged_in(event_id, idx) {
+        if (this.props.UserDetails.IsAdmin) {
+            return (
+                <div key={idx}>
+                    {this.props.UserDetails.IsAdmin &&
+                    // Delete course from courses array and update in Firebase
+                    <button id={'delete'} style={{color: 'white'}} onClick={() => {
+                        deleteDoc(this.state.events_id[idx], 'events');
+                        let array = this.state.events;
+                        array.splice(idx, 1);
+                        this.setState({events: array});
+                        this.state.events_id.splice(idx, 1);
+                    }}>
+                        <FaTrashAlt/></button>
+                    }
+                </div>
+
+            )
+        }
+
+        return <div></div>
+
+    }
+
     render() {
 
         let BuildEvents;
+
+        if(!this.props.UserDetails){return (<div></div>)}
 
         if (this.props.IsLoggedIn == true) {
             BuildEvents = (

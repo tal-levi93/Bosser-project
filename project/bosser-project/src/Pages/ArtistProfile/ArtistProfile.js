@@ -86,19 +86,19 @@ class ArtistProfile extends Component {
                         <table style={{textAlign: "center", fontSize: 40, color: "white"}}>
                             <tbody>
                             <tr>
-                                <td><h1>{this.state.full_name}</h1></td>
+                                <td>שם: {this.state.full_name}  </td>
                                 <td>{this.props.IsLoggedIn && (
                                         <button className="editDetailsBtn">ערוך שם</button>
                                     )}</td>
                             </tr>
                             <tr>
-                                <td><h1>מקצוע: {this.state.profession}</h1></td>
+                                <td>מקצוע: {this.state.profession}</td>
                                 <td>{this.props.IsLoggedIn && (
                                     <button className="editDetailsBtn">ערוך מקצוע</button>
                                 )}</td>
                             </tr>
                             <tr>
-                                <td><h1>גיל: {this.state.age}</h1></td>
+                                <td>גיל: {this.state.age}</td>
                                 <td>{this.props.IsLoggedIn && (
                                     <button className="editDetailsBtn">ערוך גיל</button>
                                 )}</td>
@@ -106,7 +106,7 @@ class ArtistProfile extends Component {
                             </tbody>
                         </table>
                     </div>
-                    <br/><br/><br/><br/><br/><br/>
+
                     <div style={{display: "inline-flex", width: "250", height: "auto", padding: 30}}>
                         <h2>על האמן: {this.state.info}</h2>
                     </div>
@@ -115,7 +115,7 @@ class ArtistProfile extends Component {
                     )}
                     {this.state.showEditInfo && (
                         <div>
-                            <TextareaAutosize onChange={this.handleChange} defaultValue={this.state.info} cols={200} style={{fontSize: 25}}/>
+                            <TextareaAutosize onChange={this.handleChange} defaultValue={this.state.info} cols={200} style={{fontSize: 50,width:'600px',marginRight:'100px',height:'300px'}}/>
                             <br/>
                             <button className="submitInfoBtn" onClick={this.updateInfo}>אישור</button>
                             <button className="cancelInfoBtn" onClick={this.toggleShowInfo}>ביטול</button>

@@ -22,19 +22,38 @@ class Courses extends Component {
         db.collection('courses').get().then((result) => {
             result.docs.forEach(doc => {
                 courses.push(doc.data());
-
-
                 courses_id.push(doc.id);
 
             });
             this.setState({courses: courses});
-
             this.setState({courses_id: courses_id});
         });
     }
 
+    admin_is_logged_in(course,index){
+        return(
+            <div key={index}>
+            {this.props.UserDetails.IsAdmin &&
+
+            // Delete course from courses array and update in Firebase
+            <button  id={'delete'} style={{color:'white'}} onClick={() =>
+        {
+            deleteDoc(this.state.courses_id[index],'courses');
+            let array = this.state.courses;
+            array.splice(index,1);
+            this.setState({courses : array});
+            this.state.courses_id.splice(index,1);
+        }}>
+            <FaTrashAlt/></button>
+            }
+            </div>
+        )
+    }
+
+
     render() {
-        if(!this.state.courses_id == undefined){return (<div></div>)}
+        if(!this.state.courses_id == undefined || !this.props.UserDetails){return (<div></div>)}
+
 
         return(
             <div>
@@ -54,16 +73,7 @@ class Courses extends Component {
         return (
             <div key={course_id.name}>
 
-                {/*Delete course from courses array and update in Firebase*/}
-                <button  id={'delete'} style={{color:'white'}} onClick={() =>
-                {
-                    deleteDoc(this.state.courses_id[index],'courses');
-                    let array = this.state.courses;
-                    array.splice(index,1);
-                    this.setState({courses : array});
-                    this.state.courses_id.splice(index,1);
-                }}>
-                    <FaTrashAlt/></button>
+                {this.admin_is_logged_in(course_id,index)}
 
                 {/*Show course details*/}
                 <div id={"course"}>

@@ -1,58 +1,67 @@
 
+td{
+    color: #ffffff;
+}
 .editDetailsBtn {
     margin: 10px;
-    background: #87b6fc;
-    padding: 10px 10px;
-    color: black;
+    background: #6e6d6d;
+    padding: 15px 30px;
+    color: white;
     border-radius: 200px;
-    font-size:20px;
+    font-size:25px;
 }
 
 .editDetailsBtn:hover {
-    background: #5a99ee;
+    background: #a9a9a9;
     cursor: pointer;
+    opacity: 0.8;
+    padding: 20px 35px;
+    font-size:30px;
 }
 
 .editInfoBtn {
     margin: 10px;
-    background: #87b6fc;
-    padding: 10px 10px;
-    color: black;
+    background: #6e6d6d;
+    padding: 15px 30px;
+    color: white;
     border-radius: 200px;
     font-size:35px;
 }
 
 .editInfoBtn:hover {
-    background: #5a99ee;
+    background: #a9a9a9;
     cursor: pointer;
+    opacity: 0.8;
+    padding: 20px 35px;
+    font-size:40px;
 }
 
 .submitInfoBtn {
-    margin: 10px;
-    background: #87FC89;
-    padding: 10px 10px;
-    color: black;
+    margin-right: 120px;
+    background: #34a935;
+    padding: 15px 30px;
+    color: white;
     border-radius: 200px;
     font-size:35px;
 }
 
 .submitInfoBtn:hover {
-    background: #62C864;
     cursor: pointer;
+    opacity: 0.7;
 }
 
 .cancelInfoBtn {
-    margin: 10px;
-    background: #FC8787;
-    padding: 10px 10px;
-    color: black;
+    margin: 20px;
+    background: #f65e5e;
+    padding: 15px 30px;
+    color: white;
     border-radius: 200px;
     font-size:35px;
 }
 
 .cancelInfoBtn:hover {
-    background: #C86767;
     cursor: pointer;
+    opacity: 0.7;
 }
 
 h1 {
@@ -77,4 +86,5 @@ h2 {
 
 #updateTxt {
     color: black;
+
 }

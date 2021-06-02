@@ -6,7 +6,6 @@ import {FaFacebook, FaTimes} from "react-icons/fa";
 export const SidebarContainer = styled.aside`
 display: none;
   
-
   @media screen and (max-width:1250px){
   position: ${({ipOpen}) => (ipOpen ? 'fixed' : 'fixed')};
   cursor: pointer;

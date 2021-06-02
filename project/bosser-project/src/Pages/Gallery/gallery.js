@@ -27,7 +27,7 @@ function Gallery(){
                 <div id={'information'}> לחץ על תמונה להגדלה <FaSearch/></div>
 
                 {/*for Admin Only*/}
-                <UploadForm />
+                {/*<UploadForm />*/}
 
                 <ImageGrid setSelectedImg={setSelectedImg} />
                 { selectedImg && (

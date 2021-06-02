@@ -11,6 +11,17 @@ import { FaTrashAlt } from "react-icons/fa";
 const ImageGrid = ({ setSelectedImg }) => {
     const { docs } = useFirestore('gallery');
 
+    // const admin_is_logged_in =(doc)=>{
+    //     if(this.props.UserDetails.IsAdmin)
+    //         return(
+    //         <button  id={'delete'} style={{color:'white'}} onClick={() => { deleteDoc(doc,'gallery')}} >
+    //             <FaTrashAlt/></button>
+    //         )
+    //     return (<div></div>)
+    //
+    //         }
+
+
     return (
 
 
@@ -19,9 +30,11 @@ const ImageGrid = ({ setSelectedImg }) => {
             {docs && docs.map(doc => (
                 <div key={doc.id}>
 
-                    {/*For admin only*/}
-                <button  id={'delete'} style={{color:'white'}} onClick={() => { deleteDoc(doc,'gallery')}} >
-                    <FaTrashAlt/></button>
+                    {/*{admin_is_logged_in(doc)}*/}
+
+                {/*    /!*For admin only*!/*/}
+                {/*<button  id={'delete'} style={{color:'white'}} onClick={() => { deleteDoc(doc,'gallery')}} >*/}
+                {/*    <FaTrashAlt/></button>*/}
 
                 <motion.div className="img-wrap" key={doc.id}
                             layout

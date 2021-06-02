@@ -4,15 +4,16 @@ import {Link as LinkR} from 'react-router-dom'
 
 
 export const Nav = styled.nav`
+  position: fixed;
   cursor: pointer;
   background: white;
+  width: 100%;
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 50px;
   color: black;
-  position: sticky;
   top:0;
   z-index: 10;
   
@@ -52,6 +53,7 @@ export const NavLink = styled(LinkR)`
   text-decoration:none;
   padding: 10px 10px;
   height: 100%;
+  margin: 10px;
   cursor: pointer;
   
   &.active {
@@ -101,6 +103,7 @@ export const NavBtn = styled.nav`
   align-items: center;
   float: right;
   padding: 0 5px;
+  margin: 10px;
   
   @media screen and (max-width: 1250px) {
     display: none;
@@ -118,7 +121,7 @@ export const NavBtnLink = styled(Link)`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  margin: 18px;
+  margin: 50px;
 
   &:hover {
     transition: all 0.2s ease-in-out;
@@ -139,6 +142,7 @@ export const FNavBtnLink = styled.a`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
+  margin: 20px;
   
   &:hover {
     transition: all 0.2s ease-in-out;
@@ -150,7 +154,7 @@ export const FNavBtnLink = styled.a`
 
 export const FullName = styled.div`
     font-size: 35px;
-    margin: 50px;
+    margin: 30px;
     color: black;
   text-align: center;
   
@@ -178,5 +182,9 @@ export const LogOutBtn = styled.button`
   }
   
 `;
+
+
+
+
 
 
