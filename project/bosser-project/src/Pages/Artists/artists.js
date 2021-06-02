@@ -5,13 +5,13 @@ import artistLogo from "../Artists/artistLogo.jpg";
 import {Button} from "@material-ui/core";
 import './artists.css'
 
-//
+
 
 
 
 import ReactRoundedImage from "react-rounded-image";
 import deleteDoc from "../../hooks/deleteDoc";
-import {FaTrashAlt} from "react-icons/fa"; // ------------------------
+import {FaTrashAlt} from "react-icons/fa";
 
 class Artists extends Component{
 
@@ -34,15 +34,15 @@ class Artists extends Component{
                     artists_id.push(doc.id);
                 }
             });
-<<<<<<< HEAD
+
             this.setState({
                 artists: artists,
                 artists_id:artists_id
             });
-=======
+
             this.setState({artists: artists});
             this.setState({artists_id: artists_id});
->>>>>>> 82ae9ac529b2123fe177a59a57a194cb91995986
+
         })
     }
 
@@ -100,7 +100,7 @@ class Artists extends Component{
                 <div id={'a_name'} >{artist_id.full_name}</div>
                 <div id={'prof'}>{artist_id.profession}</div>
             </div>
-<<<<<<< HEAD
+
             </a>
             {/*<div style={ {color: '#bab9b9' ,border: '3px solid #bab9b9', padding: '10px', margin: '14px', textAlign:'center', width: '24rem'} }>*/}
             {/*<div style={ {color: '#bab9b9', padding: '10px', margin: '14px', textAlign:'center', width: '24rem'} }>*/}
@@ -121,8 +121,8 @@ class Artists extends Component{
             {/*        /!*<Button id={'enterArtistButton'} style={ { color:'black' , border: '3px solid white' , background:'#c3c3c3'} }>כניסה לעמוד אמן</Button>*!/*/}
             {/*    </div>*/}
             {/*</div>*/}
-=======
->>>>>>> 82ae9ac529b2123fe177a59a57a194cb91995986
+
+
         </div>)
 
     }
