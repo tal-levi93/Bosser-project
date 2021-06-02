@@ -16,7 +16,6 @@ code {
 }
 
 #title{
-  margin-top: 10px;
   color: white;
   font-size: 100px;
   text-align: center;
@@ -25,5 +24,16 @@ code {
 
 p,b,input{
   font-family: 'Assistant', sans-serif;
+
+}
+
+@media only screen and (max-width: 1250px) {
+
+  #title{
+    margin-top: 100px;
+
+  }
+
+
 
 }

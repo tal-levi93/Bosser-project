@@ -66,7 +66,7 @@ i{
 
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1250px) {
 
     div#frame {
         background: url('cork_board.jpg') ;
@@ -96,9 +96,9 @@ i{
         font-size: 15px;
 
     }
-
-
-
+    #frame {
+        margin-top: -100px;
+    }
 
 }
 
@@ -113,4 +113,6 @@ i{
 
 
 }
+
+
 

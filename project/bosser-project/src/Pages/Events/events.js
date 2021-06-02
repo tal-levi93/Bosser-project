@@ -114,6 +114,7 @@ class Events extends Component {
             BuildEvents = (
                 <div>
                     <div id={'frame'}>
+                        <br/>
                         <div id={'title'} style={{color: 'black'}}>האירועים שלנו</div>
                         <div className="contain">
                             {this.state.events.map((event, idx) => (

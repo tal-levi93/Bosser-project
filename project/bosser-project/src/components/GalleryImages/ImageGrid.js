@@ -6,23 +6,31 @@ import { motion } from 'framer-motion';
 import deleteDoc from '../../hooks/deleteDoc'
 import { FaTrashAlt } from "react-icons/fa";
 
+// const admin_logged_in = (doc) =>{
+//     if(props.UserDetails.IsAdmin)
+//     return(
+//         // For admin only
+//         <button  id={'delete'} style={{color:'white'}} onClick={() => { deleteDoc(doc,'gallery')}} >
+//             <FaTrashAlt/></button>
+//     )
+//     else return(<div></div>)
+// }
 
 
-const ImageGrid = ({ setSelectedImg }) => {
+const ImageGrid = (props) => {
+
     const { docs } = useFirestore('gallery');
 
-    // const admin_is_logged_in =(doc)=>{
-    //     if(this.props.UserDetails.IsAdmin)
-    //         return(
-    //         <button  id={'delete'} style={{color:'white'}} onClick={() => { deleteDoc(doc,'gallery')}} >
-    //             <FaTrashAlt/></button>
-    //         )
-    //     return (<div></div>)
-    //
-    //         }
+    const admin_logged_in = (doc) =>{
+        if(props.UserDetails.IsAdmin)
+            return(
+                <button  id={'delete'} style={{color:'white'}} onClick={() => { deleteDoc(doc,'gallery')}} >
+                    <FaTrashAlt/></button>
+            )
+        else return(<div></div>)
+}
 
-
-    return (
+    return(
 
 
         <div className="img-grid">
@@ -30,16 +38,12 @@ const ImageGrid = ({ setSelectedImg }) => {
             {docs && docs.map(doc => (
                 <div key={doc.id}>
 
-                    {/*{admin_is_logged_in(doc)}*/}
-
-                {/*    /!*For admin only*!/*/}
-                {/*<button  id={'delete'} style={{color:'white'}} onClick={() => { deleteDoc(doc,'gallery')}} >*/}
-                {/*    <FaTrashAlt/></button>*/}
+                    {admin_logged_in(doc)}
 
                 <motion.div className="img-wrap" key={doc.id}
                             layout
                             whileHover={{ opacity: 1 }}s
-                            onClick={() => setSelectedImg(doc.url)}
+                            onClick={() => props.setSelectedImg(doc.url)}
                 >
 
                     <motion.img src={doc.url} alt="uploaded pic"
