@@ -61,7 +61,7 @@ class Events extends Component {
                 console.log(err)
         })
     };
-    
+
 
 
     SignUpForEvent(idx) {
@@ -77,11 +77,12 @@ class Events extends Component {
     cancel_reg(idx , event_id){
         console.log(event_id)
         if (window.confirm('האם אתה בטוח שהנך רוצה לבטל רישום לאירוע זה?')) {
-            let event = db.collection("events").doc(event_id).get().then((r)=>{
-                //need to cancel registeration
-            })
-
-
+            console.log("the event id is:" , this.state.events_id[idx])
+            db.collection("events").doc(this.state.events_id[idx]).update({
+                participants: firebase.firestore.FieldValue.arrayRemove(this.props.UserDetails)
+            }).catch(function (error) {
+                console.error("Error removing document: ", error);
+            });
         }
     }
 
@@ -96,7 +97,7 @@ class Events extends Component {
             }
         })
         if(signed_in){
-            return (<button className={'e_btn'} onClick={() => this.cancel_reg(idx)}>בטל רישום</button>)
+            return (<button className={'e_btn'} onClick={() => this.cancel_reg(idx , event_id)}>בטל רישום</button>)
         }
         else{
             return (<button className={'e_btn'} onClick={() => this.SignUpForEvent(idx, event_id)}>רישום לאירוע</button>)
