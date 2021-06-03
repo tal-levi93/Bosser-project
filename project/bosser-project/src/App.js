@@ -15,6 +15,7 @@ import CreatePost from "./Pages/CreatePost"
 import SignUpForEvent from "./Pages/SignUpForEvent"
 import ManageBlog from "./Pages/ManageBlog"
 import Navbar from "./components/Header/NavbarElements";
+import emailjs from "emailjs-com";
 
 
 

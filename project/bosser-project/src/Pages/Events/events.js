@@ -9,6 +9,8 @@ import firebase from "firebase"
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import SignUpForEvent from "../SignUpForEvent";
 import deleteDoc from "../../hooks/deleteDoc";
+import emailjs from "emailjs-com";
+import axios from "axios"
 
 class Events extends Component {
 
@@ -19,6 +21,15 @@ class Events extends Component {
             events_id: []
         }
     }
+
+    // sendEmail(){
+    //     emailjs.sendForm('gmail', 'template_5coreyc', {name:"Tal Levi" , subejct:"das" , message:"tasda"}, 'user_3S2tYOLpeQzh4elu8tjpo')
+    //         .then((result) => {
+    //             console.log(result.text);
+    //         }, (error) => {
+    //             console.log(error.text);
+    //         });
+    // }
 
     componentDidMount() {
         let events = [];
@@ -31,25 +42,47 @@ class Events extends Component {
             this.setState({events: events});
             this.setState({events_id: events_id});
         })
+
     }
+
+    sendEmail = ()=>{
+        const email = {
+            fromEmail:
+                "bosserjce@gmail.com",
+            mailContent:
+                "You successfully signed up for the event",
+            mailSubject:
+                "Event sign in Confirmation",
+            toEmail:
+            this.props.UserDetails.Email,
+        }
+        axios.post('https://endodty5c2zjzm7.m.pipedream.net', email)
+            .then(response => console.log(response)).catch(err=>{
+                console.log(err)
+        })
+    };
+
+
 
     SignUpForEvent(idx) {
         let eventRef
         if (window.confirm('האם אתה בטוח שהנך רוצה להירשם לאירוע זה?')) {
             db.collection("events").doc(this.state.events_id[idx]).update({
-                participants: [this.props.UserDetails]
+                participants: firebase.firestore.FieldValue.arrayUnion(this.props.UserDetails )
             })
+            this.sendEmail()
         }
     }
 
     cancel_reg(idx , event_id){
         console.log(event_id)
         if (window.confirm('האם אתה בטוח שהנך רוצה לבטל רישום לאירוע זה?')) {
-            let event = db.collection("events").doc(event_id).get().then((r)=>{
-                //need to cancel registeration
-            })
-
-
+            console.log("the event id is:" , this.state.events_id[idx])
+            db.collection("events").doc(this.state.events_id[idx]).update({
+                participants: firebase.firestore.FieldValue.arrayRemove(this.props.UserDetails)
+            }).catch(function (error) {
+                console.error("Error removing document: ", error);
+            });
         }
     }
 
@@ -64,7 +97,7 @@ class Events extends Component {
             }
         })
         if(signed_in){
-            return (<button className={'e_btn'} onClick={() => this.cancel_reg(idx)}>בטל רישום</button>)
+            return (<button className={'e_btn'} onClick={() => this.cancel_reg(idx , event_id)}>בטל רישום</button>)
         }
         else{
             return (<button className={'e_btn'} onClick={() => this.SignUpForEvent(idx, event_id)}>רישום לאירוע</button>)
