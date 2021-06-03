@@ -34,7 +34,8 @@ class Blog extends Component{
         this.state = {
             posts:[],
             postIds:[],
-            loader:false
+            loader:false,
+            searchTerm:""
         }
     }
 
@@ -68,6 +69,12 @@ class Blog extends Component{
             <div className="blogPage">
                 {/*<BlogHeader/>
                 <Hero/>*/}
+                <div>
+                    <input id={'search'} type="text" style={{backgroundColor:'white'}} placeholder="חיפוש" onChange={event =>
+                    {
+                        this.setState({searchTerm: event.target.value})
+                    }}></input>
+                </div>
                 <div>
                     {
                         this.state.posts.map((post, index ) => {

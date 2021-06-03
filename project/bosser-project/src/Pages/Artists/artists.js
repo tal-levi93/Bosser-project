@@ -4,11 +4,6 @@ import Search from '../../components/Search/index'
 import artistLogo from "../Artists/artistLogo.jpg";
 import {Button} from "@material-ui/core";
 import './artists.css'
-
-
-
-
-
 import ReactRoundedImage from "react-rounded-image";
 import deleteDoc from "../../hooks/deleteDoc";
 import {FaTrashAlt} from "react-icons/fa";
@@ -19,7 +14,8 @@ class Artists extends Component{
         super(props);
         this.state = {
             artists:[],
-            artists_id:[]
+            artists_id:[],
+            searchTerm:""
         }
     }
 
@@ -76,11 +72,20 @@ class Artists extends Component{
             <div id={'page'}>
                 <br/>
                 <div id={'title'} style={{color:'black'}}>האמנים שלנו</div>
-                <input id={'search'} type="text" placeholder="חיפוש"></input>
+                <input id={'search'} type="text" placeholder="חיפוש" onChange={event =>
+                {
+                    this.setState({searchTerm: event.target.value})
+                }}></input>
                 <div className="contains">
 
-                    {this.state.artists.map((artist , idx)=>(
-                        this.create_artist(artist,idx)
+                    {this.state.artists.filter((val)=>{
+                        if (this.state.searchTerm =="") {
+                            return val
+                        } else if(val.full_name.toLowerCase().includes(this.state.searchTerm.toLowerCase())) {
+                            return val
+                        }
+                    },).map((val , idx)=>(
+                        this.create_artist(val,idx)
                     ))}
                 </div>
 
@@ -90,7 +95,6 @@ class Artists extends Component{
 
     create_artist(artist_id, idx) {
         let url = artistLogo
-        console.log("the stats is : " , this.state)
         if(artist_id.photo ){ url = artist_id.photo }
         return (<div className={'artist'} key={idx}>
             {this.admin_is_logged_in(artist_id, idx)}
