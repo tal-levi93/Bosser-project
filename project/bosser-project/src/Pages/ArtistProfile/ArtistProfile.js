@@ -134,7 +134,7 @@ class ArtistProfile extends Component {
             <div id="page">
                 <div className="profile"><br/>
                     <div className="artistPhoto" id="title" style={{display: "flex", justifyContent: "center"}}>
-                        <img src={this.state.profilePhoto} style={{width: 130, height: 130, borderRadius: 150/2}}/>
+                        <img src={this.state.profilePhoto} alt="artistPhoto" style={{width: 130, height: 130, borderRadius: 150/2}}/>
                     </div>
                     <div className="table" style={{display: "flex", justifyContent: "center"}}>
                         <table style={{textAlign: "center", fontSize: 40, color: "black"}}>
@@ -178,8 +178,9 @@ class ArtistProfile extends Component {
                     </div><br/><br/><br/><br/>
 
                     <div style={{flexShrink: 1, width: "auto", height: "auto", padding: 30}}>
+                        <h1 style={{fontSize: 55, color: "black"}}>על האמן: </h1>
                         <p className="artistInfo" style={{flexShrink: 1}}>
-                            <h1 style={{color: "black"}}>על האמן: </h1>
+                            {/*<h1 style={{color: "black"}}>על האמן: </h1>*/}
                             {this.state.info}
                         </p>
                     </div>
