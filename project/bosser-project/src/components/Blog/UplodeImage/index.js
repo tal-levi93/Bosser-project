@@ -24,12 +24,6 @@ const UploadBlogImage = (props) => {
         props.SetUrl(e)
     }
 
-
-
-
-
-
-
     return (
         <div id={"gform"}>
             <label id={"glabel"}>

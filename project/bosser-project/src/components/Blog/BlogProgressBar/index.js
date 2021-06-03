@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import AddImageToStorage from "../AddImageToStorage";
 // import useStorage from '../hooks/useStorage';
 import { motion } from 'framer-motion';
+import "./style.css"
 
 const BlogProgressBar = ({ file, setFile , setUrl }) => {
     const { progress, url } = AddImageToStorage(file);
