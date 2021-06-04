@@ -16,7 +16,7 @@ class sign_up extends Component{
             password:"",
             full_name:"",
             user_id:"",
-            age:0
+            yearOfBorn:0
         }
     }
 
@@ -39,7 +39,7 @@ class sign_up extends Component{
                 user_uid:res.user.uid,
                 full_name: this.state.full_name,
                 email: this.state.email,
-                age:this.state.age,
+                yearOfBorn:this.state.yearOfBorn,
                 IsAdmin:false
             }).then(result=>{
                 console.log(result)
@@ -74,8 +74,8 @@ class sign_up extends Component{
                         <input className = "box" type="text" id="full_name" required onChange={this.handleChange}/>
                     </div>
                     <div className="input-field">
-                        <label className="line" htmlFor="age">גיל </label><br></br>
-                        <input className="box" type="number"  id="age" required onChange={this.handleChange}/>
+                        <label className="line" htmlFor="yearOfBorn">שנת לידה </label><br></br>
+                        <input className="box" type="number"  id="yearOfBorn" min="1900" max="2021" required onChange={this.handleChange}/>
                     </div>
                     <div><br></br>
                         <button className = "button"><span>הירשם </span></button>
