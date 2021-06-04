@@ -62,12 +62,12 @@ export const SidebarWrapper = styled.div`
 export const SidebarMenu = styled.ul`
   display:grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(6, 60px);
+  grid-template-rows: repeat(8, 40px);
   text-align: center;
 
   
   @media screen and (max-height: 430px ) {
-    grid-template-rows: repeat(6 , 30px);
+    grid-template-rows: repeat(8 , 40px);
     
   }
   
@@ -81,7 +81,7 @@ export const SidebarLink = styled(LinkR) `
   font-size: 30px;
   text-decoration: none;
   list-style: none;
-  transition: 0.2s ease-in-out;
+  transition: 0.3s ease-in-out;
   text-decoration: none;
   color: #fff;
 
@@ -140,9 +140,6 @@ export const SideBtn = styled(Link)`
     margin: 17px;
   }
   
-
-
-
 `;
 
 export const FSideBtn = styled.a`
@@ -179,17 +176,8 @@ export const SideFullName = styled.div`
   font-size: 26px;
   justify-content: center;
   text-align: center;
-
-
-  @media screen and (max-width: 480px) {
-    grid-template-rows: repeat(6, 60px);
-
-  }
-
-  @media screen and (max-height: 500px) {
-    grid-template-rows: repeat(6, 40px);
-  }
-
+  margin-bottom: 20px;
+  
   
 `;
 

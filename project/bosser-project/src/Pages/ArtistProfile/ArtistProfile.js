@@ -11,6 +11,7 @@ class ArtistProfile extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            profilePhoto: artistLogo,
             user_uid: "",
             full_name: "",
             profession: "",
@@ -27,27 +28,33 @@ class ArtistProfile extends Component {
         let prof = "";
         let age = "";
         let info = "";
+        let url = artistLogo;
         auth.onAuthStateChanged((user) => {
             if(!user) {
                 return
             }
 
-            db.collection("artists").where("user_uid", "==",user.uid).get()
+            db.collection("artists").where("user_uid", "==", user.uid).get()
                 .then((res) => {
                     res.docs.forEach((doc) => {
                         name = doc.data().full_name;
                         prof = doc.data().profession;
                         age = doc.data().age;
                         info = doc.data().info;
+                        if(doc.data().photo) {
+                            url = doc.data().photo
+                        }
                     });
                     this.setState({user_uid: user.uid});
                     this.setState({full_name: name});
                     this.setState({profession: prof});
                     this.setState({age: age});
                     this.setState({info: info});
+                    this.setState({profilePhoto: url});
                 });
 
         })
+
    }
 
     handleNameChange = (e) => {
@@ -125,10 +132,10 @@ class ArtistProfile extends Component {
 
     render() {
         return(
-            <div id="page" style={{flexDirection: "row"}}>
+            <div id="page">
                 <div className="profile"><br/>
                     <div className="artistPhoto" id="title" style={{display: "flex", justifyContent: "center"}}>
-                        <img src={artistLogo} style={{width: 130, height: 130, borderRadius: 150/2}}/>
+                        <img src={this.state.profilePhoto} alt="artistPhoto" style={{width: 130, height: 130, borderRadius: 150/2}}/>
                     </div>
                     <div className="table" style={{display: "flex", justifyContent: "center"}}>
                         <table style={{textAlign: "center", fontSize: 40, color: "black"}}>
@@ -172,8 +179,8 @@ class ArtistProfile extends Component {
                     </div><br/><br/><br/><br/>
 
                     <div style={{flexShrink: 1, width: "auto", height: "auto", padding: 30}}>
+                        <h1 style={{fontSize: 55, color: "black"}}>על האמן: </h1>
                         <p className="artistInfo" style={{flexShrink: 1}}>
-                            <h1 style={{color: "black"}}>על האמן: </h1>
                             {this.state.info}
                         </p>
                     </div>

@@ -65,6 +65,16 @@ class Navbar extends Component {
         )
     }
 
+    admin_is_logged_in(){
+        if(this.props.UserDetails.IsAdmin){
+            return(
+                <NavLink to="/manageBlog"> ניהול הבלוג</NavLink>
+            )
+            return <div></div>
+        }
+
+    }
+
 
     render(padding) {
         const {toggle} = this.props.toggle
@@ -80,6 +90,7 @@ class Navbar extends Component {
                             <NavLink to="/">  דף הבית </NavLink>
                             <NavLink to="/artists">אמנים </NavLink>
                             <NavLink to="/blog">בלוג </NavLink>
+                            {this.admin_is_logged_in()}
                             <NavLink to="/gallery">  גלריה </NavLink>
                             <NavLink to="/courses"> קורסים</NavLink>
                             <NavLink to="/events"> אירועים </NavLink>

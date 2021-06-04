@@ -17,7 +17,6 @@ import CreateEvent from "./Pages/CreateEvent"
 import SignUpForEvent from "./Pages/SignUpForEvent"
 import ManageBlog from "./Pages/ManageBlog"
 import Navbar from "./components/Header/NavbarElements";
-import emailjs from "emailjs-com";
 
 
 
@@ -128,7 +127,7 @@ class App extends Component{
                   <Route exact path="/manageBlog" render={(props) => (
                       <ManageBlog UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
                   )} />
-                  <Route exact path="/artists/:userid" component={ArtistPage}/>
+                  <Route exact path="/artists/:userid" component={ArtistPage} UserDetails={this.state.UserDetails} IsLoggedIn = {this.state.UserLog}/>
                   <Route exact path="/gallery" render={(props) => (
                       <Gallery UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>)} />
                   <Route exact path="/courses" render={(props) => (

@@ -64,7 +64,7 @@ class ManageBlog extends Component{
                 <div key={idx}>
                     {this.props.UserDetails.IsAdmin &&
                     // Delete course from courses array and update in Firebase
-                    <button id={'delete'} style={{color: 'white', position:"absolute"}} onClick={() => {
+                    <button id={'delete'} style={{backgroundColor:'green',color: 'white', position:"absolute"}} onClick={() => {
                         {
                         db.collection('posts').doc(post_id).update({
                                 isVerified: true
@@ -72,7 +72,7 @@ class ManageBlog extends Component{
                         ).then( r => {})
                         }
                     }}>
-                        <FiCheck style={{backgroundColor:'green'}}/></button>
+                        <FiCheck /></button>
                     }
                 </div>
             )
