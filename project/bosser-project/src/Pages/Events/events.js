@@ -6,7 +6,7 @@ import {Button} from "@material-ui/core";
 import './events.css';
 import {FaThumbtack, FaTrashAlt} from "react-icons/fa";
 import firebase from "firebase"
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
 import SignUpForEvent from "../SignUpForEvent";
 import deleteDoc from "../../hooks/deleteDoc";
 import emailjs from "emailjs-com";
@@ -167,6 +167,17 @@ class Events extends Component {
 
     }
 
+    createEventBtn(){
+        if (this.props.UserDetails.IsAdmin) {
+            return (
+                <a id={'create_btn'} href="/createEvent">יצירת אירוע חדש</a>
+            )
+        }
+
+        return <div></div>
+
+    }
+
     render() {
 
         let BuildEvents;
@@ -180,6 +191,10 @@ class Events extends Component {
                     <div id={'frame'}>
                         <br/>
                         <div id={'title'} style={{color: 'black'}}>האירועים שלנו</div>
+                        <br/>
+                        <div className={"create_btn_contain"} >
+                            {this.createEventBtn()}
+                        </div>
                         <div className="contain">
                             {this.state.events.map((event, idx) => (
                                 this.create_event_logged_in(event, idx)

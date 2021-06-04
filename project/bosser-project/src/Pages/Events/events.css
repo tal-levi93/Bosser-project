@@ -6,7 +6,6 @@ div#frame {
     height: 900%;
     padding-bottom: 200px;
 
-
 }
 
 #event{
@@ -33,6 +32,16 @@ div#frame {
     flexDirection: row;
     flexWrap: wrap;
     margin-right: 13%;
+}
+.create_btn_contain{
+    display: grid;
+    width: 15%;
+    grid-template-columns:1fr;
+    margin: 0 42.5% 0 auto;
+    flexDirection: row;
+    flexWrap: wrap;
+
+
 }
 .e_btn {
     color: #181818;
@@ -66,20 +75,41 @@ i{
 
 }
 
+#create_btn{
+    border-radius: 200px;
+    border-color: #fa2727;
+    border-bottom-style: double;
+    border-top-style: double;
+    border-left-style: none;
+    border-right-style: none;
+    padding: 6px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    font-size: 35px;
+    background-color: #f2f2f2;
+    opacity: 0.8;
+    text-align: center;
+}
+
+#create_btn:hover{
+    opacity: 1;
+    font-size: 40px;
+
+}
+
 @media only screen and (max-width: 1250px) {
 
     div#frame {
         background: url('cork_board.jpg') ;
         background-size: 100%;
         width:100%;
-
     }
 
-
     #event{
-        margin: 0 ;
+        margin: 0;
         padding: 2px;
-
     }
     .contain{
         width: 100%;
@@ -88,8 +118,6 @@ i{
         padding: 10%;
         grid-template-columns: 1fr ;
         font-size: 13px;
-
-
     }
 
     i{

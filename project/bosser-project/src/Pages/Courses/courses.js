@@ -50,6 +50,17 @@ class Courses extends Component {
         )
     }
 
+    createCourseBtn(){
+        if (this.props.UserDetails.IsAdmin) {
+            return (
+                <a id={'create_btn'} href="/createCourse">יצירת קורס חדש</a>
+            )
+        }
+
+        return <div></div>
+
+    }
+
 
     render() {
         if(!this.state.courses_id == undefined || !this.props.UserDetails){return (<div></div>)}
@@ -58,6 +69,10 @@ class Courses extends Component {
         return(
             <div>
                 <div id={'title'}>הקורסים שלנו</div>
+                <br/>
+                <div className={"create_btn_contain"} >
+                    {this.createCourseBtn()}
+                </div>
                 <div className='courses' >
                     {this.state.courses.map(
                         (course,index)=>(
