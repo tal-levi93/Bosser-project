@@ -16,7 +16,9 @@ class sign_up extends Component{
             password:"",
             full_name:"",
             user_id:"",
-            age:0
+            yearOfBorn:0,
+            password2:"",
+
         }
     }
 
@@ -25,12 +27,16 @@ class sign_up extends Component{
 
     handleChange = (e) =>{
         this.setState({
-            [e.target.id]:e.target.value
-
+            [e.target.id]:e.target.value,
         })
     }
     handleSubmit =  (e) => {
         e.preventDefault();
+        if(this.state.password != this.state.password2){
+            alert("הסיסמא חייבת להיות תואמת")
+            this.props.history.push('/signup')
+            return
+        }
         auth.createUserWithEmailAndPassword(this.state.email, this.state.password).then(res =>{
             console.log(res)
 
@@ -39,7 +45,7 @@ class sign_up extends Component{
                 user_uid:res.user.uid,
                 full_name: this.state.full_name,
                 email: this.state.email,
-                age:this.state.age,
+                yearOfBorn:this.state.yearOfBorn,
                 IsAdmin:false
             }).then(result=>{
                 console.log(result)
@@ -64,6 +70,10 @@ class sign_up extends Component{
                         <label className = "line" htmlFor="password">סיסמא </label><br></br>
                         <input className = "box" type="password" id="password" pattern=".{6,}" title="סיסמא חייבת לכלול 6 אותיות או יותר" required onChange={this.handleChange}/>
                     </div>
+                    <div className = "input-field">
+                        <label className = "line" htmlFor="password2"> סיסמא בשנית </label><br></br>
+                        <input className = "box" type="password" id="password2" pattern=".{6,}"  required onChange={this.handleChange}/>
+                    </div>
 
                     <div className = "input-field">
                         <label className = "line" htmlFor="email">דואר אלקטרוני </label><br></br>
@@ -74,8 +84,8 @@ class sign_up extends Component{
                         <input className = "box" type="text" id="full_name" required onChange={this.handleChange}/>
                     </div>
                     <div className="input-field">
-                        <label className="line" htmlFor="age">גיל </label><br></br>
-                        <input className="box" type="number"  id="age" required onChange={this.handleChange}/>
+                        <label className="line" htmlFor="yearOfBorn">שנת לידה </label><br></br>
+                        <input className="box" type="number"  id="yearOfBorn" min="1900" max="2021" required onChange={this.handleChange}/>
                     </div>
                     <div><br></br>
                         <button className = "button"><span>הירשם </span></button>

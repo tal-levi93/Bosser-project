@@ -4,6 +4,7 @@ import {GoCalendar, GoMortarBoard} from "react-icons/go";
 import {AiOutlineUserAdd} from "react-icons/ai";
 import React, {Component} from "react";
 import firebase from "firebase";
+import {NavLink} from "../NavbarElements/Navbar";
 
 
 
@@ -30,6 +31,17 @@ class Sidebar extends Component{
         )
 
     }
+
+    admin_is_logged_in(){
+        if(this.props.UserDetails.IsAdmin){
+            return(
+                <SidebarLink to="/manageBlog"> ניהול הבלוג</SidebarLink>
+            )
+            return <div></div>
+        }
+
+    }
+
     render() {
         let BuildSideBar
         if(this.props.isLoggedIn == true){
@@ -46,6 +58,7 @@ class Sidebar extends Component{
                         )}
                         <SidebarLink to='./artists'>אמנים </SidebarLink>
                         <SidebarLink to='/blog'> בלוג</SidebarLink>
+                        {this.admin_is_logged_in()}
                         <SidebarLink to='/gallery'>  גלריה </SidebarLink>
                         <SidebarLink to='/courses'> קורסים</SidebarLink>
                         <SidebarLink to='/events'> אירועים</SidebarLink>
