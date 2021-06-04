@@ -34,7 +34,7 @@ class ArtistProfile extends Component {
                 return
             }
 
-            db.collection("artists").where("user_uid", "==",user.uid).get()
+            db.collection("artists").where("user_uid", "==", user.uid).get()
                 .then((res) => {
                     res.docs.forEach((doc) => {
                         name = doc.data().full_name;
@@ -54,6 +54,7 @@ class ArtistProfile extends Component {
                 });
 
         })
+
    }
 
     handleNameChange = (e) => {
@@ -180,7 +181,6 @@ class ArtistProfile extends Component {
                     <div style={{flexShrink: 1, width: "auto", height: "auto", padding: 30}}>
                         <h1 style={{fontSize: 55, color: "black"}}>על האמן: </h1>
                         <p className="artistInfo" style={{flexShrink: 1}}>
-                            {/*<h1 style={{color: "black"}}>על האמן: </h1>*/}
                             {this.state.info}
                         </p>
                     </div>

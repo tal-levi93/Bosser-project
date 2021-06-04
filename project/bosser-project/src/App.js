@@ -125,7 +125,7 @@ class App extends Component{
                   <Route exact path="/manageBlog" render={(props) => (
                       <ManageBlog UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
                   )} />
-                  <Route exact path="/artists/:userid" component={ArtistPage}/>
+                  <Route exact path="/artists/:userid" component={ArtistPage} UserDetails={this.state.UserDetails} IsLoggedIn = {this.state.UserLog}/>
                   <Route exact path="/gallery" render={(props) => (
                       <Gallery UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>)} />
                   <Route exact path="/courses" render={(props) => (

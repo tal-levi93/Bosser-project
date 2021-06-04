@@ -25,7 +25,7 @@ class Artists extends Component{
         db.collection('artists').get().then((snapshot) => {
             snapshot.docs.forEach( doc => {
 
-                if(doc.data().IsAdmin == false) {
+                if(doc.data().IsAdmin === false) {
                     artists.push(doc.data());
                     artists_id.push(doc.id);
                 }
@@ -63,7 +63,7 @@ class Artists extends Component{
             )
         }
 
-        return <div></div>
+        return <div/>
 
     }
 
@@ -75,11 +75,11 @@ class Artists extends Component{
                 <input id={'search'} type="text" placeholder="חיפוש" onChange={event =>
                 {
                     this.setState({searchTerm: event.target.value})
-                }}></input>
+                }}/>
                 <div className="contains">
 
                     {this.state.artists.filter((val)=>{
-                        if (this.state.searchTerm =="") {
+                        if (this.state.searchTerm === "") {
                             return val
                         } else if(val.full_name.toLowerCase().includes(this.state.searchTerm.toLowerCase())) {
                             return val

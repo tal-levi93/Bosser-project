@@ -1,47 +1,68 @@
 import React, {useState, useEffect, Component} from "react";
-import {db} from '../../Firebase/firebase';
+import {auth, db} from '../../Firebase/firebase';
+import ArtistProfile from "../../Pages/ArtistProfile/ArtistProfile";
+import artistLogo from "../../Pages/Artists/artistLogo.jpg";
 
 class ArtistPage extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            artist_details:{
-                name:"",
-                profession:"",
-                personal_data:"",
-            },
-            loader:false
+            // UserDetails: {
+            //     UserUid:"",
+            //     FullName:"",
+            //     Email:"",
+            //     profession:"",
+            //     info:"",
+            //     UserLog: false
+            // }
+            currentUser: "",
+            profilePhoto: artistLogo,
+            userToShow: "",
+            IsLoggedIn: false
         }
     }
 
+    initIsLoggedIn = (res => {
+        if(res === this.props.UserDetails.UserUid) {
+            console.log("TRUE")
+        }
+        else {
+            console.log("FALSE")
+        }
+    })
+
     componentDidMount() {
-        const userid = this.props.match.params.userid;
-        console.log("the user id is : " , userid)
-        db.collection('artists').doc(userid).get()
-            .then((res)=>{
-                let data = res.data()
-                if(res.exists){
-                    this.setState({
-                        artist_details:{
-                            name : data.full_name,
-                            profession:data.profession,
-                            personal_data:data.personal_data,
-                        },
-                        loader:true
-                    })
-                }
-                else{
-                    console.log("ERROR!")
-                }
-            })
+        const userToShow = this.props.match.params.userid;
+
+        console.log("the userToShow is : " , userToShow)                //--------------------------------
+
+        // db.collection('artists').doc(userToShow).get()
+        //     .then((res) => {
+        //         let data = res.data()
+        //         this.setState({
+        //             userToShow: userToShow
+        //         })
+        //     })
+        //
+        // if(userToShow === this.state.UserUid) {
+        //     this.setState({
+        //         UserLog: true
+        //     })
+        // }
+
+        this.setState({
+            userToShow: userToShow
+        })
     }
 
 
     render() {
-        if (!this.state.loader) { return (<div></div>)}
         return (
-            <div><h1>{this.state.artist_details.name}</h1></div>
+            <div>
+                {this.initIsLoggedIn(this.state.userToShow)}
+                <ArtistProfile UserDetails={this.state.UserDetails} IsLoggedIn={this.state.UserLog}/>
+            </div>
         )
     }
 
