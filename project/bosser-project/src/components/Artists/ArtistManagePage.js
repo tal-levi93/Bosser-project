@@ -141,7 +141,7 @@ class ArtistManagePage extends Component {
             }
         })
     }
-    handleImg1 = (img3_url)=>{
+    handleImg3 = (img3_url)=>{
         this.setState({
             artist:{
                 image_3: img3_url,
