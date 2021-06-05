@@ -62,8 +62,19 @@ class Courses extends Component {
     }
 
 
+    is_logged_in(){
+        if(this.props.IsLoggedIn) {
+            return (
+                <Button id={'co_btn'} >רישום לקורס</Button>
+            )
+        }
+        return <div></div>
+    }
+
+
     render() {
         if(!this.state.courses_id == undefined || !this.props.UserDetails){return (<div></div>)}
+
 
 
         return(
@@ -105,8 +116,7 @@ class Courses extends Component {
                         {course_id.date.toDate().toLocaleDateString()} </h2>
                     <br/>
                     <br/>
-
-                    <Button id={'co_btn'} >רישום לקורס</Button>
+                    {this.is_logged_in()}
 
             </div>
         </div>)
