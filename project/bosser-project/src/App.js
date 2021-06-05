@@ -150,16 +150,13 @@ class App extends Component{
                   <Route exact path="/createCourse"  render={(props) => (
                       <CreateCourse UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog} {...props}/>
                   )} />
-<<<<<<< HEAD
                   <Route exact path="/events/signUpEvent/:EventId"  render={(props) => (
                       <SignUpForEvent  EventId = {props.match.params.EventId}/>)}/>
-=======
                   <Route exact path="/createMessageNS"  render={(props) => (
                       <CreateMessageNS UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog} {...props}/>
                   )} />
                   <Route exact path="/events/signUpEvent"  render={(props) => (
                       <SignUpForEvent />)}/>
->>>>>>> f8c676ab179fbc8e33d2363a42149ef42e952d76
                   {/*<Route exact path="/newsletter/:id" component={Newsletter}/>*/}
                 </Switch>
               </Router>

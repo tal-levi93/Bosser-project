@@ -4,6 +4,7 @@ import {Route, Switch} from "react-router-dom";
 import Home from "../Home";
 import "./style.css"
 import {db} from '../../Firebase/firebase';
+import axios from "axios";
 
 class CreateMessageNS extends Component{
     constructor(props) {
@@ -19,8 +20,35 @@ class CreateMessageNS extends Component{
         })
     }
 
+    sendEmail = (msg , to)=>{
+        const email = {
+            fromEmail:
+                "bosserjce@gmail.com",
+            mailContent:
+                msg,
+            mailSubject:
+                "עמותת בוסר",
+            toEmail:
+            to,
+        }
+        axios.post('https://endodty5c2zjzm7.m.pipedream.net', email)
+            .then(response =>
+                alert("ההודעה נשלחה לכל רשימת התפוצה")
+            ).catch(err=>{
+            console.log(err)
+        })
+
+    };
+
     handleSubmit = async (e) => {
         e.preventDefault();
+        let docRef = db.collection("newsletters").doc("wXWkD32q93M8YgTPJ4gh");
+        docRef.get().then((doc)=>{
+            doc.data().Emails.forEach(element => this.sendEmail(this.state.description , element))
+        }).catch((err)=>{
+            console.log(err)
+        })
+
     }
 
     render() {
