@@ -134,6 +134,20 @@ class ArtistManagePage extends Component {
             }
         })
     }
+    handleImg2 = (img2_url)=>{
+        this.setState({
+            artist:{
+                image_2: img2_url,
+            }
+        })
+    }
+    handleImg1 = (img3_url)=>{
+        this.setState({
+            artist:{
+                image_3: img3_url,
+            }
+        })
+    }
 
     handleChange = (e) =>{
         this.setState({
@@ -193,7 +207,7 @@ class ArtistManagePage extends Component {
 
         if (this.state.artist.image_2 == undefined || this.state.artist.image_2 == "") {
             img2_option =
-                <UploadImage2 user_id={this.props.userId}/>
+                <UploadImage2 user_id={this.props.userId} SetUrl={this.handleImg2}/>
 
         } else {
             img2_option =
