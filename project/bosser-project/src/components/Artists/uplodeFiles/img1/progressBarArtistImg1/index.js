@@ -6,12 +6,11 @@ import {auth, db} from "../../../../../Firebase/firebase";
 
 const ArtistImg1ProgressBar = ({ file, setFile , setUrl , ArtistId}) => {
     const { progress, url } = AddImageToStorage(file);
-
     useEffect(() => {
         if (url) {
+            console.log("the url is: " ,url)
             setUrl(url)
             setFile(null);
-
             db.collection('artists').doc(ArtistId).update({
                     image_1: url
                 }
@@ -21,6 +20,7 @@ const ArtistImg1ProgressBar = ({ file, setFile , setUrl , ArtistId}) => {
     }, [url, setFile]);
 
     return (
+
         <motion.div className="progress-bar"
                     initial={{ width: 0 }}
                     animate={{ width: progress + '%' }}

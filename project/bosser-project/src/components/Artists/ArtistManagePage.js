@@ -127,6 +127,13 @@ class ArtistManagePage extends Component {
                 <FaTrashAlt/></button>
         )
     }
+    handleImg1 = (img1_url)=>{
+        this.setState({
+            artist:{
+                image_1: img1_url,
+            }
+        })
+    }
 
     handleChange = (e) =>{
         this.setState({
@@ -170,10 +177,11 @@ class ArtistManagePage extends Component {
         let img3_option
         let youtubeVideo
         let artistPhoto
+        console.log("the state is: " , this.state)
 
         if (this.state.artist.image_1 == undefined || this.state.artist.image_1 == "") {
             img1_option =
-                    <UploadImage1 user_id={this.props.userId}/>
+                    <UploadImage1 user_id={this.props.userId} SetUrl={this.handleImg1}/>
         } else {
             img1_option =
                 <div style={{width:"30%"}}>

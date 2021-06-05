@@ -27,11 +27,16 @@ class SignUpForEvent extends Component{
 
     }
     handleSubmit  = (e) => {
-
+        e.preventDefault()
+        if (window.confirm('האם אתה בטוח שהנך רוצה להירשם לאירוע זה?')) {
+            db.collection("events").doc(this.props.EventId).update({
+                participants: firebase.firestore.FieldValue.arrayUnion(this.state)
+            })
+        }
     }
 
     render() {
-        console.log(this.props.events_id)
+
 
         return(
             <div className="container">

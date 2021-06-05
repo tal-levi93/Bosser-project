@@ -135,7 +135,7 @@ class Events extends Component {
                 <img src={show} width="250" height="100"/>
                 <h2 style={{fontWeight: 'normal', color:'black'}}>{event_id.name} - {event_id.description}</h2>
                 <h2 style={{fontWeight: 'normal', color:'black'}}>{event_id.date.toDate().toLocaleDateString()}</h2>
-                <Link to={{pathname: "/events/signUpEvent", state: {events_id: this.state.events_id},}}
+                <Link to={{pathname: "/events/signUpEvent/"+this.state.events_id[idx], state: {events_id: this.state.events_id},}}
                       className={'e_btn'}>רישום לאירוע</Link>
 
             </div>
