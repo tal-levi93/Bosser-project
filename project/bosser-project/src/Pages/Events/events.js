@@ -97,7 +97,7 @@ class Events extends Component {
             }
         })
         if(signed_in){
-            return (<button className={'e_btn'} onClick={() => this.cancel_reg(idx , event_id)}>בטל רישום</button>)
+            return (<button className={'c_btn'} onClick={() => this.cancel_reg(idx , event_id)}>בטל רישום</button>)
         }
         else{
             return (<button className={'e_btn'} onClick={() => this.SignUpForEvent(idx, event_id)}>רישום לאירוע</button>)

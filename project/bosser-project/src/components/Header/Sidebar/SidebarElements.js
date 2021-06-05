@@ -20,12 +20,61 @@ display: none;
   left: 0;
   transition: 0.3s ease-in-out;
   opacity: ${({ipOpen}) => (ipOpen ? '100%' : '0')};
-  top: ${({ipOpen}) => (ipOpen ? '0' : '-93%')};
+  top: ${({ipOpen}) => (ipOpen ? '0' : '-85%')};
 
+    //Moto G4
+    @media screen and (device-width:360px) and (device-height:640px) {
+      top: ${({ipOpen}) => (ipOpen ? '0' : '-87%')};
 
+    }
+    //Pixel
+    @media screen and (device-width:411px) and (device-height:731px) {
+      top: ${({ipOpen}) => (ipOpen ? '0' : '-88%')};
+    }
+
+    //Pixel 2XL
+    @media screen and (device-width:411px) and (device-height:823px) {
+      top: ${({ipOpen}) => (ipOpen ? '0' : '-90%')};
+    }
+
+    //iPhone 5/SE
+    @media screen and (device-width:320px) and (device-height:568px) {
+      top: ${({ipOpen}) => (ipOpen ? '0' : '-87%')};
+    }
+
+    //iPhone 6/7/8
     @media screen and (device-width:375px) and (device-height:667px) {
-      top: ${({ipOpen}) => (ipOpen ? '0' : '-100%')};
-      
+      top: ${({ipOpen}) => (ipOpen ? '0' : '-87%')};
+    }
+
+    //iPhone 6/7/8 Plus
+    @media screen and (device-width:414px) and (device-height:736px) {
+      top: ${({ipOpen}) => (ipOpen ? '0' : '-90%')};
+    }
+
+    //iPhone X
+    @media screen and (device-width:375px) and (device-height:812px) {
+      top: ${({ipOpen}) => (ipOpen ? '0' : '-89%')};
+    }
+
+    //iPad
+    @media screen and (device-width:768px) and (device-height:1024px) {
+      top: ${({ipOpen}) => (ipOpen ? '0' : '-91%')};
+    }
+
+    //iPad Pro
+    @media screen and (device-width:1024px) and (device-height:1366px) {
+      top: ${({ipOpen}) => (ipOpen ? '0' : '-93%')};
+    }
+
+    //Surface
+    @media screen and (device-width:540px) and (device-height:720px) {
+      top: ${({ipOpen}) => (ipOpen ? '0' : '-88%')};
+    }
+
+    //Galaxy Fold
+    @media screen and (device-width:280px) and (device-height:653px) {
+      top: ${({ipOpen}) => (ipOpen ? '0' : '-87%')};
     }
     
 }
@@ -55,7 +104,8 @@ export const Icon = styled.div`
 `;
 
 export const SidebarWrapper = styled.div`
-    color: #fff;
+     color: #fff;
+     display: ${({ipOpen}) => (ipOpen ? 'grid' : 'none')};
   
 `;
 

@@ -46,7 +46,7 @@ div#frame {
 .e_btn {
     color: #181818;
     padding: 20px;
-    margin: 0 50px;
+    margin: 10px 50px;
     border: 2px double #7a7979;
     background: #bbf8a0;
     font-size: 30px;
@@ -57,8 +57,31 @@ div#frame {
 }
 
 .e_btn:hover{
-    font-size: 35px;
     background: #8eff47;
+    opacity: 1;
+    color: black;
+    cursor: pointer;
+    border: 2px solid #b5b2b2;
+    opacity: 1;
+    border-radius: 200px;
+}
+
+.c_btn{
+    color: #181818;
+    padding: 20px;
+    margin: 10px 50px;
+    border: 2px double #7a7979;
+    background: #fc8f9e;
+    font-size: 30px;
+    border-left-style: none;
+    border-right-style: none;
+    border-radius: 200px;
+    text-decoration: none;
+
+}
+
+.c_btn:hover{
+    background: #ff4763;
     opacity: 1;
     color: black;
     cursor: pointer;
@@ -105,6 +128,7 @@ i{
         background: url('cork_board.jpg') ;
         background-size: 100%;
         width:100%;
+        padding-top: 30px;
     }
 
     #event{

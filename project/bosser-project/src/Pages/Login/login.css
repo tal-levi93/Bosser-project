@@ -19,7 +19,7 @@ text-align: center;
 
 .login:hover{
     background: #62C864;
-    font-size:45px;
+    /*font-size:45px;*/
     cursor: pointer;
 }
 
@@ -36,6 +36,6 @@ text-align: center;
 
 .forgot_pass:hover{
     background: #C86767;
-    font-size:45px;
+    /*font-size:45px;*/
     cursor: pointer;
 }

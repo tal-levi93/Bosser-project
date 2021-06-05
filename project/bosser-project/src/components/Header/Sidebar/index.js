@@ -80,7 +80,7 @@ class Sidebar extends Component{
                     <Icon onClick={this.props.toggle}>
                         <CloseIcon/>
                     </Icon>
-                    <SidebarWrapper>
+                    <SidebarWrapper ipOpen={this.props.isOpen}>
                         <SidebarMenu>
                             <SidebarLink to='/'>דף הבית </SidebarLink>
                             <SidebarLink to='./artists'>אמנים </SidebarLink>

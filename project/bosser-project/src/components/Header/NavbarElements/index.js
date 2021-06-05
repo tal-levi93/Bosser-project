@@ -130,7 +130,7 @@ class Navbar extends Component {
             buildNav = (
                 <Nav>
                     <NavContainer>
-                        <Bars onClick={toggle}> <FaBars/> </Bars>
+                        <Bars onClick={toggle} > <FaBars/> </Bars>
                         <NavMenu>
                             <NavItem>
                                 <NavLink to="/">  דף הבית </NavLink>
