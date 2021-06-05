@@ -53,7 +53,7 @@ export const NavLink = styled(LinkR)`
   text-decoration:none;
   padding: 10px 10px;
   height: 100%;
-  margin: 10px;
+  margin: 5px;
   cursor: pointer;
   
   &.active {

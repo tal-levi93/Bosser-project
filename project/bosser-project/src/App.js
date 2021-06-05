@@ -133,7 +133,7 @@ class App extends Component{
                   <Route exact path="/gallery" render={(props) => (
                       <Gallery UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>)} />
                   <Route exact path="/courses" render={(props) => (
-                      <Courses UserDetails={this.state.UserDetails} IsLoggedIn = {this.state.UserLog}/>)} />
+                      <Courses UserDetails={this.state.UserDetails}/>)} />
                   <Route exact path="/signup" component={sign_up}/>
                   {<Route exact path="/courses/:id" component={Courses}/>}
                   <Route exact path="/events" render={(props) => (
