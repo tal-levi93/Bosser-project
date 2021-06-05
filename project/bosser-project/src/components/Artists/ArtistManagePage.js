@@ -128,31 +128,35 @@ class ArtistManagePage extends Component {
         )
     }
     handleImg1 = (img1_url)=>{
-        this.setState({
-            artist:{
-                image_1: img1_url,
-            }
+
+        this.setState(prevState => {
+            let artist = Object.assign({}, prevState.artist);  // creating copy of state variable jasper
+            artist.image_1 = img1_url;                     // update the name property, assign a new value
+            return { artist };                                 // return new object jasper object
         })
     }
     handleImg2 = (img2_url)=>{
-        this.setState({
-            artist:{
-                image_2: img2_url,
-            }
+        console.log("here in change")
+        this.setState(prevState => {
+            let artist = Object.assign({}, prevState.artist);  // creating copy of state variable jasper
+            artist.image_2 = img2_url;                     // update the name property, assign a new value
+            return { artist };                                 // return new object jasper object
         })
     }
+
     handleImg3 = (img3_url)=>{
-        this.setState({
-            artist:{
-                image_3: img3_url,
-            }
+        this.setState(prevState => {
+            let artist = Object.assign({}, prevState.artist);  // creating copy of state variable jasper
+            artist.image_3 = img3_url;                     // update the name property, assign a new value
+            return { artist };                                 // return new object jasper object
         })
     }
+
     handleProfile = (profile_url)=>{
-        this.setState({
-            artist:{
-                image_3: profile_url,
-            }
+        this.setState(prevState => {
+            let artist = Object.assign({}, prevState.artist);  // creating copy of state variable jasper
+            artist.photo = profile_url;                     // update the name property, assign a new value
+            return { artist };                                 // return new object jasper object
         })
     }
 
@@ -227,7 +231,6 @@ class ArtistManagePage extends Component {
         if (this.state.artist.image_3 == undefined || this.state.artist.image_3 == "") {
             img3_option =
                 <UploadImage3 user_id={this.props.userId} SetUrl={this.handleImg3}/>
-
         } else {
             img3_option =
                 <div style={{width:"30%"}}>
