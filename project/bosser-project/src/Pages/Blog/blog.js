@@ -62,6 +62,8 @@ class Blog extends Component{
             overflow: 'hidden'
         };
 
+        {console.log(" in: " + this.props.IsLoggedIn)}
+
         const sideImageHeight = galleryHeight/3;
         if (this.state.searchTerm==undefined || this.state.searchTerm=="") {
             return(

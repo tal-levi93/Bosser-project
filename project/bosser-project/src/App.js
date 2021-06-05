@@ -17,18 +17,14 @@ import CreateEvent from "./Pages/CreateEvent"
 import SignUpForEvent from "./Pages/SignUpForEvent"
 import ManageBlog from "./Pages/ManageBlog"
 import Navbar from "./components/Header/NavbarElements";
-
-
-
 import React, {Component, useState} from "react";
 import Sidebar from "./components/Header/Sidebar";
 import Index from "./Pages";
 import sign_up from "./Pages/Sign_up/sign_up";
 import firebase from "firebase";
 import ArtistProfile from "./Pages/ArtistProfile/ArtistProfile";
+import ArtistManagePage from "./components/Artists/ArtistManagePage";
 import ArtistPage from "./components/Artists/ArtistPage";
-
-
 
 class App extends Component{
   constructor(props) {
@@ -127,7 +123,12 @@ class App extends Component{
                   <Route exact path="/manageBlog" render={(props) => (
                       <ManageBlog UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
                   )} />
-                  <Route exact path="/artists/:userid" component={ArtistPage} UserDetails={this.state.UserDetails} IsLoggedIn = {this.state.UserLog}/>
+                  <Route exact path="/artistManagePage/:userid" render={(props) => (
+                      <ArtistManagePage UserDetails={this.state.UserDetails} IsLoggedIn = {this.state.UserLog} userId={props.match.params.userid}/>
+                  )} />
+                  <Route exact path="/artists/:userid" render={(props) => (
+                      <ArtistPage UserDetails={this.state.UserDetails} IsLoggedIn = {this.state.UserLog} userId={props.match.params.userid}/>
+                  )} />
                   <Route exact path="/gallery" render={(props) => (
                       <Gallery UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>)} />
                   <Route exact path="/courses" render={(props) => (

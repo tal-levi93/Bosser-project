@@ -14,7 +14,7 @@ import firebase from "firebase";
 import YoutubeEmbed from "./youtubeVideo";
 import UploadProfileImg from "./uplodeFiles/profileImg/uploadProfileImg";
 
-class ArtistPage extends Component {
+class ArtistManagePage extends Component {
 
     constructor(props) {
         super(props);
@@ -53,20 +53,20 @@ class ArtistPage extends Component {
 
     user_delete_his_image_1(artist_id) {
         return (
-            // Delete course from courses array and update in Firebase
-            <button id={'delete'} style={{color: 'white', position:"absolute"}} onClick={() => {
-                db.collection("artists").doc(artist_id).update({
-                    image_1: ""
-                }).catch(function (error) {
-                    console.error("Error removing document: ", error);
-                });
-                this.setState(prevState => {
-                    let artist = Object.assign({}, prevState.artist);  // creating copy of state variable jasper
-                    artist.image_1 = '';                     // update the name property, assign a new value
-                    return { artist };                                 // return new object jasper object
-                })
-            }}>
-                <FaTrashAlt/></button>
+                // Delete course from courses array and update in Firebase
+                <button id={'delete'} style={{color: 'white', position:"absolute"}} onClick={() => {
+                    db.collection("artists").doc(artist_id).update({
+                        image_1: ""
+                    }).catch(function (error) {
+                        console.error("Error removing document: ", error);
+                    });
+                    this.setState(prevState => {
+                        let artist = Object.assign({}, prevState.artist);  // creating copy of state variable jasper
+                        artist.image_1 = '';                     // update the name property, assign a new value
+                        return { artist };                                 // return new object jasper object
+                    })
+                }}>
+                    <FaTrashAlt/></button>
         )
     }
 
@@ -137,7 +137,7 @@ class ArtistPage extends Component {
     handleSubmit =  (e) => {
         e.preventDefault();
         db.collection('artists').doc(this.props.userId).update({
-                youtubeVideo : this.state.artistVideo
+            youtubeVideo : this.state.artistVideo
             }
         ).then( r => {
             this.setState(prevState => {
@@ -152,7 +152,7 @@ class ArtistPage extends Component {
         e.preventDefault();
         console.log("here in des")
         db.collection('artists').doc(this.props.userId).update({
-                description : this.state.artistDescription
+            description : this.state.artistDescription
             }
         ).then( r => {
             this.setState(prevState => {
@@ -173,10 +173,11 @@ class ArtistPage extends Component {
 
         if (this.state.artist.image_1 == undefined || this.state.artist.image_1 == "") {
             img1_option =
-                <div></div>
+                    <UploadImage1 user_id={this.props.userId}/>
         } else {
             img1_option =
                 <div style={{width:"30%"}}>
+                    <div>{this.user_delete_his_image_1(this.props.userId)}</div>
                     <img src={this.state.artist.image_1} style={{ height:'450px'}}/>
                 </div>
 
@@ -184,31 +185,44 @@ class ArtistPage extends Component {
 
         if (this.state.artist.image_2 == undefined || this.state.artist.image_2 == "") {
             img2_option =
-                <div></div>
+                <UploadImage2 user_id={this.props.userId}/>
+
         } else {
             img2_option =
                 <div style={{width:"30%"}}>
+                    <div>{this.user_delete_his_image_2(this.props.userId)}</div>
                     <img src={this.state.artist.image_2} style={{ height:'450px'}}/>
                 </div>
         }
 
         if (this.state.artist.image_3 == undefined || this.state.artist.image_3 == "") {
             img3_option =
-                <div></div>
+                <UploadImage3 user_id={this.props.userId}/>
+
         } else {
             img3_option =
                 <div style={{width:"30%"}}>
+                    <div>{this.user_delete_his_image_3(this.props.userId)}</div>
                     <img src={this.state.artist.image_3} style={{ height:'450px'}}/>
                 </div>
         }
 
         if (this.state.artist.youtubeVideo == undefined || this.state.artist.youtubeVideo == "") {
             youtubeVideo =
-                <div></div>
+                <form style={{textAlign:'center'}} onSubmit={this.handleSubmit} className="white">
+                    <div className = "input-field">
+                        <label className = "line" htmlFor="username" >הכנס לינק לסרטון שתרצה להציג בעמוד: </label><br></br>
+                        <input className = "box" type="text"  id="artistVideo" required  onChange={this.handleChange}/>
+                    </div>
+                    <div><br></br>
+                        <button className = "button"><span>שלח </span></button>
+                    </div>
+                </form>
         } else {
             youtubeVideo =
                 <div>
                     <h1>סרטון של האמן:</h1>
+                    <div>{this.user_delete_his_video(this.props.userId)}</div>
                     <YoutubeEmbed embedId={this.state.artist.youtubeVideo} />
                 </div>
         }
@@ -226,6 +240,8 @@ class ArtistPage extends Component {
                 <Card>
                     <div className="artistPhoto" id="title" style={{ justifyContent: "center"}}>
                         {artistPhoto}
+                        <p style= {{color:'black', fontSize:"20px"}}>העלה / ערוך תמונה</p>
+                        <UploadProfileImg user_id={this.props.userId}/>
                     </div>
                 </Card>
                 <Card>
@@ -235,6 +251,15 @@ class ArtistPage extends Component {
                     </div>
                     <div>
                         <p style={{fontSize:"30px", textAlign:'center'}}>האמן מספר על עצמו: {this.state.artist.description}</p>
+                        <form style={{textAlign:'center'}} onSubmit={this.handleSubmitDescription} className="white">
+                            <div className = "input-field">
+                                <label className = "line" htmlFor="postText">הכנס תיאור חדש: </label><br></br>
+                                <textarea className="artistDescription" id="artistDescription" name="w3review" rows="10" cols="100" onChange={this.handleChange}/>
+                            </div>
+                            <div><br></br>
+                                <button className = "button"><span>שלח </span></button>
+                            </div>
+                        </form>
                     </div>
                     <div>
                         <div className="uploadFiles">
@@ -259,4 +284,4 @@ class ArtistPage extends Component {
 
 }
 
-export default ArtistPage
+export default ArtistManagePage

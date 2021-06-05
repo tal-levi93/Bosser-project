@@ -87,7 +87,7 @@ class CreatePost extends Component{
 
                     <div className = "input-field">
                         <label className = "line" htmlFor="postText">תוכן הפוסט: </label><br></br>
-                        <textarea id="postText" name="w3review" rows="20" cols="200" onChange={this.handleChange}/>
+                        <textarea className="postText" id="postText" name="w3review" rows="20" cols="100" onChange={this.handleChange}/>
                     </div>
 
                         <div className = "input-field">

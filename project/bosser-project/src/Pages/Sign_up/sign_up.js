@@ -18,6 +18,7 @@ class sign_up extends Component{
             user_id:"",
             yearOfBorn:0,
             password2:"",
+            profession:""
 
         }
     }
@@ -46,7 +47,13 @@ class sign_up extends Component{
                 full_name: this.state.full_name,
                 email: this.state.email,
                 yearOfBorn:this.state.yearOfBorn,
-                IsAdmin:false
+                IsAdmin:false,
+                profession:this.state.profession,
+                description:"",
+                image_1:"",
+                image_2:"",
+                image_3:"",
+                youtubeVideo:""
             }).then(result=>{
                 console.log(result)
                 this.props.history.push('/')
@@ -86,6 +93,10 @@ class sign_up extends Component{
                     <div className="input-field">
                         <label className="line" htmlFor="yearOfBorn">שנת לידה </label><br></br>
                         <input className="box" type="number"  id="yearOfBorn" min="1900" max="2021" required onChange={this.handleChange}/>
+                    </div>
+                    <div className = "input-field ">
+                        <label className = "line" htmlFor="name">התמחות:</label><br></br>
+                        <input className = "box" type="text" id="profession" required onChange={this.handleChange}/>
                     </div>
                     <div><br></br>
                         <button className = "button"><span>הירשם </span></button>
