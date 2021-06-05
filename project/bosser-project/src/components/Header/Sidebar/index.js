@@ -93,7 +93,7 @@ class Sidebar extends Component{
                         </SidebarMenu>
 
                         <SideBtnWrap>
-                            <SideBtn to='login' onClick={this.props.toggle}> התחברות</SideBtn>
+                            <SideBtn to='/login' onClick={this.props.toggle}> התחברות</SideBtn>
                             <FSideBtn href='https://www.facebook.com/bosserco/'> <FaFacebookF/></FSideBtn>
 
 

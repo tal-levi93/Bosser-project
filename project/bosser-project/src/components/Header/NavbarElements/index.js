@@ -85,6 +85,16 @@ class Navbar extends Component {
 
     }
 
+    not_admin(){
+        if(this.props.UserDetails.IsAdmin == false)
+        return(
+            <NavLink to={"/artistManagePage/" +  this.props.UserDetails.UserUid} >
+                <FaRegEdit/>
+            </NavLink>
+        )
+        return <div></div>
+    }
+
 
 
     render(padding) {
@@ -110,9 +120,7 @@ class Navbar extends Component {
                     </NavMenu>
                     <NavBtn>
                         {this.UserTab()}
-                        <NavLink to={"/artistManagePage/" +  this.props.UserDetails.UserUid} >
-                            <FaRegEdit/>
-                        </NavLink>
+                        {this.not_admin()}
 
                         <FNavBtnLink href='https://www.facebook.com/bosserco/'><FaFacebookF/> </FNavBtnLink>
                     </NavBtn>
@@ -136,7 +144,7 @@ class Navbar extends Component {
                         </NavMenu>
                         <NavBtn>
                             <NavLink to="/signup"> הרשמה </NavLink>
-                            <NavBtnLink to="login">התחברות</NavBtnLink>
+                            <NavBtnLink to="/login">התחברות</NavBtnLink>
                             <FNavBtnLink href='https://www.facebook.com/bosserco/'><FaFacebookF/> </FNavBtnLink>
                         </NavBtn>
                     </NavContainer>
