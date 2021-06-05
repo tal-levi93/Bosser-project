@@ -39,10 +39,11 @@ export const Form = styled.div`
   padding: 30px;
   background-color: white;
   z-index: 9;
+ text-align: center;
 `;
 
 export const In = styled.input`
-  font-family: 'Karantina', cursive;
+  //font-family: 'Karantina', cursive;
   width: 100%;
   margin: 8px 0 14px 0;
   border: none;

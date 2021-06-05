@@ -14,6 +14,8 @@ import {SidebarContainer} from "../Header/Sidebar/SidebarElements";
 import firebase from "firebase";
 import validator from 'validator'
 
+
+
 class Footer extends Component {
 // const Footer = () => {
 
@@ -23,7 +25,10 @@ class Footer extends Component {
             isOpen: false,
             email: "",
             exist:"",
-            setIsOpen: false
+            setIsOpen: false,
+            success: false,
+            failed: false
+
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -66,7 +71,9 @@ class Footer extends Component {
         this.setState({
             [e.target.id]:e.target.value
         })
-    }
+    };
+
+
 
     render() {
         return (
@@ -74,19 +81,19 @@ class Footer extends Component {
 
             <div>
                 <BTN ipOpen={this.props.isOpen} onClick={this.props.toggle}> <FaEnvelope/> הרשמה לדיוור אלקטרוני</BTN>
-
                 <PopUp ipOpen={this.props.isOpen} toggle={this.props.toggle}>
                     <Form onSubmit={this.handleSubmit}>
 
                         <label  htmlFor="email"></label>
                         <In id="email" value={this.state.email}   onChange={this.handleChange} />
+                        {this.success_m}
 
-                        {/*<In type="text" value={this.state.email} placeholder="הכנס דואר אלקטרוני" name="email " onfocusout={this.handleEmail}></In>*/}
+                        {/*<div id={'failed'}  style={{color:'red',fontSize:'25px'}} > דואר אלקטרוני כבר קיים </div>*/}
                         <Confirm onClick={this.handleSubmit}>הרשמה</Confirm>
                         <Close onClick={this.props.toggle}>סגור</Close>
                     </Form>
-                </PopUp>
 
+                </PopUp>
 
             </div>
         )
