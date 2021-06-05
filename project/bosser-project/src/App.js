@@ -25,6 +25,7 @@ import firebase from "firebase";
 import ArtistProfile from "./Pages/ArtistProfile/ArtistProfile";
 import ArtistManagePage from "./components/Artists/ArtistManagePage";
 import ArtistPage from "./components/Artists/ArtistPage";
+import CreateMessageNS from "./Pages/CreateMessageForNS"
 
 class App extends Component{
   constructor(props) {
@@ -148,6 +149,9 @@ class App extends Component{
 
                   <Route exact path="/createCourse"  render={(props) => (
                       <CreateCourse UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog} {...props}/>
+                  )} />
+                  <Route exact path="/createMessageNS"  render={(props) => (
+                      <CreateMessageNS UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog} {...props}/>
                   )} />
                   <Route exact path="/events/signUpEvent"  render={(props) => (
                       <SignUpForEvent />)}/>

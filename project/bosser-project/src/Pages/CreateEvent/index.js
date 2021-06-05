@@ -73,7 +73,7 @@ class CreateEvent extends Component{
                     </div>
                     <div className = "input-field">
                         <label className = "line" htmlFor="description">תיאור: </label><br></br>
-                        <textarea id="description" name="w3review" rows="10" cols="100" onChange={this.handleChange}/>
+                        <textarea className="description" id="description" name="w3review" rows="5" cols="70" onChange={this.handleChange}/>
                     </div>
                     <div className = "input-field">
                         <label className = "line" htmlFor="link">קישור לאירוע: </label><br></br>
