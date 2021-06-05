@@ -22,8 +22,8 @@ const UploadProfileImg = (props) => {
         }
     };
 
-    const handleUrl = (file_url)=>{
-        setUrl(file_url)
+    const handleUrl = (e)=>{
+        props.SetUrl(e)
     }
 
     return (

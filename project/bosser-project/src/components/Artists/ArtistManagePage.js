@@ -148,6 +148,13 @@ class ArtistManagePage extends Component {
             }
         })
     }
+    handleProfile = (profile_url)=>{
+        this.setState({
+            artist:{
+                image_3: profile_url,
+            }
+        })
+    }
 
     handleChange = (e) =>{
         this.setState({
@@ -219,7 +226,7 @@ class ArtistManagePage extends Component {
 
         if (this.state.artist.image_3 == undefined || this.state.artist.image_3 == "") {
             img3_option =
-                <UploadImage3 user_id={this.props.userId}/>
+                <UploadImage3 user_id={this.props.userId} SetUrl={this.handleImg3}/>
 
         } else {
             img3_option =
@@ -263,7 +270,7 @@ class ArtistManagePage extends Component {
                     <div className="artistPhoto" id="title" style={{ justifyContent: "center"}}>
                         {artistPhoto}
                         <p style= {{color:'black', fontSize:"20px"}}>העלה / ערוך תמונה</p>
-                        <UploadProfileImg user_id={this.props.userId}/>
+                        <UploadProfileImg user_id={this.props.userId} SetUrl ={this.handleProfile}/>
                     </div>
                 </Card>
                 <Card>
