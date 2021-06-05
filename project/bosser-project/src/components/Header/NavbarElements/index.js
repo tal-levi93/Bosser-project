@@ -65,7 +65,7 @@ class Navbar extends Component {
         )
     }
 
-    admin_is_logged_in(){
+    manage_blog(){
         if(this.props.UserDetails.IsAdmin){
             return(
                 <NavLink to="/manageBlog"> ניהול הבלוג</NavLink>
@@ -74,6 +74,17 @@ class Navbar extends Component {
         }
 
     }
+
+    send_newsletter_massage(){
+        if(this.props.UserDetails.IsAdmin){
+            return(
+                <NavLink to="/createMessageNS">  תפוצה</NavLink>
+            )
+            return <div></div>
+        }
+
+    }
+
 
 
     render(padding) {
@@ -90,10 +101,11 @@ class Navbar extends Component {
                             <NavLink to="/">  דף הבית </NavLink>
                             <NavLink to="/artists">אמנים </NavLink>
                             <NavLink to="/blog">בלוג </NavLink>
-                            {this.admin_is_logged_in()}
+                            {this.manage_blog()}
                             <NavLink to="/gallery">  גלריה </NavLink>
                             <NavLink to="/courses"> קורסים</NavLink>
                             <NavLink to="/events"> אירועים </NavLink>
+                            {this.send_newsletter_massage()}
                         </NavItem>
                     </NavMenu>
                     <NavBtn>
