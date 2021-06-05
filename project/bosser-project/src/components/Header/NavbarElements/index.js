@@ -98,7 +98,7 @@ class Navbar extends Component {
                     </NavMenu>
                     <NavBtn>
                         {this.UserTab()}
-                        <NavLink to="/ArtistProfile">
+                        <NavLink to={"/artistManagePage/" +  this.props.UserDetails.UserUid} >
                             <FaRegEdit/>
                         </NavLink>
 
