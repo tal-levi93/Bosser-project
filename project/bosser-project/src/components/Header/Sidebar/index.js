@@ -49,7 +49,7 @@ class Sidebar extends Component{
                 <Icon onClick={this.props.toggle}>
                     <CloseIcon/>
                 </Icon>
-                <SidebarWrapper>
+                <SidebarWrapper ipOpen={this.props.isOpen} >
                     {this.UserTab()}
                     <SidebarMenu>
                         <SidebarLink to='/'> דף הבית </SidebarLink>

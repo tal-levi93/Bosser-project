@@ -4,8 +4,9 @@ import {FaFacebookF, FaHome, FaImages, FaNewspaper, FaUserFriends} from "react-i
 import {GoCalendar, GoMortarBoard} from "react-icons/go";
 import {AiOutlineUserAdd} from "react-icons/ai";
 import styled from "styled-components";
-import logo from './logo.png';
-
+import logo1 from './logo2.jpg';
+import logo3 from './logo2.1.jpg';
+import logo2 from './logo2.3.jpg';
 
 
 export const Back = styled.body`
@@ -37,13 +38,27 @@ export const Title = styled.div`
 `;
 
 export const Img = styled.div`
-background-image: url(${logo});
-width: 100%;
-height: 360px;
-margin-top: 15px;
-margin-bottom: 15px;
-padding: 10px 10px;
+  background-image: url(${logo1}) ;
+  //background-repeat: no-repeat;
+  width: 100%;
+  display: grid;
+  height: 500px;
+  position: center;
+
+  @media screen and (max-width: 800px ) {
+    background-image: url(${logo3}) ;
+    height: 300px;
 
 
+  }
+  @media screen and (max-width: 500px ) {
+    background-image: url(${logo2}) ;
+    height: 400px;
+    
+
+  }
+
+    
 
 `;
+
