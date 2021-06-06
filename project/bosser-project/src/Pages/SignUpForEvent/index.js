@@ -33,6 +33,7 @@ class SignUpForEvent extends Component{
                 participants: firebase.firestore.FieldValue.arrayUnion(this.state)
             })
         }
+        this.props.history.push("/")
     }
 
     render() {
