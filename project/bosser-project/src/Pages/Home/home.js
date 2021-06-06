@@ -39,12 +39,13 @@ export const Title = styled.div`
 
 export const Img = styled.div`
   background-image: url(${logo1}) ;
-  //background-repeat: no-repeat;
+  background-repeat: no-repeat;
   width: 100%;
   display: grid;
   height: 500px;
   position: center;
-
+  
+  
   @media screen and (max-width: 800px ) {
     background-image: url(${logo3}) ;
     height: 300px;

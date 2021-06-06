@@ -26,13 +26,13 @@ div#frame {
 
 .contain{
     display: grid;
-    width: 50px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 50px;
+    /*width: 50px;*/
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
     flexDirection: row;
     flexWrap: wrap;
-    margin-right: 13%;
 }
+
 .create_btn_contain{
     display: grid;
     width: 15%;
