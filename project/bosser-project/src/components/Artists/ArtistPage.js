@@ -208,7 +208,7 @@ class ArtistPage extends Component {
         } else {
             youtubeVideo =
                 <div>
-                    <h1>סרטון של האמן:</h1>
+                    <div id={'video'} style={{fontSize:'70px',textAlign:'center',paddingTop:'30px',paddingBottom:'10px'}}>סרטון של האמן:</div>
                     <YoutubeEmbed embedId={this.state.artist.youtubeVideo} />
                 </div>
         }
