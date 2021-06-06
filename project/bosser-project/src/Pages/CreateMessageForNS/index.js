@@ -33,11 +33,11 @@ class CreateMessageNS extends Component{
         }
         axios.post('https://endodty5c2zjzm7.m.pipedream.net', email)
             .then(response =>
-                alert("ההודעה נשלחה לכל רשימת התפוצה")
+                console.log(response)
             ).catch(err=>{
             console.log(err)
         })
-
+        alert("הודעה נשלחה לכל רשימת התפוצה")
     };
 
     handleSubmit = async (e) => {
