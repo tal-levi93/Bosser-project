@@ -5,46 +5,6 @@ import Footer from "../components/Footer";
 import Home from "./Home";
 
 
-/*
-class Index extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isOpen:'false'
-        }
-    }
-    toggle = () => {
-        if(this.state.isOpen == true){
-            this.setState({
-                isOpen:'false'
-            })
-        }
-        else {
-            this.setState({
-                isOpen: 'true'
-            })
-        }
-        return this.state.isOpen
-    };
-
-    render() {
-
-
-        return (
-            <div>
-                <Header isOpen={this.isOpen} toggle={this.toggle} isLoggedIn={this.props.isLoggedIn}/>
-                <Footer isOpen={this.isOpen} toggle={this.toggle}/>
-            </div>
-        );
-    }
-}
-export default Index
-*/
-
-
-
-
-
 const Index = (props) => {
     const [isOpen, setIsOpen] = useState(false);
 

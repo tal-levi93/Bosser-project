@@ -27,7 +27,7 @@ export const P = styled.p`
 
 export const Title = styled.div`
   padding-right: 30px;
-  margin-top: 17px;
+  margin-top: 0px;
   padding-left: 30px;
   text-align: center;
   color: white;
@@ -42,7 +42,7 @@ export const Img = styled.div`
   background-repeat: no-repeat;
   width: 100%;
   display: grid;
-  height: 500px;
+  height: 400px;
   position: center;
   
   

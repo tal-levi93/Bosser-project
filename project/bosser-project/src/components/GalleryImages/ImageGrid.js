@@ -6,21 +6,13 @@ import { motion } from 'framer-motion';
 import deleteDoc from '../../hooks/deleteDoc'
 import { FaTrashAlt } from "react-icons/fa";
 
-// const admin_logged_in = (doc) =>{
-//     if(props.UserDetails.IsAdmin)
-//     return(
-//         // For admin only
-//         <button  id={'delete'} style={{color:'white'}} onClick={() => { deleteDoc(doc,'gallery')}} >
-//             <FaTrashAlt/></button>
-//     )
-//     else return(<div></div>)
-// }
 
-
+/* This function shows the gallery images from firebase (gallery collection)     */
 const ImageGrid = (props) => {
 
     const { docs } = useFirestore('gallery');
 
+    /* If admin is logged in delete button will show up */
     const admin_logged_in = (doc) =>{
         if(props.UserDetails.IsAdmin)
             return(

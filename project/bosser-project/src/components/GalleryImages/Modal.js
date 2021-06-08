@@ -5,7 +5,7 @@ import {FaRegWindowClose} from "react-icons/fa";
 import React,{Component} from "react";
 
 
-
+/*This function shows images that the user clicked on (zoom option with close option) */
 const Modal = ({ setSelectedImg, selectedImg }) => {
 
     const { docs } = useFirestore('images');

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import ProgressBar from './ProgressBar';
 
+/*With this function admin can upload some images to gallery page and update it in firebase  */
 const UploadForm = (props) => {
     const [file, setFile] = useState(null);
     const [error, setError] = useState(null);
 
+    /* This is the only types that the upload will confirm*/
     const types = ['image/png', 'image/jpeg'];
 
     const handleChange = (e) => {

@@ -1,16 +1,6 @@
 import React, {Component} from 'react'
 import firebase from "firebase";
-import {auth} from "../../../Firebase/firebase";
-import { Route, Switch} from "react-router-dom";
-import Blog from "../../../Pages/Blog/blog";
-import Gallery from "../../../Pages/Gallery/gallery";
-import Courses from "../../../Pages/Courses/courses";
-import Events from "../../../Pages/Events/events";
-import Newsletter from "../../../Pages/newsletter";
-import ArtistProfile from "../../../Pages/ArtistProfile/ArtistProfile";
 import {FaFacebookF, FaUserFriends, FaImages, FaNewspaper, FaHome, FaBars} from 'react-icons/fa';
-import { GoMortarBoard , GoCalendar } from "react-icons/go";
-import { AiOutlineUserAdd } from "react-icons/ai";
 import { FaRegEdit } from "react-icons/fa";
 
 import {
@@ -26,9 +16,10 @@ import {
     FullName,
     LogOutBtn
 } from './Navbar';
-import artistLogo from "../../../Pages/Artists/artistLogo.jpg";
-import ReactRoundedImage from "react-rounded-image";
 
+
+/*This class provide toolbar for min-width of 1250px (regular computer devices)
+the toolbar contain all the pages that belongs to this website and link for facebook page*/
 class Navbar extends Component {
     constructor(props) {
         super(props);
@@ -46,6 +37,7 @@ class Navbar extends Component {
         }
     }
 
+    /*User that is logged-in can log-out - click on toolbar */
     LogOut = ()=> {
         this.props.ClearUserDetails()
         firebase.auth().signOut().then(() => {
@@ -57,6 +49,7 @@ class Navbar extends Component {
 
     }
 
+    /* Toolbar say Hi for User that is logged-in */
     UserTab(){
         return(
             <FullName>שלום  {this.props.UserDetails.FullName}
@@ -65,6 +58,7 @@ class Navbar extends Component {
         )
     }
 
+    /*This is admin only functionality */
     manage_blog(){
         if(this.props.UserDetails.IsAdmin){
             return(
@@ -74,7 +68,7 @@ class Navbar extends Component {
         }
 
     }
-
+    /* This is admin only functionality*/
     send_newsletter_massage(){
         if(this.props.UserDetails.IsAdmin){
             return(
@@ -85,6 +79,8 @@ class Navbar extends Component {
 
     }
 
+
+    /* User that is logged-in can manage his artist personal pages*/
     not_admin(){
         if(this.props.UserDetails.IsAdmin == false)
         return(

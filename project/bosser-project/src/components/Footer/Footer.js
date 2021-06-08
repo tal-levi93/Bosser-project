@@ -57,6 +57,7 @@ export const In = styled.input`
 `;
 
 export const Confirm = styled.button`
+  display: ${({success}) => (success ? 'none' : 'grid')};
   background-color: red;
   color: white;
   font-size: 190%;
