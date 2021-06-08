@@ -37,7 +37,6 @@ class CreateMessageNS extends Component{
             ).catch(err=>{
             console.log(err)
         })
-        alert("הודעה נשלחה לכל רשימת התפוצה")
     };
 
     handleSubmit = async (e) => {
@@ -48,6 +47,7 @@ class CreateMessageNS extends Component{
         }).catch((err)=>{
             console.log(err)
         })
+        this.props.history.push("/")
 
     }
 
