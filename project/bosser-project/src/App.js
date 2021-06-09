@@ -40,16 +40,21 @@ class App extends Component{
         IsAdmin:""
       }
     }
+    this.IsLoggedIn = this.IsLoggedIn.bind(this)
   }
+
   IsLoggedIn = async()=>{
     try {
-      await new Promise((resolve, reject) =>
+        await new Promise((resolve, reject) =>
           firebase.auth().onAuthStateChanged(
               async (user) => {
                 if (user && user.uid) {
+                  console.log("the user is: " , user)
                   const curr_user = await db.collection('artists').doc(user.uid)
                   curr_user.get().then((res)=>{
                     let data = res.data()
+                    console.log("data 2 is " ,  data)
+
                     if(res.exists){
                       this.setState({
                         UserLog:true,
@@ -76,16 +81,18 @@ class App extends Component{
               error => reject(error)
           )
       )
-    } catch (error) {
-
+    } catch (err) {
+      console.log(err)
     }
   }
 
   componentWillMount() {
-    this.IsLoggedIn().then(r => {
-      console.log( "r :: " , r)
+    this.IsLoggedIn().then((r)=>{
+      console.log(r)
+    })
 
-    });
+
+
   }
 
   handleUserDetails = ()=>{
@@ -102,6 +109,8 @@ class App extends Component{
   }
 
   render(){
+
+    console.log("the state is: " ,  this.state)
     return (
         <div>
           <div className="App" dir="rtl">

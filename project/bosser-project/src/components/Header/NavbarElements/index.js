@@ -93,11 +93,12 @@ class Navbar extends Component {
 
 
 
+
+
     render(padding) {
-        const {toggle} = this.props.toggle
+        const {toggle} = this.props.toggle //checkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk!!!!!!
         let buildNav
-        console.log("the prop is:" ,  this.props.IsLoggedIn)
-        if (this.state.LoggedIn) {
+        if (this.props.isLoggedIn) {
 
             buildNav = (<Nav>
                 <NavContainer>

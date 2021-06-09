@@ -23,13 +23,14 @@ class Events extends Component {
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
         let events = [];
         let events_id = [];
         let signed_up = [];
-        let signed = false;
+        console.log("the props are : " , this.props.UserDetails)
         db.collection('events').get().then((snapshot) => {
             snapshot.docs.forEach(doc => {
+                let signed = false;
                 events.push(doc.data());
                 events_id.push(doc.id);
                 doc.data().participants.forEach((participant)=>{
@@ -37,13 +38,7 @@ class Events extends Component {
                         signed = true
                     }
                 })
-                if(signed == true){
-                    signed_up.push(true)
-                }
-                else{
-                    signed_up.push(false)
-                }
-                signed = false;
+                signed_up.push(signed)
             });
             console.log(signed_up)
             this.setState({events: events});
@@ -80,7 +75,6 @@ class Events extends Component {
                 participants: firebase.firestore.FieldValue.arrayUnion(this.props.UserDetails )
             })
             this.sendEmail(this.state.events[idx])
-            this.props.history.push("/")
         }
     }
 
