@@ -1,12 +1,6 @@
 import React,{Component} from "react";
-import firebase from "firebase";
 import {auth} from "../../Firebase/firebase";
-import {Route, Switch} from "react-router-dom";
-import Home from "../Home";
 import "./login.css"
-import styled from "styled-components";
-import logo from "../Home/logo.png";
-import Header from "../../components/Header";
 import ForgotPassword from "../ForgotPassword/forgotPassword";
 
 

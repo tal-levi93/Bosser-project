@@ -41,7 +41,7 @@ export const Title = styled.div`
 
 `;
 
-export const Imgs = styled.div`
+export const Img = styled.div`
   position: relative;
 
   

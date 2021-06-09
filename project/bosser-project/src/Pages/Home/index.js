@@ -1,6 +1,5 @@
 import React from 'react';
-import {P,Title,Imgs} from "./home";
-import Logo from './logo.png';
+import {P,Title,Img} from "./home";
 import img4 from './4.jpg'
 import img1 from './1.jpg'
 import img3 from './3.jpg'
@@ -12,12 +11,12 @@ const Home = () => {
     return (
         <div>
 
-            <Imgs>
+            <Img>
             <img src={img2}  style={{padding:'5px ',width:'25%'}}/>
             <img src={img1} style={{padding:'5px',width:'25%'}}/>
             <img src={img3} style={{padding:'5px',width:'25%'}}/>
             <img src={img4} style={{padding:'5px',width:'25%'}}/>
-            </Imgs>
+            </Img>
 
 
             <Title>מי היא בוסרה?</Title>
