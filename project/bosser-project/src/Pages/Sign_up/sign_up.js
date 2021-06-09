@@ -3,6 +3,7 @@ import firebase,{db,auth} from "../../Firebase/firebase";
 import {Route, Switch} from "react-router-dom";
 import Home from "../Home";
 import "./sign_up.css"
+import axios from "axios";
 
 
 
@@ -22,6 +23,23 @@ class sign_up extends Component{
 
         }
     }
+
+    sendEmail = (mail)=>{
+        const email = {
+            fromEmail:
+                "bosserjce@gmail.com",
+            mailContent:
+                "נרשמתם בהצלחה לאתר בוסר אנחנו מאחלים לכם חוויה מהנה :)",
+            mailSubject:
+                "Event sign in Confirmation",
+            toEmail:
+            mail,
+        }
+        axios.post('https://endodty5c2zjzm7.m.pipedream.net', email)
+            .then(response => console.log(response)).catch(err=>{
+            console.log(err)
+        })
+    };
 
 
 
@@ -56,6 +74,7 @@ class sign_up extends Component{
                 youtubeVideo:""
             }).then(result=>{
                 console.log(result)
+                this.sendEmail(this.state.email)
                 this.props.history.push('/')
             });
 

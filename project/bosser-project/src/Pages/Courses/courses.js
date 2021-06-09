@@ -61,6 +61,10 @@ class Courses extends Component {
 
     }
 
+    SignUpForCourse(idx , course_id){
+
+    }
+
 
     is_logged_in(){
         if(this.props.IsLoggedIn) {

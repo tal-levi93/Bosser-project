@@ -22,15 +22,6 @@ class Events extends Component {
         }
     }
 
-    // sendEmail(){
-    //     emailjs.sendForm('gmail', 'template_5coreyc', {name:"Tal Levi" , subejct:"das" , message:"tasda"}, 'user_3S2tYOLpeQzh4elu8tjpo')
-    //         .then((result) => {
-    //             console.log(result.text);
-    //         }, (error) => {
-    //             console.log(error.text);
-    //         });
-    // }
-
     componentDidMount() {
         let events = [];
         let events_id = [];
@@ -45,12 +36,14 @@ class Events extends Component {
 
     }
 
-    sendEmail = ()=>{
+    sendEmail = (event)=>{
+        console.log(event)
+        console.log(event.date.toDate().toLocaleDateString())
         const email = {
             fromEmail:
                 "bosserjce@gmail.com",
             mailContent:
-                "You successfully signed up for the event",
+                "נרשמתם בהצלחה ל" + event.name + "\n" + "האירוע יתקיים בתאריך: " + event.date.toDate().toLocaleDateString()  + "\n" + "צוות בוסר מאחל לכם הנאה :)",
             mailSubject:
                 "Event sign in Confirmation",
             toEmail:
@@ -70,7 +63,7 @@ class Events extends Component {
             db.collection("events").doc(this.state.events_id[idx]).update({
                 participants: firebase.firestore.FieldValue.arrayUnion(this.props.UserDetails )
             })
-            this.sendEmail()
+            this.sendEmail(this.state.events[idx])
         }
     }
 
@@ -91,7 +84,6 @@ class Events extends Component {
         let signed_in = false;
         let curr_participants = events[idx].participants
         curr_participants.forEach( (participant) => {
-            console.log("the par useruid is: " , participant.UserUid , "and the curr user is: " , this.props.UserDetails.UserUid)
             if(participant.UserUid === this.props.UserDetails.UserUid){
                 signed_in = true;
             }
