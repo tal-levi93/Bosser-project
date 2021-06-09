@@ -15,7 +15,8 @@ class CreateCourse extends Component{
             duration: 0,
             link: "",
             name:"",
-            participants: 0
+            participants: 0,
+            signed:[]
         }
     }
 
@@ -50,7 +51,8 @@ class CreateCourse extends Component{
                 duration: "",
                 link: "",
                 name:"",
-                participants: 0
+                participants: 0,
+                signed:[]
             })
             this.props.history.push('/')
         }).catch(err=>{
