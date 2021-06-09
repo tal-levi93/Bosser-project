@@ -75,6 +75,7 @@ class Events extends Component {
                 participants: firebase.firestore.FieldValue.arrayUnion(this.props.UserDetails )
             })
             this.sendEmail(this.state.events[idx])
+            this.props.history.push("/")
         }
     }
 
