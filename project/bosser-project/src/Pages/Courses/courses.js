@@ -113,7 +113,6 @@ class Courses extends Component {
     sign(course_id,index) {
         if (window.confirm('האם אתה בטוח שהנך רוצה להירשם לקורס זה?')) {
             let update_parti = this.state.courses[index].currentParticipants + 1
-            console.log(update_parti)
             db.collection("courses").doc(this.state.courses_id[index]).update({
                 signed: firebase.firestore.FieldValue.arrayUnion(this.props.UserDetails),
                 currentParticipants: update_parti
@@ -140,7 +139,6 @@ class Courses extends Component {
     cancel(course_id, index){
         if (window.confirm('האם אתה בטוח שהנך רוצה לבטל רישום לקורס זה?')) {
             let update_parti = this.state.courses[index].currentParticipants - 1
-            console.log(update_parti)
             db.collection("courses").doc(this.state.courses_id[index]).update({
                 signed: firebase.firestore.FieldValue.arrayRemove(this.props.UserDetails)}).then(r => {
                 db.collection("courses").doc(this.state.courses_id[index]).update({currentParticipants: update_parti}).then(r => {
