@@ -16,13 +16,10 @@ import CreateCourse from "./Pages/CreateCourse"
 import CreateEvent from "./Pages/CreateEvent"
 import SignUpForEvent from "./Pages/SignUpForEvent"
 import ManageBlog from "./Pages/ManageBlog"
-import Navbar from "./components/Header/NavbarElements";
 import React, {Component, useState} from "react";
-import Sidebar from "./components/Header/Sidebar";
 import Index from "./Pages";
 import sign_up from "./Pages/Sign_up/sign_up";
 import firebase from "firebase";
-import ArtistProfile from "./Pages/ArtistProfile/ArtistProfile";
 import ArtistManagePage from "./components/Artists/ArtistManagePage";
 import ArtistPage from "./components/Artists/ArtistPage";
 import CreateMessageNS from "./Pages/CreateMessageForNS"
@@ -49,11 +46,9 @@ class App extends Component{
           firebase.auth().onAuthStateChanged(
               async (user) => {
                 if (user && user.uid) {
-                  console.log("the user is: " , user)
                   const curr_user = await db.collection('artists').doc(user.uid)
                   curr_user.get().then((res)=>{
                     let data = res.data()
-                    console.log("data 2 is " ,  data)
 
                     if(res.exists){
                       this.setState({
@@ -109,21 +104,18 @@ class App extends Component{
   }
 
   render(){
-
-    console.log("the state is: " ,  this.state)
     return (
         <div>
           <div className="App" dir="rtl">
             <header className="App-header">
               <Router>
-                {/*{console.log(this.state.UserLog)}*/}
                 <Index isLoggedIn = {this.state.UserLog} UserDetails = {this.state.UserDetails} ClearUserDetails = {this.handleUserDetails}/>
                 <Switch >
                   <Route exact path="/" component={Home} />
                   <Route exact path="/login" component={Login} />
-                  <Route exact path="/ArtistProfile" render={(props) => (
-                      <ArtistProfile UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
-                  )} />
+                  {/*<Route exact path="/ArtistProfile" render={(props) => (*/}
+                  {/*    <ArtistProfile UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>*/}
+                  {/*)} />*/}
                   <Route exact path="/artists" render={(props) => (
                       <Artists UserDetails={this.state.UserDetails}  IsLoggedIn = {this.state.UserLog}/>
                   )} />
@@ -180,53 +172,9 @@ class App extends Component{
   }
 
 
-
-
 }
 export default App;
 
 
-
-
-//
-// function App() {
-//
-//   firebase.auth().onAuthStateChanged(function (user) {
-//     if (user) {
-//       console.log("imhere")
-//     } else {
-//       console.log("3213")
-//     }
-//   });
-//
-//   return (
-//       <>
-//     <div className="App" dir="rtl">
-//       <header className="App-header">
-//
-//         <Router>
-//           <Index/>
-//             <Switch>
-//               <Route exact path="/" component={Home} />
-//               <Route exact path="/login" component={Login} />
-//               <Route exact path="/artists" component={Artists}/>
-//               <Route exact path="/blog" component={Blog}/>
-//               <Route exact path="/gallery" component={Gallery}/>
-//               <Route exact path="/courses" component={Courses}/>
-//               <Route exact path="/signup" component={sign_up}/>
-//               {<Route exact path="/courses/:id" component={Courses}/>}
-//               <Route exact path="/events" component={Events}/>
-//               <Route exact path="/newsletter" component={Newsletter}/>
-//               {/*<Route exact path="/newsletter/:id" component={Newsletter}/>*/}
-//           </Switch>
-//         </Router>
-//
-//
-//
-//       </header>
-//     </div>
-//       </>
-//   );
-// }
 
 

@@ -41,9 +41,16 @@ export const Title = styled.div`
 
 `;
 
-export const Img = styled.div`
+export const Img_con = styled.div`
   position: relative;
-
   
 `;
+
+export const Img = styled.img`
+  padding:5px ;
+  width:25%;
+`;
+
+
+
 

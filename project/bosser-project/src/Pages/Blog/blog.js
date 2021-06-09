@@ -71,7 +71,7 @@ class Blog extends Component{
                 <div className="blogPage">
                     {/*<BlogHeader/>
                 <Hero/>*/}
-                    <input id={'search'} type="text" placeholder="חיפוש" style={{backgroundColor:'white'}} onChange={event =>
+                    <input id={'search'} type="text" placeholder="חיפוש לפי שם הפוסט" style={{backgroundColor:'white'}} onChange={event =>
                     {
                         this.setState({searchTerm: event.target.value})
                     }}></input>

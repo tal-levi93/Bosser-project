@@ -1,6 +1,5 @@
 import React,{Component} from "react";
 import {auth, db} from "../../Firebase/firebase";
-import Search from '../../components/Search/index'
 import artistLogo from "../Artists/artistLogo.jpg";
 import {Button} from "@material-ui/core";
 import './artists.css'
@@ -72,7 +71,7 @@ class Artists extends Component{
             <div id={'page'}>
                 <br/>
                 <div id={'title'} style={{color:'black'}}>האמנים שלנו</div>
-                <input id={'search'} type="text" placeholder="חיפוש" onChange={event =>
+                <input id={'search'} type="text" placeholder="חיפוש לפי שם" onChange={event =>
                 {
                     this.setState({searchTerm: event.target.value})
                 }}/>

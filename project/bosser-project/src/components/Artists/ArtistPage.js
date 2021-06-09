@@ -1,9 +1,7 @@
 import React, {useState, useEffect, Component} from "react";
 import {auth, db} from '../../Firebase/firebase';
-import ArtistProfile from "../../Pages/ArtistProfile/ArtistProfile";
 import artistLogo from "../../Pages/Artists/artistLogo.jpg";
 import Card from "../../components/Blog/UI/Card";
-import UpdateProfile from "../../Pages/ArtistProfile/UpdateProfile";
 import UploadImage1 from "./uplodeFiles/img1/uploadImg_1"
 import UploadImage2 from "./uplodeFiles/img2/uplodeImg_2"
 import UploadImage3 from "./uplodeFiles/img3/uplodeImg_3"
@@ -176,8 +174,8 @@ class ArtistPage extends Component {
                 <div></div>
         } else {
             img1_option =
-                <div style={{width:"30%"}}>
-                    <img src={this.state.artist.image_1} style={{ height:'450px'}}/>
+                <div id={'img_con'} >
+                    <img id={'artist_img'} src={this.state.artist.image_1} />
                 </div>
 
         }
@@ -187,8 +185,8 @@ class ArtistPage extends Component {
                 <div></div>
         } else {
             img2_option =
-                <div style={{width:"30%"}}>
-                    <img src={this.state.artist.image_2} style={{ height:'450px'}}/>
+                <div id={'img_con'} >
+                    <img id={'artist_img'} src={this.state.artist.image_2} />
                 </div>
         }
 
@@ -197,8 +195,8 @@ class ArtistPage extends Component {
                 <div></div>
         } else {
             img3_option =
-                <div style={{width:"30%"}}>
-                    <img src={this.state.artist.image_3} style={{ height:'450px'}}/>
+                <div id={'img_con'} >
+                    <img id={'artist_img'} src={this.state.artist.image_3} />
                 </div>
         }
 
@@ -237,7 +235,7 @@ class ArtistPage extends Component {
                         <p style={{fontSize:"30px", textAlign:'center'}}>האמן מספר על עצמו: {this.state.artist.description}</p>
                     </div>
                     <div>
-                        <div className="uploadFiles">
+                        <div id= {'artistUploadFiles'} className="uploadFiles" >
                             {img1_option}
                             {img2_option}
                             {img3_option}

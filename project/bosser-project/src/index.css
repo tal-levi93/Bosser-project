@@ -27,6 +27,23 @@ p,b,input{
 
 }
 
+#img_con{
+  width: 30%;
+  margin: 30px;
+}
+
+#artistUploadFiles{
+display:flex;
+  text-align: center;
+}
+
+#artist_img{
+ height:350px;
+  width:85%;
+
+}
+
+
 @media only screen and (max-width: 1250px) {
 
   #title{
@@ -35,5 +52,17 @@ p,b,input{
   }
 
 
+}
 
+@media only screen and (max-width: 850px) {
+
+  #artist_img{
+    height: 200px;
+    width: 100%;
+  }
+
+  #img_con{
+    width: 33%;
+    margin: 10px;
+  }
 }

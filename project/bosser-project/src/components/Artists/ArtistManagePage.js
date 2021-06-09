@@ -1,9 +1,7 @@
 import React, {useState, useEffect, Component} from "react";
 import {auth, db} from '../../Firebase/firebase';
-import ArtistProfile from "../../Pages/ArtistProfile/ArtistProfile";
 import artistLogo from "../../Pages/Artists/artistLogo.jpg";
 import Card from "../../components/Blog/UI/Card";
-import UpdateProfile from "../../Pages/ArtistProfile/UpdateProfile";
 import UploadImage1 from "./uplodeFiles/img1/uploadImg_1"
 import UploadImage2 from "./uplodeFiles/img2/uplodeImg_2"
 import UploadImage3 from "./uplodeFiles/img3/uplodeImg_3"
