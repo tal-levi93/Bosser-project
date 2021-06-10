@@ -18,7 +18,7 @@ export const P = styled.p`
   margin-bottom: 100px;
   
   @media screen and (max-width: 600px) {
-    font-size: 26px;
+    font-size: 15px;
   }
 
 
@@ -36,7 +36,7 @@ export const Title = styled.div`
   padding-bottom: 10px;
 
   @media screen and (max-width: 600px) {
-    font-size: 80px;
+    font-size: 60px;
   }
 
 `;

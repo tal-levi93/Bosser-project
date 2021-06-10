@@ -27,7 +27,6 @@ class Events extends Component {
         let events = [];
         let events_id = [];
         let signed_up = [];
-        console.log("the props are : " , this.props.UserDetails)
         db.collection('events').get().then((snapshot) => {
             snapshot.docs.forEach(doc => {
                 let signed = false;
@@ -40,7 +39,6 @@ class Events extends Component {
                 })
                 signed_up.push(signed)
             });
-            console.log(signed_up)
             this.setState({events: events});
             this.setState({events_id: events_id});
         })
@@ -48,8 +46,6 @@ class Events extends Component {
     }
 
     sendEmail = (event)=>{
-        console.log(event)
-        console.log(event.date.toDate().toLocaleDateString())
         const email = {
             fromEmail:
                 "bosserjce@gmail.com",
@@ -82,7 +78,6 @@ class Events extends Component {
     cancel_reg(idx , event_id){
         console.log(event_id)
         if (window.confirm('האם אתה בטוח שהנך רוצה לבטל רישום לאירוע זה?')) {
-            console.log("the event id is:" , this.state.events_id[idx])
             db.collection("events").doc(this.state.events_id[idx]).update({
                 participants: firebase.firestore.FieldValue.arrayRemove(this.props.UserDetails)
             }).catch(function (error) {

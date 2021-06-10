@@ -148,7 +148,6 @@ class ArtistPage extends Component {
 
     handleSubmitDescription = (e) => {
         e.preventDefault();
-        console.log("here in des")
         db.collection('artists').doc(this.props.userId).update({
                 description : this.state.artistDescription
             }
@@ -220,9 +219,10 @@ class ArtistPage extends Component {
         }
 
         return (
-            <div id="blogPostContainer">
+            <div  id={'page'} style={{paddingBottom:'0'}}>
+                <br/>
                 <Card>
-                    <div className="artistPhoto" id="title" style={{ justifyContent: "center"}}>
+                    <div className="artistPhoto" id="title" style={{ justifyContent: "center",padding:'10px'}}>
                         {artistPhoto}
                     </div>
                 </Card>
@@ -245,12 +245,9 @@ class ArtistPage extends Component {
 
                 </Card>
 
-                <Card>
+                <Card style={{paddingBottom:'0'}}>
                     {youtubeVideo}
                 </Card>
-
-
-
             </div>
         )
     }

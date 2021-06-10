@@ -24,7 +24,6 @@ class Sidebar extends Component{
     }
     /* Toolbar say hi for User that is logged-in */
     UserTab(){
-        console.log(this.props.UserDetails)
         return(
             <SideFullName>שלום  {this.props.UserDetails.FullName}
 

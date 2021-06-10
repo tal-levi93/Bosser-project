@@ -82,9 +82,7 @@ class App extends Component{
   }
 
   componentWillMount() {
-    this.IsLoggedIn().then((r)=>{
-      console.log(r)
-    })
+    this.IsLoggedIn().then((r)=>{})
 
 
 

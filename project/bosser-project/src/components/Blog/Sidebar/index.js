@@ -36,7 +36,7 @@ class Sidebar extends Component {
                         <div className="cardHeader" style={{fontSize:'30px'}}>
                         <span>
                             <a href={"/blog/createPost"}>
-                                <p style={{fontWeight:'bold'}}>צור פוסט</p>
+                                <p id={'p_blog'} style={{fontWeight:'bold'}}>צור פוסט</p>
                             </a>
                         </span>
                         </div>
@@ -44,7 +44,7 @@ class Sidebar extends Component {
 
                     <Card style={{marginBottom: '20px', padding: '20px', boxSizing: "border-box", height: '100%'}}>
                         <div className="cardHeader">
-                            <span><p style={{fontWeight:'bold'}}>פוסטים אחרונים:</p></span>
+                            <span><p id={'p_blog'} style={{fontWeight:'bold'}}>פוסטים אחרונים:</p></span>
                         </div>
 
                         <div className="recentPosts">

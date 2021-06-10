@@ -8,7 +8,6 @@ const ArtistImg1ProgressBar = ({ file, setFile , setUrl , ArtistId}) => {
     const { progress, url } = AddImageToStorage(file);
     useEffect(() => {
         if (url) {
-            console.log("the url is: " ,url)
             setUrl(url)
             setFile(null);
             db.collection('artists').doc(ArtistId).update({

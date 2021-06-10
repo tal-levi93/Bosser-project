@@ -62,7 +62,6 @@ class Blog extends Component{
             overflow: 'hidden'
         };
 
-        {console.log(" in: " + this.props.IsLoggedIn)}
 
         const sideImageHeight = galleryHeight/3;
         if (this.state.searchTerm==undefined || this.state.searchTerm=="") {
@@ -71,7 +70,7 @@ class Blog extends Component{
                 <div className="blogPage">
                     {/*<BlogHeader/>
                 <Hero/>*/}
-                    <input id={'search'} type="text" placeholder="חיפוש לפי שם הפוסט" style={{backgroundColor:'white'}} onChange={event =>
+                    <input id={'search'} type="text" placeholder="חיפוש לפי שם הפוסט" style={{backgroundColor:'white',fontSize:'20px'}} onChange={event =>
                     {
                         this.setState({searchTerm: event.target.value})
                     }}></input>
@@ -160,7 +159,7 @@ class Blog extends Component{
                                         return val
                                     }
                                 },).map((val , idx)=>(
-                                    <RecentPost key={idx} style={{width:'100%', padding:'3px 3px'}} post={val} id={idx}/>
+                                    <RecentPost key={idx} style={{width:'100%', padding:'3px 3px'}} post={val} id={this.state.postIds[this.state.posts.indexOf(val)]}/>
                                 ))}
                             </div>
                         </section>

@@ -26,7 +26,7 @@ export const Nav = styled.nav`
   @media screen and (max-width:190px){
     transition: 0.8s all ease;
     width: 50%;
-    height: 60px;
+    height: 50px;
 
   }
 `;
@@ -78,7 +78,7 @@ export const Bars = styled.div`
     top: 0;
     text-align: center;
     transform: translate(-10%, 30%);
-    font-size: 59px;
+    font-size: 50px;
     cursor: pointer;
   }
 

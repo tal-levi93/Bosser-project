@@ -70,7 +70,7 @@ class Artists extends Component{
             <div id={'page'}>
                 <br/>
                 <div id={'title'} style={{color:'black'}}>האמנים שלנו</div>
-                <input id={'search'} type="text" placeholder="חיפוש לפי שם" onChange={event =>
+                <input id={'search'} type="text" placeholder="חיפוש לפי שם" style={{fontSize:'20px'}} onChange={event =>
                 {
                     this.setState({searchTerm: event.target.value})
                 }}/>

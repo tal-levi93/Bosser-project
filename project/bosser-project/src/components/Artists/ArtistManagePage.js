@@ -134,7 +134,6 @@ class ArtistManagePage extends Component {
         })
     }
     handleImg2 = (img2_url)=>{
-        console.log("here in change")
         this.setState(prevState => {
             let artist = Object.assign({}, prevState.artist);  // creating copy of state variable jasper
             artist.image_2 = img2_url;                     // update the name property, assign a new value
@@ -180,7 +179,6 @@ class ArtistManagePage extends Component {
 
     handleSubmitDescription = (e) => {
         e.preventDefault();
-        console.log("here in des")
         db.collection('artists').doc(this.props.userId).update({
             description : this.state.artistDescription
             }
@@ -200,7 +198,6 @@ class ArtistManagePage extends Component {
         let img3_option
         let youtubeVideo
         let artistPhoto
-        console.log("the state is: " , this.state)
 
         if (this.state.artist.image_1 == undefined || this.state.artist.image_1 == "") {
             img1_option =

@@ -10,15 +10,6 @@ import {FaSearch} from "react-icons/fa";
 
 const Gallery=(props) => {
 
-// class Gallery extends Component{
-
-
-    // constructor(props) {
-    //     super(props);
-    //
-    // }
-    //     {console.log('this:',props.UserDetails)}
-
         const [selectedImg, setSelectedImg] = useState(null);
         return (
             <div>
