@@ -83,7 +83,6 @@ class Artists extends Component{
                             return val
                         }
                     },).map((val , idx)=>(
-                        console.log('index:',val),
                         this.create_artist(val,val.user_uid)
                     ))}
                 </div>
