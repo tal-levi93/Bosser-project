@@ -77,7 +77,7 @@ class Sidebar extends Component{
                     {this.UserTab()}
                     <SidebarMenu>
                         <SidebarLink to='/'> דף הבית </SidebarLink>
-                        <SidebarLink to='./artists'>אמנים </SidebarLink>
+                        <SidebarLink to='/artists'>אמנים </SidebarLink>
                         <SidebarLink to='/blog'> בלוג</SidebarLink>
                         {this.manage_blog()}
                         <SidebarLink to='/gallery'>  גלריה </SidebarLink>
@@ -105,7 +105,7 @@ class Sidebar extends Component{
                     <SidebarWrapper ipOpen={this.props.isOpen}>
                         <SidebarMenu>
                             <SidebarLink to='/'>דף הבית </SidebarLink>
-                            <SidebarLink to='./artists'>אמנים </SidebarLink>
+                            <SidebarLink to='/artists'>אמנים </SidebarLink>
                             <SidebarLink to='/blog'>בלוג </SidebarLink>
                             <SidebarLink to='/gallery'>  גלריה </SidebarLink>
                             <SidebarLink to='/courses'> קורסים</SidebarLink>
