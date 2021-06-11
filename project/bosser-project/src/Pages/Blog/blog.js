@@ -135,8 +135,7 @@ class Blog extends Component{
         } else {
             return (
                 <div className="blogPage">
-                    {/*<BlogHeader/>
-                <Hero/>*/}
+
                     <input id={'search'} type="text" placeholder="חיפוש" style={{backgroundColor:'white'}} onChange={event =>
                     {
                         this.setState({searchTerm: event.target.value})

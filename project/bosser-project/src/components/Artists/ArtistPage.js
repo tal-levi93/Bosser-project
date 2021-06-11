@@ -205,7 +205,7 @@ class ArtistPage extends Component {
         } else {
             youtubeVideo =
                 <div>
-                    <div id={'video'} style={{fontSize:'70px',textAlign:'center',paddingTop:'30px',paddingBottom:'10px'}}>סרטון של האמן:</div>
+                    <p id={'video'} style={{fontSize:'40px',textAlign:'center',paddingTop:'30px',paddingBottom:'10px',textDecoration: 'underline'}}><b>סרטון של האמן:</b></p>
                     <YoutubeEmbed embedId={this.state.artist.youtubeVideo} />
                 </div>
         }
@@ -228,11 +228,12 @@ class ArtistPage extends Component {
                 </Card>
                 <Card>
                     <div>
-                        <p style={{fontSize:"36px", fontWeight:"bold", textAlign:'center'}}>  שם האמן: {this.state.artist.full_name} </p>
-                        <p style={{fontSize:"30px", fontWeight:"bold", textAlign:'center'}}>  התמחות: {this.state.artist.profession} </p>
+                        <p style={{fontSize:"40px", textAlign:'center'}}> <b> שם האמן: </b>{this.state.artist.full_name} </p>
+                        <p style={{fontSize:"30px", textAlign:'center'}}> <b> התמחות: </b> {this.state.artist.profession} </p>
                     </div>
                     <div>
-                        <p style={{fontSize:"30px", textAlign:'center'}}>האמן מספר על עצמו: {this.state.artist.description}</p>
+                        <p style={{fontSize:"30px", textAlign:'center',fontWeight:"bold",paddingTop:'10px', textDecoration: 'underline'}}>האמן מספר על עצמו: </p>
+                        <p style={{fontSize:"20px", textAlign:'center',paddingBottom:'13px'}}> {this.state.artist.description}</p>
                     </div>
                     <div>
                         <div id= {'artistUploadFiles'} className="uploadFiles" >

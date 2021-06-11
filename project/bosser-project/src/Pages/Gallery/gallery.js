@@ -13,7 +13,6 @@ const Gallery=(props) => {
         const [selectedImg, setSelectedImg] = useState(null);
         return (
             <div>
-
                 <div id={'title'}>הגלריה שלנו</div>
                 <br/>
                 <div id={'information'}> לחץ על תמונה להגדלה <FaSearch/></div>

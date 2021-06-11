@@ -16,11 +16,17 @@ export const Nav = styled.nav`
   color: black;
   top:0;
   z-index: 10;
-  
+
   @media screen and (max-width:1250px){
     transition: 0.8s all ease;
-    width: 150px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
+  }
+  
+  @media screen and (max-width:1000px){
+    transition: 0.8s all ease;
+    width: 60px;
+    height: 60px;
   }
 
   @media screen and (max-width:190px){
@@ -70,15 +76,26 @@ export const NavLink = styled(LinkR)`
 
 export const Bars = styled.div`
   display: none;
-  
+
   @media screen and (max-width: 1250px) {
     display: flex;
     color: black;
     position: absolute;
     top: 0;
     text-align: center;
-    transform: translate(-10%, 30%);
+    transform: translate(-20%, 40%);
     font-size: 50px;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 1000px) {
+    display: flex;
+    color: black;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    transform: translate(-5%, 30%);
+    font-size: 35px;
     cursor: pointer;
   }
 

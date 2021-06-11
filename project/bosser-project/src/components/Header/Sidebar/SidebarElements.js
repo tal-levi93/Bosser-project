@@ -112,11 +112,11 @@ export const SidebarWrapper = styled.div`
 export const SidebarMenu = styled.ul`
   display:grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(8, 40px);
+  grid-template-rows: repeat(8, 50px);
   text-align: center;
 
   
-  @media screen and (max-height: 430px ) {
+  @media screen and (max-height: 600px ) {
     grid-template-rows: repeat(8 , 40px);
     
   }
@@ -128,7 +128,7 @@ export const SidebarLink = styled(LinkR) `
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 40px;
   text-decoration: none;
   list-style: none;
   transition: 0.3s ease-in-out;
@@ -140,8 +140,8 @@ export const SidebarLink = styled(LinkR) `
     transition: 0.2s ease-in-out;
   }
 
-  @media screen and (max-height: 400px ) {
-    font-size: 18px;
+  @media screen and (max-height: 600px ) {
+    font-size: 30px;
   }
   
 `;

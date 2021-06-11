@@ -89,7 +89,7 @@ class Sidebar extends Component{
 
                     <SideBtnWrap>
                         <SideLogOutBtn onClick={this.LogOut}>התנתק</SideLogOutBtn>
-                        <FSideBtn href='https://www.facebook.com/bosserco/'> <FaFacebookF/></FSideBtn>
+                        <FSideBtn href='https://www.facebook.com/'> <FaFacebookF/></FSideBtn>
 
                     </SideBtnWrap>
                 </SidebarWrapper>
@@ -115,7 +115,7 @@ class Sidebar extends Component{
 
                         <SideBtnWrap>
                             <SideBtn to='/login' onClick={this.props.toggle}> התחברות</SideBtn>
-                            <FSideBtn href='https://www.facebook.com/bosserco/'> <FaFacebookF/></FSideBtn>
+                            <FSideBtn href='https://www.facebook.com/'> <FaFacebookF/></FSideBtn>
 
 
                         </SideBtnWrap>

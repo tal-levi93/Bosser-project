@@ -1,15 +1,12 @@
 import React, {Component} from "react";
 import {db} from "../../Firebase/firebase";
-import eventLogo from "./eventLogo.jpg";
 import show from './show.png';
-import {Button} from "@material-ui/core";
 import './events.css';
 import {FaThumbtack, FaTrashAlt} from "react-icons/fa";
 import firebase from "firebase"
 import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
 import SignUpForEvent from "../SignUpForEvent";
 import deleteDoc from "../../hooks/deleteDoc";
-import emailjs from "emailjs-com";
 import axios from "axios"
 
 class Events extends Component {
@@ -50,15 +47,40 @@ class Events extends Component {
             fromEmail:
                 "bosserjce@gmail.com",
             mailContent:
-                "נרשמתם בהצלחה ל" + event.name + "\n" + "האירוע יתקיים בתאריך: " + event.date.toDate().toLocaleDateString()  + "\n" + "צוות בוסר מאחל לכם הנאה :)",
+                "שלום "+this.props.UserDetails.FullName+","
+                 +"\n"+ "נרשמתם בהצלחה לאירוע " + event.name +" , '"+ event.description+"'."
+                + "\n" + "האירוע יתקיים בתאריך: " + event.date.toDate().toLocaleDateString()+"."
+                + "\n" + "הלינק לאירוע הוא: " + event.link
+                + "\n" + "נתראה," + "\n צוות בוסרה.",
             mailSubject:
-                "Event sign in Confirmation",
+                "אישור רישום לאירוע",
             toEmail:
             this.props.UserDetails.Email,
         }
         axios.post('https://endodty5c2zjzm7.m.pipedream.net', email)
             .then(response => console.log(response)).catch(err=>{
                 console.log(err)
+        })
+    };
+
+    /* When user cancel to signup for event, email will sent*/
+    cancel_sendEmail = (event)=>{
+
+        const email = {
+            fromEmail:
+                "bosserjce@gmail.com",
+            mailContent:
+                "שלום " + this.props.UserDetails.FullName +", \n"
+                +"ביטול הרשמתך לאירוע "+event.name+" ,'"+event.description +"' בוצע בהצלחה." +"\n"
+                +"תודה מצוות בוסרה."+"\n",
+            mailSubject:
+                "ביטול רישום לאירוע",
+            toEmail:
+            this.props.UserDetails.Email,
+        }
+        axios.post('https://endodty5c2zjzm7.m.pipedream.net', email)
+            .then(response => console.log(response)).catch(err=>{
+            console.log(err)
         })
     };
 
@@ -69,18 +91,39 @@ class Events extends Component {
         if (window.confirm('האם אתה בטוח שהנך רוצה להירשם לאירוע זה?')) {
             db.collection("events").doc(this.state.events_id[idx]).update({
                 participants: firebase.firestore.FieldValue.arrayUnion(this.props.UserDetails )
-            })
-            this.sendEmail(this.state.events[idx])
-            this.props.history.push("/")
+            }).then(r =>{
+                let update_events = []
+                db.collection('events').get().then((result) => {
+                    result.docs.forEach(doc => {
+                        update_events.push(doc.data());
+                    });
+                    this.setState({events: update_events})
+                    this.sendEmail(this.state.events[idx])
+
+                })
+            });
         }
     }
 
+
+
     cancel_reg(idx , event_id){
-        console.log(event_id)
         if (window.confirm('האם אתה בטוח שהנך רוצה לבטל רישום לאירוע זה?')) {
             db.collection("events").doc(this.state.events_id[idx]).update({
                 participants: firebase.firestore.FieldValue.arrayRemove(this.props.UserDetails)
-            }).catch(function (error) {
+            }).then(r => {
+
+                let update_events = []
+                db.collection('events').get().then((result) => {
+                    result.docs.forEach(doc => {
+                        update_events.push(doc.data());
+                    });
+                    this.setState({events: update_events})
+                    this.cancel_sendEmail(this.state.events[idx])
+
+                })
+            })
+            .catch(function (error) {
                 console.error("Error removing document: ", error);
             });
         }

@@ -204,9 +204,9 @@ class ArtistManagePage extends Component {
                     <UploadImage1 user_id={this.props.userId} SetUrl={this.handleImg1}/>
         } else {
             img1_option =
-                <div style={{width:"30%"}}>
+                <div id={'img_con'} >
                     <div>{this.user_delete_his_image_1(this.props.userId)}</div>
-                    <img src={this.state.artist.image_1} style={{ height:'450px'}}/>
+                    <img id={'artist_img'} src={this.state.artist.image_1} />
                 </div>
 
         }
@@ -217,9 +217,9 @@ class ArtistManagePage extends Component {
 
         } else {
             img2_option =
-                <div style={{width:"30%"}}>
+                <div id={'img_con'} >
                     <div>{this.user_delete_his_image_2(this.props.userId)}</div>
-                    <img src={this.state.artist.image_2} style={{ height:'450px'}}/>
+                    <img id={'artist_img'} src={this.state.artist.image_2} />
                 </div>
         }
 
@@ -228,9 +228,9 @@ class ArtistManagePage extends Component {
                 <UploadImage3 user_id={this.props.userId} SetUrl={this.handleImg3}/>
         } else {
             img3_option =
-                <div style={{width:"30%"}}>
+                <div id={'img_con'} >
                     <div>{this.user_delete_his_image_3(this.props.userId)}</div>
-                    <img src={this.state.artist.image_3} style={{ height:'450px'}}/>
+                    <img id={'artist_img'} src={this.state.artist.image_3} />
                 </div>
         }
 
@@ -248,7 +248,7 @@ class ArtistManagePage extends Component {
         } else {
             youtubeVideo =
                 <div>
-                    <h1>סרטון של האמן:</h1>
+                    <p style={{fontSize:'40px',textAlign:'center',paddingTop:'30px',textDecoration: 'underline'}}>סרטון של האמן:</p>
                     <div>{this.user_delete_his_video(this.props.userId)}</div>
                     <YoutubeEmbed embedId={this.state.artist.youtubeVideo} />
                 </div>
@@ -263,9 +263,10 @@ class ArtistManagePage extends Component {
         }
 
         return (
-            <div id="blogPostContainer">
+            <div  id={'page'} style={{paddingBottom:'0'}}>
+                <br/>
                 <Card>
-                    <div className="artistPhoto" id="title" style={{ justifyContent: "center"}}>
+                    <div className="artistPhoto" id="title" style={{ justifyContent: "center",padding:'10px'}}>
                         {artistPhoto}
                         <p style= {{color:'black', fontSize:"20px"}}>העלה / ערוך תמונה</p>
                         <UploadProfileImg user_id={this.props.userId} SetUrl ={this.handleProfile}/>
@@ -273,14 +274,15 @@ class ArtistManagePage extends Component {
                 </Card>
                 <Card>
                     <div>
-                        <p style={{fontSize:"36px", fontWeight:"bold", textAlign:'center'}}>  שם האמן: {this.state.artist.full_name} </p>
-                        <p style={{fontSize:"30px", fontWeight:"bold", textAlign:'center'}}>  התמחות: {this.state.artist.profession} </p>
+                        <p style={{fontSize:"36px", textAlign:'center'}}><b>  שם האמן: </b>{this.state.artist.full_name} </p>
+                        <p style={{fontSize:"30px", textAlign:'center'}}> <b> התמחות:</b> {this.state.artist.profession} </p>
                     </div>
                     <div>
-                        <p style={{fontSize:"30px", textAlign:'center'}}>האמן מספר על עצמו: {this.state.artist.description}</p>
-                        <form style={{textAlign:'center'}} onSubmit={this.handleSubmitDescription} className="white">
+                        <p style={{fontSize:"30px", textAlign:'center',fontWeight:"bold",paddingTop:'10px', textDecoration: 'underline'}}>האמן מספר על עצמו: </p>
+                        <p style={{fontSize:"20px", textAlign:'center',paddingBottom:'13px'}}> {this.state.artist.description}</p>
+                        <form style={{textAlign:'center'}} onSubmit={this.handleSubmitDescription} >
                             <div className = "input-field">
-                                <label className = "line" htmlFor="postText">הכנס תיאור חדש: </label><br></br>
+                                <label className = "line" htmlFor="postText" > <p style={{paddingBottom:'13px',fontWeight:"bold"}}>הכנס תיאור חדש:  </p></label>
                                 <textarea className="artistDescription" id="artistDescription" name="w3review" rows="10" cols="100" onChange={this.handleChange}/>
                             </div>
                             <div><br></br>
@@ -289,7 +291,7 @@ class ArtistManagePage extends Component {
                         </form>
                     </div>
                     <div>
-                        <div className="uploadFiles">
+                        <div id= {'artistUploadFiles'} className="uploadFiles">
                             {img1_option}
                             {img2_option}
                             {img3_option}

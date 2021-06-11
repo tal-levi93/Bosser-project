@@ -96,7 +96,7 @@ class Navbar extends Component {
 
 
     render(padding) {
-        const {toggle} = this.props.toggle //checkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk!!!!!!
+        const {toggle} = this.props.toggle
         let buildNav
         if (this.props.isLoggedIn) {
 
@@ -119,7 +119,7 @@ class Navbar extends Component {
                         {this.UserTab()}
                         {this.not_admin()}
 
-                        <FNavBtnLink href='https://www.facebook.com/bosserco/'><FaFacebookF/> </FNavBtnLink>
+                        <FNavBtnLink href='https://www.facebook.com/'><FaFacebookF/> </FNavBtnLink>
                     </NavBtn>
                 </NavContainer>
             </Nav>)
@@ -142,7 +142,7 @@ class Navbar extends Component {
                         <NavBtn>
                             <NavLink to="/signup"> הרשמה </NavLink>
                             <NavBtnLink to="/login">התחברות</NavBtnLink>
-                            <FNavBtnLink href='https://www.facebook.com/bosserco/'><FaFacebookF/> </FNavBtnLink>
+                            <FNavBtnLink href='https://www.facebook.com/'><FaFacebookF/> </FNavBtnLink>
                         </NavBtn>
                     </NavContainer>
                 </Nav>
