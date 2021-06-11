@@ -5,6 +5,7 @@ import 'firebase/storage'
 import 'firebase/firestore'
 import 'firebase/database';
 import 'firebase/storage';
+import 'firebase/functions'
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
