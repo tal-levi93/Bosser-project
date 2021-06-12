@@ -262,6 +262,8 @@ class ArtistManagePage extends Component {
                 <img src={this.state.artist.photo} alt="artistPhoto" style={{width: 130, height: 130, borderRadius: 150/2}}/>
         }
 
+        if(this.props.UserDetails.UserUid == this.props.userId ){
+
         return (
             <div  id={'page'} style={{paddingBottom:'0'}}>
                 <br/>
@@ -308,7 +310,10 @@ class ArtistManagePage extends Component {
 
 
             </div>
-        )
+
+
+        )}
+        else return <div></div>
     }
 
 }

@@ -89,28 +89,28 @@ class sign_up extends Component{
                 <form onSubmit={this.handleSubmit} className="white">
                     <h5 className="headline">הרשמה</h5>
                     <div className = "input-field">
-                        <label className = "line" htmlFor="username" >שם משתמש </label><br></br>
+                        <label className = "line" htmlFor="username" >שם משתמש: </label><br></br>
                         <input className = "box" type="text"  id="username" required  onChange={this.handleChange}/>
                     </div>
                     <div className = "input-field">
-                        <label className = "line" htmlFor="password">סיסמא </label><br></br>
+                        <label className = "line" htmlFor="password">סיסמא: </label><br></br>
                         <input className = "box" type="password" id="password" pattern=".{6,}" title="סיסמא חייבת לכלול 6 אותיות או יותר" required onChange={this.handleChange}/>
                     </div>
                     <div className = "input-field">
-                        <label className = "line" htmlFor="password2"> סיסמא בשנית </label><br></br>
+                        <label className = "line" htmlFor="password2"> סיסמא בשנית: </label><br></br>
                         <input className = "box" type="password" id="password2" pattern=".{6,}"  required onChange={this.handleChange}/>
                     </div>
 
                     <div className = "input-field">
-                        <label className = "line" htmlFor="email">דואר אלקטרוני </label><br></br>
+                        <label className = "line" htmlFor="email">דואר אלקטרוני: </label><br></br>
                         <input className = "box" type="text" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="name@domain.com" onChange={this.handleChange}/>
                     </div>
                     <div className = "Full name: ">
-                        <label className = "line" htmlFor="name">שם מלא</label><br></br>
+                        <label className = "line" htmlFor="name">שם מלא:</label><br></br>
                         <input className = "box" type="text" id="full_name" required onChange={this.handleChange}/>
                     </div>
                     <div className="input-field">
-                        <label className="line" htmlFor="yearOfBorn">שנת לידה </label><br></br>
+                        <label className="line" htmlFor="yearOfBorn">שנת לידה: </label><br></br>
                         <input className="box" type="number"  id="yearOfBorn" min="1900" max="2021" required onChange={this.handleChange}/>
                     </div>
                     <div className = "input-field ">

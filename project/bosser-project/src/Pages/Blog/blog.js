@@ -14,7 +14,7 @@ import {FaTrashAlt} from "react-icons/fa";
 const SideImage = props => {
     return (
 
-        <Card style={{height: `${props.height}px` , padding:'3px 3px', textAlign:'center', display:'block' , objectFit:'cover'}}>
+        <Card style={{height: `${props.height}px` , padding:'3px 3px 55px 3px', textAlign:'center', display:'block' , objectFit:'cover'}}>
             <img src={props.post.image} alt="" style={{width:'95%',height:'70%'}}/>
             <div >
                 <p style={{ fontWeight:'bold'}}>{props.post.blogTitle}</p>
@@ -86,7 +86,7 @@ class Blog extends Component{
                         }
                         <Card style={{margin: '20px 0'}}>
                             <div className="GalleryPost" style={galleryStyle}>
-                                <Card style={{width:'70%', height:"450px",textAlign:'center', display:'block' , objectFit:'cover'}}>
+                                <Card style={{width:'70%', height:"450px",textAlign:'center', display:'block' , objectFit:'cover', paddingBottom:'25px'}}>
 
                                     <img src={this.state.posts[0].image} style={{width:'95%',height:'87%'}}/>
                                     <p style={{fontSize:'24px', fontWeight:'bold'}}>{this.state.posts[0].blogTitle}</p>

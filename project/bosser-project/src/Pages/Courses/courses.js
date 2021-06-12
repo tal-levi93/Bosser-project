@@ -171,7 +171,7 @@ class Courses extends Component {
             if(is_sign == true)
                 return (<Button id={'co_btn'} style={{backgroundColor:'red',color:'white'}} onClick={()=>{this.cancel(course_id, index)}}>בטל רישום</Button>)
 
-            else
+            else if (is_sign == false && this.state.courses[index].currentParticipants < this.state.courses[index].participants)
                 return(<Button id={'co_btn'} onClick={()=>{this.sign(course_id, index)}}>רישום לקורס</Button>)
         }
 
