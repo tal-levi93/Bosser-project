@@ -9,6 +9,8 @@ const deleteDoc = (img , collection) =>{
         .doc(img).delete()
         .catch((error) => console.log(error));
 
+         console.log(img.id)
+
 
 if(collection === 'gallery') {
 

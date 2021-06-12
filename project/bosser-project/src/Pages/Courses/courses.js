@@ -165,6 +165,9 @@ class Courses extends Component {
 
         if(this.props.IsLoggedIn) {
             let curr_participants = this.state.courses[index].signed
+            if(curr_participants == undefined){
+                return(<Button id={'co_btn'} onClick={()=>{this.sign(course_id, index)}}>רישום לקורס</Button>)
+            }
             curr_participants.forEach( (user) => {
                 if (user.UserUid == this.props.UserDetails.UserUid) { is_sign = true}})
 
