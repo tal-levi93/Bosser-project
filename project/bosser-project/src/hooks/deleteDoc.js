@@ -2,14 +2,9 @@
 import firebase from "firebase/app";
 import useFirestore from "./useFirestore";
 
-const deleteDoc = (img , collection) =>{
+const deleteDoc = (doc , collection) =>{
 
-         firebase.firestore()
-        .collection(collection)
-        .doc(img).delete()
-        .catch((error) => console.log(error));
 
-         console.log(img.id)
 
 
 if(collection === 'gallery') {
@@ -17,14 +12,14 @@ if(collection === 'gallery') {
 
     firebase.firestore()
         .collection(collection)
-        .doc(img.id).delete()
+        .doc(doc.id).delete()
         .catch((error) => console.log(error));
 
     // Get a reference to the storage service, which is used to create references in your storage bucket
     var storage = firebase.storage();
 // Create a storage reference from our storage service
     var storageRef = storage.ref();
-    var desertRef = storageRef.child(img.name);
+    var desertRef = storageRef.child(doc.name);
 
 // Delete the file
     desertRef.delete().then(() => {
@@ -35,6 +30,14 @@ if(collection === 'gallery') {
 
 }
 
+else {
+
+    firebase.firestore()
+        .collection(collection)
+        .doc(doc).delete()
+        .catch((error) => console.log(error));
+
+}
 
 }
 export default deleteDoc;
