@@ -1,7 +1,4 @@
 import React,{Component} from "react";
-import firebase from "firebase";
-import {Route, Switch} from "react-router-dom";
-import Home from "../Home";
 import "./style.css"
 import {db} from '../../Firebase/firebase';
 import axios from "axios";
@@ -20,6 +17,7 @@ class CreateMessageNS extends Component{
         })
     }
 
+    /* Send email for all newsletter's list from firebase*/
     sendEmail = (msg , to)=>{
         const email = {
             fromEmail:
@@ -39,6 +37,7 @@ class CreateMessageNS extends Component{
         })
     };
 
+    /*When admin submit to send email for newsletter list */
     handleSubmit = async (e) => {
         e.preventDefault();
         let docRef = db.collection("newsletters").doc("wXWkD32q93M8YgTPJ4gh");

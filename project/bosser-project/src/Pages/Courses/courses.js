@@ -18,6 +18,7 @@ class Courses extends Component {
         }
     }
 
+    // courses data will save in array that called courses, and id's in courses_id
     componentDidMount() {
         let courses = [];
         let courses_id= [];
@@ -135,7 +136,6 @@ class Courses extends Component {
     }
 
     /*User can cancel his Request to register for course - this is also update in firebase */
-
     cancel(course_id, index){
         if (window.confirm('האם אתה בטוח שהנך רוצה לבטל רישום לקורס זה?')) {
             let update_parti = this.state.courses[index].currentParticipants - 1

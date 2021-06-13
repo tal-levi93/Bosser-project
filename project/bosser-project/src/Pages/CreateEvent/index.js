@@ -27,6 +27,7 @@ class CreateEvent extends Component{
     }
 
 
+    /* When admin submit create new event*/
     handleSubmit = async (e) => {
         e.preventDefault();
 

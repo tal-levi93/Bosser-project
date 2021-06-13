@@ -33,6 +33,7 @@ class CreatePost extends Component{
     }
 
 
+    /* When user create new post for blog*/
     handleSubmit = async (e) => {
         e.preventDefault();
 

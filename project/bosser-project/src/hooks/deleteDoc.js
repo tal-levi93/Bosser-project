@@ -4,9 +4,6 @@ import useFirestore from "./useFirestore";
 
 const deleteDoc = (doc , collection) =>{
 
-
-
-
 if(collection === 'gallery') {
 
 
