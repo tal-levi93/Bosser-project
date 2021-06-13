@@ -40,7 +40,7 @@ class Artists extends Component{
         })
     }
 
-
+// if admin id logged in, option of delete will display on every artist
     admin_is_logged_in(artist_id, idx) {
         if (this.props.UserDetails.IsAdmin) {
             return (
@@ -65,6 +65,7 @@ class Artists extends Component{
 
     }
 
+    // return the artists and search option
     render() {
         return(
             <div id={'page'}>
@@ -91,6 +92,7 @@ class Artists extends Component{
         )
     }
 
+    // for every artist, display his name,photo and profession
     create_artist(artist_id, uid) {
         let idx =  this.state.artists_id.indexOf(uid)
         let url = artistLogo

@@ -1,8 +1,4 @@
 import React,{Component} from "react";
-import firebase from "firebase";
-import {Route, Switch} from "react-router-dom";
-import Home from "../Home";
-import "./style.css"
 import {db} from '../../Firebase/firebase';
 
 class CreateCourse extends Component{
@@ -22,6 +18,7 @@ class CreateCourse extends Component{
 
 
 
+
     handleChange = (e) =>{
         this.setState({
             [e.target.id]:e.target.value
@@ -29,6 +26,7 @@ class CreateCourse extends Component{
     }
 
 
+    /* When admin create courses- all the data will send to firebase*/
     handleSubmit = async (e) => {
         e.preventDefault();
 

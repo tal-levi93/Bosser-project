@@ -20,6 +20,8 @@ class Events extends Component {
         }
     }
 
+
+    /* Events list will save in event array and id's will save in events_id, Participants in signed_up*/
     componentWillMount() {
         let events = [];
         let events_id = [];
@@ -42,6 +44,7 @@ class Events extends Component {
 
     }
 
+    /* When user signed for event he will get an email with confirm */
     sendEmail = (event)=>{
         const email = {
             fromEmail:
@@ -107,6 +110,7 @@ class Events extends Component {
 
 
 
+    /* When user cancel his signed for event */
     cancel_reg(idx , event_id){
         if (window.confirm('האם אתה בטוח שהנך רוצה לבטל רישום לאירוע זה?')) {
             db.collection("events").doc(this.state.events_id[idx]).update({
@@ -129,6 +133,7 @@ class Events extends Component {
         }
     }
 
+    /* Button for signed/cancel for events */
     btn_switch(event_id , idx){
         let events = this.state.events
         let signed_in = false;
@@ -146,7 +151,7 @@ class Events extends Component {
         }
     }
 
-
+    /*Create events for user that logged in */
     create_event_logged_in(event_id, idx) {
 
         return (<div key={idx}>
@@ -166,6 +171,7 @@ class Events extends Component {
 
     }
 
+    /*Create events for guest*/
     create_event_offline(event_id, idx) {
         return (<div key={idx}>
 
@@ -185,6 +191,7 @@ class Events extends Component {
 
     }
 
+    /*Admin can delete events*/
     admin_is_logged_in(event_id, idx) {
         if (this.props.UserDetails.IsAdmin) {
             return (
@@ -209,6 +216,7 @@ class Events extends Component {
 
     }
 
+ 
     createEventBtn(){
         if (this.props.UserDetails.IsAdmin) {
             return (
