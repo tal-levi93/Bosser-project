@@ -6,6 +6,7 @@ import Card from "../UI/Card";
 import BlogPost from "../BlogPost";
 import Sidebar from "../Sidebar";
 
+// post is in blogPost con
 const Post = (props) => {
 
     return (

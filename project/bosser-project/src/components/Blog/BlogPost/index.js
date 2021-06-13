@@ -4,6 +4,8 @@ import Card from "../UI/Card";
 import blogImage from "../../../blogImages/blogPotho2.jpg";
 import {db} from '../../../Firebase/firebase';
 
+// the struct of the post is : field , title , date , img , context
+
 class BlogPost extends Component {
 
     constructor(props) {

@@ -5,6 +5,7 @@ import ProfileImage from "../../../blogImages/profileImage.jpg";
 import {db} from "../../../Firebase/firebase";
 import {NavLink} from "react-router-dom";
 
+// side bar of blog page which displays all the recent posts
 class Sidebar extends Component {
 
     constructor(props) {

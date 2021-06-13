@@ -7,6 +7,7 @@ import Sidebar from "../Sidebar";
 import blogImage2 from "../../../blogImages/blogPotho2.jpg";
 import React, {useState, useEffect, Component} from "react";
 
+// the post in the blog page
 const ReadMore = (props) => {
     const text = props.children;
     const [isReadMore, setIsReadMore] = useState(true);

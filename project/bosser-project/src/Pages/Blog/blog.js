@@ -11,6 +11,7 @@ import RecentPost from "../../components/Blog/recentPost";
 import deleteDoc from "../../hooks/deleteDoc";
 import {FaTrashAlt} from "react-icons/fa";
 
+// img on the left side of top of page
 const SideImage = props => {
     return (
 
@@ -26,7 +27,7 @@ const SideImage = props => {
     )
 }
 
-
+// keep array of posts and post ids from firebase
 class Blog extends Component{
 
     constructor(props) {
@@ -62,7 +63,7 @@ class Blog extends Component{
             overflow: 'hidden'
         };
 
-
+        // if artist is logged in, display option of create new post
         const sideImageHeight = galleryHeight/3;
         if (this.state.searchTerm==undefined || this.state.searchTerm=="") {
             return(
